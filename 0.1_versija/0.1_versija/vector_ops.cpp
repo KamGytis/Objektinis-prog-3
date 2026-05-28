@@ -1,4 +1,11 @@
-﻿#include "vector_ops.h"
+﻿/**
+ * @file vector_ops.cpp
+ * @brief Vektoriaus operacijų realizacija naudojant nuosavą Vector konteinerį.
+ *
+ * v3.0: std::vector pakeistas nuosavu Vector<T> konteineriu.
+ */
+
+#include "vector_ops.h"
 #include "utils.h"
 
 #include <iostream>
@@ -9,9 +16,7 @@
 #include <stdexcept>
 #include <chrono>
 
-
-
-void skaitymas_is_failo(const std::string& filename, std::vector<Studentas>& studentai) {
+void skaitymas_is_failo(const std::string& filename, Vector<Studentas>& studentai) {
     std::ifstream file(filename);
     if (!file.is_open())
         throw std::runtime_error("Nepavyko atidaryti failo: " + filename);
@@ -26,7 +31,7 @@ void skaitymas_is_failo(const std::string& filename, std::vector<Studentas>& stu
         std::stringstream ss(line);
         std::string vardas, pavarde;
         ss >> vardas >> pavarde;
-        std::vector<int> paz;
+        std::vector<int> paz;  // laikinas std::vector pazymiu nuskaitymui
         int v;
         while (ss >> v) paz.push_back(v);
         if (paz.empty()) continue;
@@ -39,7 +44,7 @@ void skaitymas_is_failo(const std::string& filename, std::vector<Studentas>& stu
     std::cout << "  Is viso nuskaityta: " << studentai.size() << " studentu\n";
 }
 
-void isvedimas(const std::vector<Studentas>& studentai, int metodas) {
+void isvedimas(const Vector<Studentas>& studentai, int metodas) {
     std::string rez = (metodas == 1) ? "Galutinis (vidurkis)" : "Galutinis (mediana)";
     std::cout << std::left << std::setw(15) << "Vardas"
         << std::setw(15) << "Pavarde"
@@ -48,7 +53,7 @@ void isvedimas(const std::vector<Studentas>& studentai, int metodas) {
         std::cout << s << "\n";
 }
 
-void isvedimas_i_faila(const std::vector<Studentas>& studentai,
+void isvedimas_i_faila(const Vector<Studentas>& studentai,
     const std::string& filename,
     const std::string& kategorija) {
     std::ofstream out(filename);
@@ -67,12 +72,12 @@ void isvedimas_i_faila(const std::vector<Studentas>& studentai,
         << " studentu -> " << filename << "\n";
 }
 
-void pasirinkimo_metodas(int tipas, std::vector<Studentas>& studentai) {
+void pasirinkimo_metodas(int tipas, Vector<Studentas>& studentai) {
     for (auto& s : studentai)
         s.skaiciuotiRez(tipas);
 }
 
-void rusiavimas(std::vector<Studentas>& studentai, int budas) {
+void rusiavimas(Vector<Studentas>& studentai, int budas) {
     switch (budas) {
     case 1: std::sort(studentai.begin(), studentai.end(),
         [](const Studentas& a, const Studentas& b) { return a.getVardas() < b.getVardas(); }); break;
@@ -106,19 +111,18 @@ int pasirinkimas_rusiavimo_budo() {
     return p;
 }
 
-void skirstymas_i_grupes(const std::vector<Studentas>& visi,
-    std::vector<Studentas>& kieti,
-    std::vector<Studentas>& vargsai) {
+void skirstymas_i_grupes(const Vector<Studentas>& visi,
+    Vector<Studentas>& kieti,
+    Vector<Studentas>& vargsai) {
     for (const auto& s : visi) {
         if (s.getRez() >= 5.0) kieti.push_back(s);
         else                   vargsai.push_back(s);
     }
 }
 
-// S1: du nauji konteineriai, originalas lieka nepakeistas
-double skirstymas_s1(const std::vector<Studentas>& studentai,
-    std::vector<Studentas>& kieti,
-    std::vector<Studentas>& vargsai) {
+double skirstymas_s1(const Vector<Studentas>& studentai,
+    Vector<Studentas>& kieti,
+    Vector<Studentas>& vargsai) {
     auto t0 = std::chrono::high_resolution_clock::now();
     kieti.clear(); vargsai.clear();
     std::copy_if(studentai.begin(), studentai.end(), std::back_inserter(kieti),
@@ -129,9 +133,8 @@ double skirstymas_s1(const std::vector<Studentas>& studentai,
         std::chrono::high_resolution_clock::now() - t0).count();
 }
 
-// S2: vienas naujas konteineris + erase/remove_if
-double skirstymas_s2(std::vector<Studentas>& studentai,
-    std::vector<Studentas>& vargsai) {
+double skirstymas_s2(Vector<Studentas>& studentai,
+    Vector<Studentas>& vargsai) {
     auto t0 = std::chrono::high_resolution_clock::now();
     vargsai.clear();
     std::copy_if(studentai.begin(), studentai.end(), std::back_inserter(vargsai),
@@ -144,9 +147,8 @@ double skirstymas_s2(std::vector<Studentas>& studentai,
         std::chrono::high_resolution_clock::now() - t0).count();
 }
 
-// S3: std::partition
-double skirstymas_s3(std::vector<Studentas>& studentai,
-    std::vector<Studentas>& vargsai) {
+double skirstymas_s3(Vector<Studentas>& studentai,
+    Vector<Studentas>& vargsai) {
     auto t0 = std::chrono::high_resolution_clock::now();
     vargsai.clear();
     auto pivot = std::partition(studentai.begin(), studentai.end(),
