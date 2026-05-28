@@ -102,3 +102,26 @@ public:
      * @brief Konstruktorius su paskirstytoju.
      * @param alloc Naudojamas paskirstytojas
      */
+
+    explicit Vector(const Allocator& alloc) noexcept
+        : data_(nullptr), size_(0), capacity_(0), alloc_(alloc) {
+    }
+
+    /**
+     * @brief Konstruktorius su dydžiu.
+     * @param count Elementų skaičius
+     * @param value Pradinė reikšmė (pagal nutylėjimą – numatytoji)
+     * @param alloc Paskirstytojas
+     */
+    explicit Vector(size_type count, const T& value = T(),
+        const Allocator& alloc = Allocator())
+        : data_(nullptr), size_(0), capacity_(0), alloc_(alloc) {
+        assign(count, value);
+    }
+
+    /**
+     * @brief Konstruktorius iš iteratorių diapazono.
+     * @param first Pradžios iteratorius
+     * @param last  Pabaigos iteratorius
+     * @param alloc Paskirstytojas
+     */
