@@ -90,3 +90,15 @@ private:
         size_ = i;
         capacity_ = new_cap;
     } 
+public:
+    // Constructors 
+
+    /**
+     * @brief Numatytasis konstruktorius. Sukuria tuščią vektorių.
+     */
+    Vector() noexcept : data_(nullptr), size_(0), capacity_(0), alloc_() {}
+
+    /**
+     * @brief Konstruktorius su paskirstytoju.
+     * @param alloc Naudojamas paskirstytojas
+     */
