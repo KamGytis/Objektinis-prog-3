@@ -560,8 +560,3 @@ TEST(VectorEdgeCases, ReserveBeforePush) {
     EXPECT_EQ(v.capacity(), cap);
     EXPECT_EQ(v.size(), 1000u);
 }
-
-int main(int argc, char** argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

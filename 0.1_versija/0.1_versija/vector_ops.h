@@ -2,7 +2,7 @@
 #define VECTOR_OPS_H
 
 #include "studentas.h"
-#include "vector.h"
+#include "Vector.h"
 #include <string>
 
 /**
@@ -13,7 +13,7 @@
  */
 
 // Skaitymas ir isvedimas
-void skaitymas_is_failo(const std::string& filename, std::vector<Studentas>& studentai);
+void skaitymas_is_failo(const std::string& filename, Vector<Studentas>& studentai);
 
 
 /**
@@ -21,7 +21,7 @@ void skaitymas_is_failo(const std::string& filename, std::vector<Studentas>& stu
  * @param studentai Studentų vektorius.
  * @param metodas 1 – vidurkis, 2 – mediana (nurodoma antraštėje).
  */
-void isvedimas(const std::vector<Studentas>& studentai, int metodas);
+void isvedimas(const Vector<Studentas>& studentai, int metodas);
 /**
  * @brief Išveda studentų sąrašą į failą.
  * @param studentai Studentų vektorius.
@@ -29,7 +29,7 @@ void isvedimas(const std::vector<Studentas>& studentai, int metodas);
  * @param kategorija "Kietiakai" arba "Vargsiukai" – naudojama pranešimui.
  * @throws std::runtime_error Jei failo nepavyksta sukurti.
  */
-void isvedimas_i_faila(const std::vector<Studentas>& studentai,
+void isvedimas_i_faila(const Vector<Studentas>& studentai,
     const std::string& filename,
     const std::string& kategorija);
 /**
@@ -39,7 +39,7 @@ void isvedimas_i_faila(const std::vector<Studentas>& studentai,
  */
 
 
-void pasirinkimo_metodas(int tipas, std::vector<Studentas>& studentai);
+void pasirinkimo_metodas(int tipas, Vector<Studentas>& studentai);
 
 /**
  * @brief Surūšiuoja studentų vektorių pagal pasirinktą kriterijų.
@@ -54,7 +54,7 @@ void pasirinkimo_metodas(int tipas, std::vector<Studentas>& studentai);
  */
 
 
-void rusiavimas(std::vector<Studentas>& studentai, int budas);
+void rusiavimas(Vector<Studentas>& studentai, int budas);
 
 /**
  * @brief Paprašo vartotojo pasirinkti rūšiavimo būdą.
@@ -69,30 +69,30 @@ int  pasirinkimas_rusiavimo_budo();
  * @param vargsai [out] Studentai su rez < 5.0.
  */
 
-void   skirstymas_i_grupes(const std::vector<Studentas>& visi,
-    std::vector<Studentas>& kieti,
-    std::vector<Studentas>& vargsai);
+void   skirstymas_i_grupes(const Vector<Studentas>& visi,
+    Vector<Studentas>& kieti,
+    Vector<Studentas>& vargsai);
 /**
  * @brief Strategija S1: du nauji konteineriai, kopijavimas su copy_if.
  * @return Sugaištas laikas sekundėmis.
  */
 
-double skirstymas_s1(const std::vector<Studentas>& studentai,
-    std::vector<Studentas>& kieti,
-    std::vector<Studentas>& vargsai);
+double skirstymas_s1(const Vector<Studentas>& studentai,
+    Vector<Studentas>& kieti,
+    Vector<Studentas>& vargsai);
 
 /**
  * @brief Strategija S2: vienas naujas + erase/remove_if.
  * @return Sugaištas laikas sekundėmis.
  */
-double skirstymas_s2(std::vector<Studentas>& studentai,
-    std::vector<Studentas>& vargsai);
+double skirstymas_s2(Vector<Studentas>& studentai,
+    Vector<Studentas>& vargsai);
 /**
  * @brief Strategija S3: std::partition.
  * @return Sugaištas laikas sekundėmis.
  */
 
-double skirstymas_s3(std::vector<Studentas>& studentai,
-    std::vector<Studentas>& vargsai);
+double skirstymas_s3(Vector<Studentas>& studentai,
+    Vector<Studentas>& vargsai);
 
 #endif
