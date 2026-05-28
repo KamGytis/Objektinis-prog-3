@@ -1,15 +1,20 @@
 ﻿{
     "configurations": [
         {
-            "name": "x64-Debug",
+            "name": "x64-Debug-MSYS2",
             "generator": "Ninja",
             "configurationType": "Debug",
-            "inheritEnvironments": [ "msvc_x64_x64" ],
             "buildRoot": "${projectDir}\\out\\build\\${name}",
-            "installRoot": "${projectDir}\\out\\install\\${name}",
             "cmakeCommandArgs": "",
             "buildCommandArgs": "",
-            "ctestCommandArgs": ""
+            "inheritEnvironments": [ "mingw_64" ],
+            "environments": [
+                {
+                    "MINGW64_ROOT": "C:\\msys64\\ucrt64",
+                    "BIN_ROOT": "${env.MINGW64_ROOT}\\bin",
+                    "PATH": "${env.BIN_ROOT};${env.PATH}"
+                }
+            ]
         }
     ]
 }

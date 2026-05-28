@@ -10,7 +10,7 @@
 #include "list_ops.h"
 #include "deque_ops.h"
 #include "utils.h"
-#include "Vector.h"
+#include "vector.h"
 
 void generuoti_testu_failus();
 void generuoti_faila(const std::string&, int, int);
@@ -158,7 +158,7 @@ static void rankinis_ivedimas() {
             paz.push_back(p);
         }
         int egz = ivesties_tikrinimas("Egzamino pazymys: ");
-        studentai.emplace_back(vardas, pavarde, paz, egz);
+        studentai.push_back(Studentas(vardas, pavarde, paz, egz));
         std::cout << "Dar vienas? (1-taip, 0-ne): "; std::cin >> chosen;
     } while (chosen == 1);
 

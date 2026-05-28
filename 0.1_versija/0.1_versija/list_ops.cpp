@@ -20,7 +20,7 @@ void skaitymas_is_failo_l(const std::string& filename, std::list<Studentas>& stu
 		std::stringstream ss(line);
 		std::string vardas, pavarde;
 		ss >> vardas >> pavarde;
-		std::vector<int> paz;
+		Vector<int> paz;
 		int v;
 		while (ss >> v) paz.push_back(v);
 		if (paz.empty()) continue;

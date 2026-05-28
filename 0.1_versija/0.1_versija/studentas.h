@@ -2,6 +2,7 @@
 #define STUDENTAS_H
 
 #include "zmogus.h"
+#include "vector.h"
 #include <vector>
 #include <iostream>
 #include <iomanip>
@@ -52,7 +53,7 @@ public:
     
     Studentas(const std::string& vardas,
         const std::string& pavarde,
-        const std::vector<int>& paz,
+        const Vector<int>& paz,
         int egz);
 
     /**

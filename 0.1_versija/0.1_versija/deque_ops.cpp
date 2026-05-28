@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <stdexcept>
 #include <chrono>
+#include "vector.h"
 
 void skaitymas_is_failo_d(const std::string& filename, std::deque<Studentas>& studentai) {
     std::ifstream file(filename);
@@ -20,7 +21,7 @@ void skaitymas_is_failo_d(const std::string& filename, std::deque<Studentas>& st
         std::stringstream ss(line);
         std::string vardas, pavarde;
         ss >> vardas >> pavarde;
-        std::vector<int> paz;
+        Vector<int> paz;
         int v;
         while (ss >> v) paz.push_back(v);
         if (paz.empty()) continue;

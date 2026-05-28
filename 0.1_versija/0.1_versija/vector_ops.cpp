@@ -31,7 +31,7 @@ void skaitymas_is_failo(const std::string& filename, Vector<Studentas>& studenta
         std::stringstream ss(line);
         std::string vardas, pavarde;
         ss >> vardas >> pavarde;
-        std::vector<int> paz;  // laikinas std::vector pazymiu nuskaitymui
+        Vector<int> paz;
         int v;
         while (ss >> v) paz.push_back(v);
         if (paz.empty()) continue;

@@ -4,6 +4,7 @@
 #include <stdexcept>
 #include <sstream>
 #include <iomanip>
+#include "vector.h"
 
 //  Numatytasis konstruktorius 
 Studentas::Studentas()
@@ -13,9 +14,9 @@ Studentas::Studentas()
 //  Parametrinis konstruktorius 
 Studentas::Studentas(const std::string& vardas,
     const std::string& pavarde,
-    const std::vector<int>& paz,
+    const Vector<int>& paz,
     int egz)
-    : Zmogus(vardas, pavarde), paz_(paz), egz_(egz), rez_(0.0) {
+    : Zmogus(vardas, pavarde), paz_(paz.begin(), paz.end()), egz_(egz), rez_(0.0) {
 }
 
 //  Kopijavimo konstruktorius 
