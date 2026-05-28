@@ -125,3 +125,67 @@ public:
      * @param last  Pabaigos iteratorius
      * @param alloc Paskirstytojas
      */
+
+    template<typename InputIt,
+        typename = std::enable_if_t<std::is_base_of_v<
+        std::input_iterator_tag,
+        typename std::iterator_traits<InputIt>::iterator_category>>>
+        Vector(InputIt first, InputIt last, const Allocator& alloc = Allocator())
+        : data_(nullptr), size_(0), capacity_(0), alloc_(alloc) {
+        assign(first, last);
+    }
+
+    /**
+     * @brief Kopijos konstruktorius.
+     * @param other Kopijuojamas vektorius
+     */
+    Vector(const Vector& other)
+        : data_(nullptr), size_(0), capacity_(0),
+        alloc_(AllocTraits::select_on_container_copy_construction(other.alloc_)) {
+        assign(other.begin(), other.end());
+    }
+
+    /**
+     * @brief Perkėlimo konstruktorius.
+     * @param other Perkeliamas vektorius
+     */
+
+    Vector(Vector&& other) noexcept
+        : data_(other.data_), size_(other.size_), capacity_(other.capacity_),
+        alloc_(std::move(other.alloc_)) {
+        other.data_ = nullptr;
+        other.size_ = 0;
+        other.capacity_ = 0;
+    }
+
+    /**
+     * @brief Konstruktorius iš std::initializer_list.
+     * @param il   Pradinių reikšmių sąrašas
+     * @param alloc Paskirstytojas
+     */
+    Vector(std::initializer_list<T> il, const Allocator& alloc = Allocator())
+        : data_(nullptr), size_(0), capacity_(0), alloc_(alloc) {
+        assign(il.begin(), il.end());
+    }
+
+    /**
+     * @brief Destruktorius. Atlaisvina visą atmintį.
+     */
+    ~Vector() { deallocate_all(); }
+
+    // ===== Assignment operators =====
+
+    /**
+     * @brief Kopijos priskyrimo operatorius.
+     */
+    Vector& operator=(const Vector& other) {
+        if (this == &other) return *this;
+        if constexpr (AllocTraits::propagate_on_container_copy_assignment::value)
+            alloc_ = other.alloc_;
+        assign(other.begin(), other.end());
+        return *this;
+    }
+
+    /**
+     * @brief Perkėlimo priskyrimo operatorius.
+     */
