@@ -34,18 +34,18 @@ template<typename T, typename Allocator = std::allocator<T>>
 class Vector {
 public:
     //  Member types 
-	using value_type = T; //<! Elementų tipas
-	using allocator_type = Allocator; //<! Atminties paskirstytojo tipas
-	using size_type = std::size_t; //<! Dydžio tipas
-	using difference_type = std::ptrdiff_t; //<! Skirtumo tipas
-	using reference = T&;//<! Elementų nuorodų tipas
-	using const_reference = const T&; //<! Konstantiškų elementų nuorodų tipas
-	using pointer = typename std::allocator_traits<Allocator>::pointer; //<! Elementų rodyklės tipas
-	using const_pointer = typename std::allocator_traits<Allocator>::const_pointer; //<! Konstantiškų elementų rodyklės tipas
-	using iterator = T*; //<! Elementų iteratoriaus tipas
-	using const_iterator = const T*; //<! Konstantiškų elementų iteratoriaus tipas
-	using reverse_iterator = std::reverse_iterator<iterator>; //<! Atvirkštinių elementų iteratoriaus tipas
-	using const_reverse_iterator = std::reverse_iterator<const_iterator>;//<! Atvirkštinių konstantiškų elementų iteratoriaus tipas
+    using value_type = T; //<! Elementų tipas
+    using allocator_type = Allocator; //<! Atminties paskirstytojo tipas
+    using size_type = std::size_t; //<! Dydžio tipas
+    using difference_type = std::ptrdiff_t; //<! Skirtumo tipas
+    using reference = T&;//<! Elementų nuorodų tipas
+    using const_reference = const T&; //<! Konstantiškų elementų nuorodų tipas
+    using pointer = typename std::allocator_traits<Allocator>::pointer; //<! Elementų rodyklės tipas
+    using const_pointer = typename std::allocator_traits<Allocator>::const_pointer; //<! Konstantiškų elementų rodyklės tipas
+    using iterator = T*; //<! Elementų iteratoriaus tipas
+    using const_iterator = const T*; //<! Konstantiškų elementų iteratoriaus tipas
+    using reverse_iterator = std::reverse_iterator<iterator>; //<! Atvirkštinių elementų iteratoriaus tipas
+    using const_reverse_iterator = std::reverse_iterator<const_iterator>;//<! Atvirkštinių konstantiškų elementų iteratoriaus tipas
 
 private:
     pointer   data_;      ///< Rodyklė į duomenų masyvą
@@ -89,7 +89,7 @@ private:
         data_ = new_data;
         size_ = i;
         capacity_ = new_cap;
-    } 
+    }
 public:
     // Constructors 
 
@@ -173,7 +173,7 @@ public:
      */
     ~Vector() { deallocate_all(); }
 
-	//  Priskyrimo operatoriai
+    //  Priskyrimo operatoriai
 
     /**
      * @brief Kopijos priskyrimo operatorius.
@@ -181,7 +181,7 @@ public:
     Vector& operator=(const Vector& other) {
         if (this == &other) return *this;
         if constexpr (AllocTraits::propagate_on_container_copy_assignment::value)
-            alloc_ = other.alloc_;
+            alloc_ = other.alloc_; // <- Čia ištaisyta klaida (buvo alloc = ...)
         assign(other.begin(), other.end());
         return *this;
     }
@@ -212,7 +212,7 @@ public:
         return *this;
     }
 
-	// priskyrimo funkcijos
+    // priskyrimo funkcijos
 
     /**
      * @brief Priskiria count kopijų reikšmės value.
@@ -252,7 +252,7 @@ public:
      */
     allocator_type get_allocator() const noexcept { return alloc_; }
 
-	// element access
+    // element access
 
     /**
      * @brief Prieiga prie elemento su ribų tikrinimu.
@@ -321,7 +321,7 @@ public:
     const_reverse_iterator rend() const noexcept { return const_reverse_iterator(begin()); }
     const_reverse_iterator crend() const noexcept { return const_reverse_iterator(begin()); }
 
-	// Talpa ir dydis
+    // Talpa ir dydis
 
     /** @brief Tikrina ar vektorius tuščias. */
     [[nodiscard]] bool empty() const noexcept { return size_ == 0; }
@@ -357,7 +357,7 @@ public:
             reallocate(size_);
     }
 
-	// Modifikacija
+    // Modifikacija
 
     /** @brief Ištrina visus elementus (size = 0, capacity nesikeičia). */
     void clear() noexcept {
@@ -390,13 +390,28 @@ public:
             size_type new_cap = std::max(size_ + count, capacity_ * 2);
             reallocate(new_cap);
         }
-        iterator it = begin() + idx;
-        std::move_backward(it, end(), end() + count);
+
+        for (size_type i = size_; i > idx; --i) {
+            size_type old_idx = i - 1;
+            size_type new_idx = old_idx + count;
+            if (new_idx >= size_) {
+                AllocTraits::construct(alloc_, data_ + new_idx, std::move(data_[old_idx]));
+            }
+            else {
+                data_[new_idx] = std::move(data_[old_idx]);
+            }
+        }
+
+        size_type affected_constructed = std::min(size_, idx + count);
+        for (size_type i = idx; i < affected_constructed; ++i) {
+            AllocTraits::destroy(alloc_, data_ + i);
+        }
+
         for (size_type i = 0; i < count; ++i) {
-            AllocTraits::construct(alloc_, it + i, value);
+            AllocTraits::construct(alloc_, data_ + idx + i, value);
         }
         size_ += count;
-        return it;
+        return begin() + idx;
     }
 
     /**
@@ -413,12 +428,27 @@ public:
         if (count == 0) return begin() + idx;
         if (size_ + count > capacity_)
             reallocate(std::max(size_ + count, capacity_ * 2));
-        iterator it = begin() + idx;
-        std::move_backward(it, end(), end() + count);
+
+        for (size_type i = size_; i > idx; --i) {
+            size_type old_idx = i - 1;
+            size_type new_idx = old_idx + count;
+            if (new_idx >= size_) {
+                AllocTraits::construct(alloc_, data_ + new_idx, std::move(data_[old_idx]));
+            }
+            else {
+                data_[new_idx] = std::move(data_[old_idx]);
+            }
+        }
+
+        size_type affected_constructed = std::min(size_, idx + count);
+        for (size_type i = idx; i < affected_constructed; ++i) {
+            AllocTraits::destroy(alloc_, data_ + i);
+        }
+
         for (size_type i = 0; i < count; ++i)
-            AllocTraits::construct(alloc_, it + i, std::move(tmp[i]));
+            AllocTraits::construct(alloc_, data_ + idx + i, std::move(tmp[i]));
         size_ += count;
-        return it;
+        return begin() + idx;
     }
 
     iterator insert(const_iterator pos, std::initializer_list<T> il) {
@@ -433,11 +463,25 @@ public:
         size_type idx = pos - cbegin();
         if (size_ == capacity_)
             reallocate(capacity_ == 0 ? 1 : capacity_ * 2);
-        iterator it = begin() + idx;
-        std::move_backward(it, end(), end() + 1);
-        AllocTraits::construct(alloc_, it, std::forward<Args>(args)...);
+
+        for (size_type i = size_; i > idx; --i) {
+            size_type old_idx = i - 1;
+            size_type new_idx = old_idx + 1;
+            if (new_idx >= size_) {
+                AllocTraits::construct(alloc_, data_ + new_idx, std::move(data_[old_idx]));
+            }
+            else {
+                data_[new_idx] = std::move(data_[old_idx]);
+            }
+        }
+
+        if (idx < size_) {
+            AllocTraits::destroy(alloc_, data_ + idx);
+        }
+
+        AllocTraits::construct(alloc_, data_ + idx, std::forward<Args>(args)...);
         ++size_;
-        return it;
+        return begin() + idx;
     }
 
     /**
