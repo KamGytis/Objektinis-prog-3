@@ -472,3 +472,123 @@ public:
     /**
      * @brief Prideda elementą į galą (perkėlimas).
      */
+    void push_back(T&& value) {
+        emplace_back(std::move(value));
+    }
+
+    /**
+     * @brief Sukonstruoja elementą gale vietoje.
+     * @return Nuoroda į sukonstruotą elementą
+     */
+    template<typename... Args>
+    reference emplace_back(Args&&... args) {
+        if (size_ == capacity_)
+            reallocate(capacity_ == 0 ? 1 : capacity_ * 2);
+        AllocTraits::construct(alloc_, data_ + size_, std::forward<Args>(args)...);
+        return data_[size_++];
+    }
+
+    /**
+     * @brief Pašalina paskutinį elementą.
+     */
+    void pop_back() {
+        AllocTraits::destroy(alloc_, data_ + --size_);
+    }
+
+    /**
+     * @brief Pakeičia vektoriaus dydį.
+     * @param count Naujas dydis
+     * @param value Reikšmė naujiems elementams (jei didėja)
+     */
+    void resize(size_type count, const T& value = T()) {
+        if (count < size_) {
+            for (size_type i = count; i < size_; ++i)
+                AllocTraits::destroy(alloc_, data_ + i);
+            size_ = count;
+        }
+        else if (count > size_) {
+            reserve(count);
+            for (size_type i = size_; i < count; ++i)
+                AllocTraits::construct(alloc_, data_ + i, value);
+            size_ = count;
+        }
+    }
+
+    /**
+     * @brief Sukeičia du vektorius vietomis (O(1)).
+     * @param other Kitas vektorius
+     */
+    void swap(Vector& other) noexcept {
+        std::swap(data_, other.data_);
+        std::swap(size_, other.size_);
+        std::swap(capacity_, other.capacity_);
+        if constexpr (AllocTraits::propagate_on_container_swap::value)
+            std::swap(alloc_, other.alloc_);
+    }
+};
+
+//  Non-member functions 
+
+/** @brief Lygybės operatorius. */
+template<typename T, typename A>
+bool operator==(const Vector<T, A>& lhs, const Vector<T, A>& rhs) {
+    if (lhs.size() != rhs.size()) return false;
+    return std::equal(lhs.begin(), lhs.end(), rhs.begin());
+}
+
+/** @brief Nelygybės operatorius. */
+template<typename T, typename A>
+bool operator!=(const Vector<T, A>& lhs, const Vector<T, A>& rhs) {
+    return !(lhs == rhs);
+}
+
+/** @brief Leksikografinis < palyginimas. */
+template<typename T, typename A>
+bool operator<(const Vector<T, A>& lhs, const Vector<T, A>& rhs) {
+    return std::lexicographical_compare(lhs.begin(), lhs.end(),
+        rhs.begin(), rhs.end());
+}
+
+/** @brief Leksikografinis <= palyginimas. */
+template<typename T, typename A>
+bool operator<=(const Vector<T, A>& lhs, const Vector<T, A>& rhs) {
+    return !(rhs < lhs);
+}
+
+/** @brief Leksikografinis > palyginimas. */
+template<typename T, typename A>
+bool operator>(const Vector<T, A>& lhs, const Vector<T, A>& rhs) {
+    return rhs < lhs;
+}
+
+/** @brief Leksikografinis >= palyginimas. */
+template<typename T, typename A>
+bool operator>=(const Vector<T, A>& lhs, const Vector<T, A>& rhs) {
+    return !(lhs < rhs);
+}
+
+/** @brief Globalus swap (ADL). */
+template<typename T, typename A>
+void swap(Vector<T, A>& lhs, Vector<T, A>& rhs) noexcept {
+    lhs.swap(rhs);
+}
+
+/** @brief Ištrina elementus pagal reikšmę (C++20 stilius). */
+template<typename T, typename A, typename U>
+typename Vector<T, A>::size_type erase(Vector<T, A>& c, const U& value) {
+    auto it = std::remove(c.begin(), c.end(), value);
+    auto n = c.end() - it;
+    c.erase(it, c.end());
+    return static_cast<typename Vector<T, A>::size_type>(n);
+}
+
+/** @brief Ištrina elementus pagal predikato sąlygą (C++20 stilius). */
+template<typename T, typename A, typename Pred>
+typename Vector<T, A>::size_type erase_if(Vector<T, A>& c, Pred pred) {
+    auto it = std::remove_if(c.begin(), c.end(), pred);
+    auto n = c.end() - it;
+    c.erase(it, c.end());
+    return static_cast<typename Vector<T, A>::size_type>(n);
+}
+
+#endif // VECTOR_H
