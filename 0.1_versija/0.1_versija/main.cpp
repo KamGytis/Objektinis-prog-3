@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <limits>
 #include <string>
 #include <list>
@@ -10,25 +10,25 @@
 #include "list_ops.h"
 #include "deque_ops.h"
 #include "utils.h"
-#include "vector.h"
-
+#include "Vector.h"
 
 void generuoti_testu_failus();
 void generuoti_faila(const std::string&, int, int);
 void atlikti_visus_testus();
 void atlikti_klases_testus();
 
-// Skaitymas is failo - kiekvienas konteineris
+//  Vector 
 
 static void skaityti_vector() {
     std::string fn;
     std::cout << "Failo pavadinimas: "; std::cin >> fn;
 
-    std::vector<Studentas> studentai;
+    Vector<Studentas> studentai;
     try {
         auto t0 = std::chrono::high_resolution_clock::now();
         skaitymas_is_failo(fn, studentai);
-        double dt = std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - t0).count();
+        double dt = std::chrono::duration<double>(
+            std::chrono::high_resolution_clock::now() - t0).count();
         if (studentai.empty()) throw std::runtime_error("Failas tuscias");
         std::cout << "Skaitymas: " << dt << " s\n";
     }
@@ -40,28 +40,38 @@ static void skaityti_vector() {
     int rus = pasirinkimas_rusiavimo_budo();
     auto t0 = std::chrono::high_resolution_clock::now();
     rusiavimas(studentai, rus);
-    std::cout << "Rusiavimas: " << std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - t0).count() << " s\n";
+    std::cout << "Rusiavimas: "
+        << std::chrono::duration<double>(
+            std::chrono::high_resolution_clock::now() - t0).count()
+        << " s\n";
 
-    std::vector<Studentas> kieti, vargsai;
+    Vector<Studentas> kieti, vargsai;
     t0 = std::chrono::high_resolution_clock::now();
     skirstymas_i_grupes(studentai, kieti, vargsai);
-    std::cout << "Skirstymas: " << std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - t0).count() << " s\n";
-    std::cout << "Kietiakai: " << kieti.size() << " | Vargsai: " << vargsai.size() << "\n";
+    std::cout << "Skirstymas: "
+        << std::chrono::duration<double>(
+            std::chrono::high_resolution_clock::now() - t0).count()
+        << " s\n";
+    std::cout << "Kietiakai: " << kieti.size()
+        << " | Vargsai: " << vargsai.size() << "\n";
 
     std::string base = fn.substr(0, fn.find_last_of('.'));
     isvedimas_i_faila(kieti, base + "_kietiakai.txt", "Kietiakai");
     isvedimas_i_faila(vargsai, base + "_vargsiukai.txt", "Vargsiukai");
 }
 
+// List 
+
 static void skaityti_list() {
     std::string fn;
     std::cout << "Failo pavadinimas: "; std::cin >> fn;
 
-    std::list<Studentas> studentai;
+    std::list<Studentas> studentai;   
     try {
         auto t0 = std::chrono::high_resolution_clock::now();
         skaitymas_is_failo_l(fn, studentai);
-        double dt = std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - t0).count();
+        double dt = std::chrono::duration<double>(
+            std::chrono::high_resolution_clock::now() - t0).count();
         if (studentai.empty()) throw std::runtime_error("Failas tuscias");
         std::cout << "Skaitymas: " << dt << " s\n";
     }
@@ -71,18 +81,27 @@ static void skaityti_list() {
 
     auto t0 = std::chrono::high_resolution_clock::now();
     rusiavimas_l(studentai);
-    std::cout << "Rusiavimas: " << std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - t0).count() << " s\n";
+    std::cout << "Rusiavimas: "
+        << std::chrono::duration<double>(
+            std::chrono::high_resolution_clock::now() - t0).count()
+        << " s\n";
 
     std::list<Studentas> kieti, vargsai;
     t0 = std::chrono::high_resolution_clock::now();
     skirstymas_i_grupes_l(studentai, kieti, vargsai);
-    std::cout << "Skirstymas: " << std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - t0).count() << " s\n";
-    std::cout << "Kietiakai: " << kieti.size() << " | Vargsai: " << vargsai.size() << "\n";
+    std::cout << "Skirstymas: "
+        << std::chrono::duration<double>(
+            std::chrono::high_resolution_clock::now() - t0).count()
+        << " s\n";
+    std::cout << "Kietiakai: " << kieti.size()
+        << " | Vargsai: " << vargsai.size() << "\n";
 
     std::string base = fn.substr(0, fn.find_last_of('.'));
     isvedimas_i_faila_l(kieti, base + "_kietiakai.txt", "Kietiakai");
     isvedimas_i_faila_l(vargsai, base + "_vargsiukai.txt", "Vargsiukai");
 }
+
+//  Deque
 
 static void skaityti_deque() {
     std::string fn;
@@ -92,7 +111,8 @@ static void skaityti_deque() {
     try {
         auto t0 = std::chrono::high_resolution_clock::now();
         skaitymas_is_failo_d(fn, studentai);
-        double dt = std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - t0).count();
+        double dt = std::chrono::duration<double>(
+            std::chrono::high_resolution_clock::now() - t0).count();
         if (studentai.empty()) throw std::runtime_error("Failas tuscias");
         std::cout << "Skaitymas: " << dt << " s\n";
     }
@@ -102,29 +122,35 @@ static void skaityti_deque() {
 
     auto t0 = std::chrono::high_resolution_clock::now();
     rusiavimas_d(studentai);
-    std::cout << "Rusiavimas: " << std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - t0).count() << " s\n";
+    std::cout << "Rusiavimas: "
+        << std::chrono::duration<double>(
+            std::chrono::high_resolution_clock::now() - t0).count()
+        << " s\n";
 
     std::deque<Studentas> kieti, vargsai;
     t0 = std::chrono::high_resolution_clock::now();
     skirstymas_i_grupes_d(studentai, kieti, vargsai);
-    std::cout << "Skirstymas: " << std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - t0).count() << " s\n";
-    std::cout << "Kietiakai: " << kieti.size() << " | Vargsai: " << vargsai.size() << "\n";
+    std::cout << "Skirstymas: "
+        << std::chrono::duration<double>(
+            std::chrono::high_resolution_clock::now() - t0).count()
+        << " s\n";
+    std::cout << "Kietiakai: " << kieti.size()
+        << " | Vargsai: " << vargsai.size() << "\n";
 
     std::string base = fn.substr(0, fn.find_last_of('.'));
     isvedimas_i_faila_d(kieti, base + "_kietiakai.txt", "Kietiakai");
     isvedimas_i_faila_d(vargsai, base + "_vargsiukai.txt", "Vargsiukai");
 }
 
-
-// Rankinis ivedimas (vector) - is originalo
+//  Rankinis ivedimas 
 
 static void rankinis_ivedimas() {
-    std::vector<Studentas> studentai;
+    Vector<Studentas> studentai;   
     int chosen = 1;
     do {
         std::string vardas = ivesti_varda_ar_pavarde("Vardas: ");
         std::string pavarde = ivesti_varda_ar_pavarde("Pavarde: ");
-        std::vector<int> paz;
+        Vector<int> paz;   // laikinas Vector pazymiu nuskaitymui
         std::cout << "Pazymiai (0-10, -1 baigti):\n";
         while (true) {
             int p = ivesties_tikrinimas("Pazymys: ");
@@ -143,11 +169,13 @@ static void rankinis_ivedimas() {
     }
 }
 
+//  main
+
 int main() {
     while (true) {
-        std::cout << "\n======= STUDENTU PROGRAMA v2.0 (unit_tests and docs) =======\n"
+        std::cout << "\n======= STUDENTU PROGRAMA v3.0 (Vector<T>) =======\n"
             << "1 - Rankinis ivedimas\n"
-            << "2 - Skaityti is failo (vector)\n"
+            << "2 - Skaityti is failo (Vector)\n"
             << "3 - Skaityti is failo (list)\n"
             << "4 - Skaityti is failo (deque)\n"
             << "5 - Testavimas (visi konteineriai)\n"
@@ -165,13 +193,14 @@ int main() {
         }
 
         switch (p) {
-        case 1: rankinis_ivedimas(); break;
-        case 2: skaityti_vector();   break;
-        case 3: skaityti_list();     break;
-        case 4: skaityti_deque();    break;
+        case 1: rankinis_ivedimas();    break;
+        case 2: skaityti_vector();      break;
+        case 3: skaityti_list();        break;
+        case 4: skaityti_deque();       break;
         case 5: atlikti_visus_testus(); break;
         case 6: {
-            std::cout << "1 - Visus testu failus (1k-10M)\n2 - Viena faila\nPasirinkimas: ";
+            std::cout << "1 - Visus testu failus (1k-10M)\n"
+                "2 - Viena faila\nPasirinkimas: ";
             int sub; std::cin >> sub;
             if (sub == 1) {
                 generuoti_testu_failus();
