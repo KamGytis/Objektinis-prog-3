@@ -72,3 +72,21 @@ private:
      * @brief Perskirsto atmintį naujam dydžiui.
      * @param new_cap Naujas capacity dydis
      */
+    void reallocate(size_type new_cap) {
+        pointer new_data = AllocTraits::allocate(alloc_, new_cap);
+        size_type i = 0;
+        try {
+            for (; i < size_; ++i)
+                AllocTraits::construct(alloc_, new_data + i, std::move_if_noexcept(data_[i]));
+        }
+        catch (...) {
+            for (size_type j = 0; j < i; ++j)
+                AllocTraits::destroy(alloc_, new_data + j);
+            AllocTraits::deallocate(alloc_, new_data, new_cap);
+            throw;
+        }
+        deallocate_all();
+        data_ = new_data;
+        size_ = i;
+        capacity_ = new_cap;
+    } 
