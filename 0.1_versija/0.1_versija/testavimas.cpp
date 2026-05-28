@@ -1,6 +1,7 @@
 #include "vector_ops.h"
 #include "list_ops.h"
 #include "deque_ops.h"
+#include "vector.h"
 
 #include <iostream>
 #include <iomanip>
@@ -134,7 +135,6 @@ void atlikti_visus_testus() {
 
     std::vector<TestRow> rezultatai;
     std::cout << "\n########## PRADEDAMAS TESTAVIMAS ##########\n\n";
-
     for (const auto& f : failai) {
         for (int s = 1; s <= 3; ++s) {
             std::cout << ">> vector S" << s << " | " << f << "\n";
