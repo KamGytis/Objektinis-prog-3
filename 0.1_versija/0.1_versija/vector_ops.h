@@ -2,26 +2,16 @@
 #define VECTOR_OPS_H
 
 #include "studentas.h"
-#include <vector>
+#include "vector.h"
 #include <string>
 
 /**
  * @file vector_ops.h
- * @brief Funkcijos darbui su std::vector<Studentas>.
+ * @brief Vektoriaus operacijos naudojant nuosavą Vector konteinerį.
+ *
+ * v3.0: std::vector pakeistas nuosavu Vector<T> konteineriu.
  */
 
-
- /**
-  * @brief Nuskaito studentų duomenis iš failo į vektorių.
-  *
-  * Failo formatas: pirma eilutė antraštė, toliau kiekvienoje eilutėje:
-  * Vardas Pavarde paz1 paz2 ... pazN egzaminas.
-  *
-  * @param filename Failo pavadinimas.
-  * @param studentai [out] Vektorius, kur bus patalpinti studentai.
-  * @throws std::runtime_error Jei failo nepavyksta atidaryti.
-  * @kompleksiskumas O(N * M), kur N – studentų skaičius, M – pažymių skaičius.
-  */
 // Skaitymas ir isvedimas
 void skaitymas_is_failo(const std::string& filename, std::vector<Studentas>& studentai);
 
