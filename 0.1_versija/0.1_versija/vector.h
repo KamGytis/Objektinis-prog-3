@@ -173,7 +173,7 @@ public:
      */
     ~Vector() { deallocate_all(); }
 
-    // ===== Assignment operators =====
+	//  Priskyrimo operatoriai
 
     /**
      * @brief Kopijos priskyrimo operatorius.
@@ -188,4 +188,287 @@ public:
 
     /**
      * @brief Perkėlimo priskyrimo operatorius.
+     */
+
+    Vector& operator=(Vector&& other) noexcept {
+        if (this == &other) return *this;
+        deallocate_all();
+        if constexpr (AllocTraits::propagate_on_container_move_assignment::value)
+            alloc_ = std::move(other.alloc_);
+        data_ = other.data_;
+        size_ = other.size_;
+        capacity_ = other.capacity_;
+        other.data_ = nullptr;
+        other.size_ = 0;
+        other.capacity_ = 0;
+        return *this;
+    }
+
+    /**
+     * @brief Priskyrimo operatorius iš initializer_list.
+     */
+    Vector& operator=(std::initializer_list<T> il) {
+        assign(il.begin(), il.end());
+        return *this;
+    }
+
+	// priskyrimo funkcijos
+
+    /**
+     * @brief Priskiria count kopijų reikšmės value.
+     * @param count Elementų skaičius
+     * @param value Reikšmė
+     */
+    void assign(size_type count, const T& value) {
+        clear();
+        reserve(count);
+        for (size_type i = 0; i < count; ++i)
+            AllocTraits::construct(alloc_, data_ + i, value);
+        size_ = count;
+    }
+
+    /**
+     * @brief Priskiria elementus iš iteratorių diapazono.
+     */
+    template<typename InputIt,
+        typename = std::enable_if_t<std::is_base_of_v<
+        std::input_iterator_tag,
+        typename std::iterator_traits<InputIt>::iterator_category>>>
+        void assign(InputIt first, InputIt last) {
+        clear();
+        for (auto it = first; it != last; ++it)
+            push_back(*it);
+    }
+
+    /**
+     * @brief Priskiria elementus iš initializer_list.
+     */
+    void assign(std::initializer_list<T> il) {
+        assign(il.begin(), il.end());
+    }
+
+    /**
+     * @brief Grąžina paskirstytojo kopiją.
+     */
+    allocator_type get_allocator() const noexcept { return alloc_; }
+
+	// element access
+
+    /**
+     * @brief Prieiga prie elemento su ribų tikrinimu.
+     * @throws std::out_of_range jei pos >= size()
+     */
+    reference at(size_type pos) {
+        if (pos >= size_) throw std::out_of_range("Vector::at - indeksas uz ribu");
+        return data_[pos];
+    }
+
+    /**
+     * @brief Prieiga prie elemento su ribų tikrinimu (const).
+     */
+    const_reference at(size_type pos) const {
+        if (pos >= size_) throw std::out_of_range("Vector::at - indeksas uz ribu");
+        return data_[pos];
+    }
+
+    /**
+     * @brief Prieiga prie elemento pagal indeksą (be tikrinimo).
+     */
+    reference operator[](size_type pos) { return data_[pos]; }
+
+    /**
+     * @brief Prieiga prie elemento pagal indeksą (be tikrinimo, const).
+     */
+    const_reference operator[](size_type pos) const { return data_[pos]; }
+
+    /**
+     * @brief Grąžina pirmą elementą.
+     */
+    reference front() { return data_[0]; }
+    const_reference front() const { return data_[0]; }
+
+    /**
+     * @brief Grąžina paskutinį elementą.
+     */
+    reference back() { return data_[size_ - 1]; }
+    const_reference back() const { return data_[size_ - 1]; }
+
+    /**
+     * @brief Grąžina rodyklę į vidinį duomenų masyvą.
+     */
+    T* data() noexcept { return data_; }
+    const T* data() const noexcept { return data_; }
+
+    // Iteratoriai
+
+    /** @brief Grąžina iteratorių į pradžią. */
+    iterator begin() noexcept { return data_; }
+    const_iterator begin() const noexcept { return data_; }
+    const_iterator cbegin() const noexcept { return data_; }
+
+    /** @brief Grąžina iteratorių į pabaigą (past-the-end). */
+    iterator end() noexcept { return data_ + size_; }
+    const_iterator end() const noexcept { return data_ + size_; }
+    const_iterator cend() const noexcept { return data_ + size_; }
+
+    /** @brief Grąžina atvirkštinį iteratorių. */
+    reverse_iterator rbegin() noexcept { return reverse_iterator(end()); }
+    const_reverse_iterator rbegin() const noexcept { return const_reverse_iterator(end()); }
+    const_reverse_iterator crbegin() const noexcept { return const_reverse_iterator(end()); }
+
+    /** @brief Grąžina atvirkštinį past-the-end iteratorių. */
+    reverse_iterator rend() noexcept { return reverse_iterator(begin()); }
+    const_reverse_iterator rend() const noexcept { return const_reverse_iterator(begin()); }
+    const_reverse_iterator crend() const noexcept { return const_reverse_iterator(begin()); }
+
+	// Talpa ir dydis
+
+    /** @brief Tikrina ar vektorius tuščias. */
+    [[nodiscard]] bool empty() const noexcept { return size_ == 0; }
+
+    /** @brief Grąžina elementų skaičių. */
+    size_type size() const noexcept { return size_; }
+
+    /** @brief Grąžina maksimalų galimą elementų skaičių. */
+    size_type max_size() const noexcept {
+        return AllocTraits::max_size(alloc_);
+    }
+
+    /**
+     * @brief Rezervuoja atmintį new_cap elementams.
+     * @param new_cap Naujas capacity
+     * @throws std::length_error jei new_cap > max_size()
+     */
+    void reserve(size_type new_cap) {
+        if (new_cap <= capacity_) return;
+        if (new_cap > max_size())
+            throw std::length_error("Vector::reserve - per didelis dydis");
+        reallocate(new_cap);
+    }
+
+    /** @brief Grąžina dabartiną capacity. */
+    size_type capacity() const noexcept { return capacity_; }
+
+    /**
+     * @brief Sumažina capacity iki size (shrink to fit).
+     */
+    void shrink_to_fit() {
+        if (size_ < capacity_)
+            reallocate(size_);
+    }
+
+	// Modifikacija
+
+    /** @brief Ištrina visus elementus (size = 0, capacity nesikeičia). */
+    void clear() noexcept {
+        for (size_type i = 0; i < size_; ++i)
+            AllocTraits::destroy(alloc_, data_ + i);
+        size_ = 0;
+    }
+
+    /**
+     * @brief Įterpia elementą prieš pos.
+     * @param pos   Iteratorius į vietą
+     * @param value Įterpiama reikšmė
+     * @return Iteratorius į įterptą elementą
+     */
+    iterator insert(const_iterator pos, const T& value) {
+        return emplace(pos, value);
+    }
+
+    iterator insert(const_iterator pos, T&& value) {
+        return emplace(pos, std::move(value));
+    }
+
+    /**
+     * @brief Įterpia count kopijų reikšmės prieš pos.
+     */
+    iterator insert(const_iterator pos, size_type count, const T& value) {
+        size_type idx = pos - cbegin();
+        if (count == 0) return begin() + idx;
+        if (size_ + count > capacity_) {
+            size_type new_cap = std::max(size_ + count, capacity_ * 2);
+            reallocate(new_cap);
+        }
+        iterator it = begin() + idx;
+        std::move_backward(it, end(), end() + count);
+        for (size_type i = 0; i < count; ++i) {
+            AllocTraits::construct(alloc_, it + i, value);
+        }
+        size_ += count;
+        return it;
+    }
+
+    /**
+     * @brief Įterpia elementus iš diapazono prieš pos.
+     */
+    template<typename InputIt,
+        typename = std::enable_if_t<std::is_base_of_v<
+        std::input_iterator_tag,
+        typename std::iterator_traits<InputIt>::iterator_category>>>
+        iterator insert(const_iterator pos, InputIt first, InputIt last) {
+        size_type idx = pos - cbegin();
+        Vector tmp(first, last);
+        size_type count = tmp.size();
+        if (count == 0) return begin() + idx;
+        if (size_ + count > capacity_)
+            reallocate(std::max(size_ + count, capacity_ * 2));
+        iterator it = begin() + idx;
+        std::move_backward(it, end(), end() + count);
+        for (size_type i = 0; i < count; ++i)
+            AllocTraits::construct(alloc_, it + i, std::move(tmp[i]));
+        size_ += count;
+        return it;
+    }
+
+    iterator insert(const_iterator pos, std::initializer_list<T> il) {
+        return insert(pos, il.begin(), il.end());
+    }
+
+    /**
+     * @brief Sukonstruoja elementą vietoje prieš pos.
+     */
+    template<typename... Args>
+    iterator emplace(const_iterator pos, Args&&... args) {
+        size_type idx = pos - cbegin();
+        if (size_ == capacity_)
+            reallocate(capacity_ == 0 ? 1 : capacity_ * 2);
+        iterator it = begin() + idx;
+        std::move_backward(it, end(), end() + 1);
+        AllocTraits::construct(alloc_, it, std::forward<Args>(args)...);
+        ++size_;
+        return it;
+    }
+
+    /**
+     * @brief Ištrina elementą ties pos.
+     * @return Iteratorius į kitą elementą po ištrintojo
+     */
+    iterator erase(const_iterator pos) {
+        return erase(pos, pos + 1);
+    }
+
+    /**
+     * @brief Ištrina elementus diapazone [first, last).
+     */
+    iterator erase(const_iterator first, const_iterator last) {
+        iterator f = begin() + (first - cbegin());
+        iterator l = begin() + (last - cbegin());
+        size_type count = l - f;
+        std::move(l, end(), f);
+        for (size_type i = 0; i < count; ++i)
+            AllocTraits::destroy(alloc_, end() - 1 - i);
+        size_ -= count;
+        return f;
+    }
+
+    /**
+     * @brief Prideda elementą į galą (kopija).
+     * @param value Pridedama reikšmė
+     */
+    void push_back(const T& value) {
+        emplace_back(value);
+    }
+    /**
+     * @brief Prideda elementą į galą (perkėlimas).
      */
