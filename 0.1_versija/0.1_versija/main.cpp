@@ -1,7 +1,6 @@
 #include <iostream>
 #include <limits>
 #include <string>
-#include <vector>
 #include <list>
 #include <deque>
 #include <chrono>
@@ -11,6 +10,8 @@
 #include "list_ops.h"
 #include "deque_ops.h"
 #include "utils.h"
+#include "vector.h"
+
 
 void generuoti_testu_failus();
 void generuoti_faila(const std::string&, int, int);
