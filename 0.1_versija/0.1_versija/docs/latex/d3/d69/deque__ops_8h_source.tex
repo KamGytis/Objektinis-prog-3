@@ -1,0 +1,38 @@
+\doxysection{deque\+\_\+ops.\+h}
+\hypertarget{deque__ops_8h_source}{}\label{deque__ops_8h_source}\doxymbox{\hyperlink{deque__ops_8h}{Eiti į šio failo dokumentaciją.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ DEQUE\_OPS\_H}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ DEQUE\_OPS\_H}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{studentas_8h}{studentas.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00008}00008\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{deque__ops_8h_a46f1bb732ce30e94017e8f5ad83cf5ee}{skaitymas\_is\_failo\_d}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ std::deque<Studentas>\&\ studentai);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00009}00009\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{deque__ops_8h_a338c324463bc5f3f546b5a947302bb40}{isvedimas\_i\_faila\_d}}(\textcolor{keyword}{const}\ std::deque<Studentas>\&\ studentai,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ filename,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ kategorija);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00012}00012\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{deque__ops_8h_abab0a69041ed040c5ddc604ee491b01f}{pasirinkimo\_metodas\_d}}(\textcolor{keywordtype}{int}\ tipas,\ std::deque<Studentas>\&\ studentai);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00013}00013\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{deque__ops_8h_af42199cfc780183e959b4690b4d2c48e}{rusiavimas\_d}}(std::deque<Studentas>\&\ studentai);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00015}00015\ \textcolor{comment}{//\ Originali\ strategija}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00016}00016\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{deque__ops_8h_a0a1bfcc2c94c685b17beae3374d63c2a}{skirstymas\_i\_grupes\_d}}(\textcolor{keyword}{const}\ std::deque<Studentas>\&\ visi,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00017}00017\ \ \ \ \ std::deque<Studentas>\&\ kieti,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00018}00018\ \ \ \ \ std::deque<Studentas>\&\ vargsai);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00020}00020\ \textcolor{comment}{//\ STRATEGIJA\ 1\ du\ nauji\ konteineriai,\ originalas\ lieka\ nepakeistas}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00021}00021\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{deque__ops_8h_a7cbf3ae10bfc6a1058d0edb264776e00}{skirstymas\_s1\_d}}(\textcolor{keyword}{const}\ std::deque<Studentas>\&\ visi,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00022}00022\ \ \ \ \ std::deque<Studentas>\&\ kieti,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00023}00023\ \ \ \ \ std::deque<Studentas>\&\ vargsai);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00025}00025\ \textcolor{comment}{//\ STRATEGIJA\ 2\ vienas\ naujas\ konteineris\ +\ erase/remove\ if}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00026}00026\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{deque__ops_8h_ab2c3656fbd43a45e00bc6fa7d4d413a4}{skirstymas\_s2\_d}}(std::deque<Studentas>\&\ studentai,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00027}00027\ \ \ \ \ std::deque<Studentas>\&\ vargsai);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00029}00029\ \textcolor{comment}{//\ STRATEGIJA\ 3\ std::partition}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00030}00030\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{deque__ops_8h_abf2f5f53c2bf7fe36381ada717c8389c}{skirstymas\_s3\_d}}(std::deque<Studentas>\&\ studentai,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00031}00031\ \ \ \ \ std::deque<Studentas>\&\ vargsai);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8h_source_l00033}00033\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

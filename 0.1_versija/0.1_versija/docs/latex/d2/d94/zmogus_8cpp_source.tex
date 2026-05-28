@@ -1,0 +1,50 @@
+\doxysection{zmogus.\+cpp}
+\hypertarget{zmogus_8cpp_source}{}\label{zmogus_8cpp_source}\doxymbox{\hyperlink{zmogus_8cpp}{Eiti į šio failo dokumentaciją.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{zmogus_8h}{zmogus.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00003}00003\ \textcolor{comment}{//\ -\/-\/-\/\ Numatytasis\ konstruktorius\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00004}\doxymbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{00004}}\ \doxymbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus::Zmogus}}()}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00005}00005\ \ \ \ \ :\ \doxymbox{\hyperlink{class_zmogus_a80e72cd553492344884a264a72ce33d2}{vardas\_}}(\textcolor{stringliteral}{"{}"{}}),\ \doxymbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{pavarde\_}}(\textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00006}00006\ \}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00008}00008\ \textcolor{comment}{//\ -\/-\/-\/\ Parametrinis\ konstruktorius\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00009}\doxymbox{\hyperlink{class_zmogus_ae6bfb71e4c8fddf15f3a19b4bcd6fd26}{00009}}\ \doxymbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus::Zmogus}}(\textcolor{keyword}{const}\ std::string\&\ vardas,\ \textcolor{keyword}{const}\ std::string\&\ pavarde)}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00010}00010\ \ \ \ \ :\ \doxymbox{\hyperlink{class_zmogus_a80e72cd553492344884a264a72ce33d2}{vardas\_}}(vardas),\ \doxymbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{pavarde\_}}(pavarde)\ \{}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00013}00013\ \textcolor{comment}{//\ -\/-\/-\/\ Kopijavimo\ konstruktorius\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00014}\doxymbox{\hyperlink{class_zmogus_a9d2bbeaf83ead87dbb686ee04999885f}{00014}}\ \doxymbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus::Zmogus}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus}}\&\ other)}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00015}00015\ \ \ \ \ :\ \doxymbox{\hyperlink{class_zmogus_a80e72cd553492344884a264a72ce33d2}{vardas\_}}(other.\doxymbox{\hyperlink{class_zmogus_a80e72cd553492344884a264a72ce33d2}{vardas\_}}),\ \doxymbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{pavarde\_}}(other.\doxymbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{pavarde\_}})\ \{}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00018}00018\ \textcolor{comment}{//\ -\/-\/-\/\ Perkelimo\ konstruktorius\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00019}\doxymbox{\hyperlink{class_zmogus_a97c679fdf47100b8d6a9a7e17d4953c2}{00019}}\ \doxymbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus::Zmogus}}(\doxymbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus}}\&\&\ other)\ noexcept}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00020}00020\ \ \ \ \ :\ \doxymbox{\hyperlink{class_zmogus_a80e72cd553492344884a264a72ce33d2}{vardas\_}}(std::move(other.vardas\_)),}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00021}00021\ \ \ \ \ \doxymbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{pavarde\_}}(std::move(other.pavarde\_))\ \{}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00024}00024\ \textcolor{comment}{//\ -\/-\/-\/\ Grynas\ virtualus\ destruktorius\ �\ turi\ tureti\ realizacija\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00025}00025\ \textcolor{comment}{//\ Net\ ir\ grynas\ virtualus\ destruktorius\ privalo\ buti\ realizuotas,}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00026}00026\ \textcolor{comment}{//\ nes\ isvestines\ klases\ destruktorius\ ji\ isskviecia\ grandinine\ tvarka.}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00027}\doxymbox{\hyperlink{class_zmogus_a64c712eed93f3dc770bb00df890292d7}{00027}}\ \doxymbox{\hyperlink{class_zmogus_a64c712eed93f3dc770bb00df890292d7}{Zmogus::\string~Zmogus}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00029}00029\ \textcolor{comment}{//\ -\/-\/-\/\ Kopijavimo\ priskyrimo\ operatorius\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00030}\doxymbox{\hyperlink{class_zmogus_a8bc6d11547d75c71a38567f750f02612}{00030}}\ \doxymbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus}}\&\ \doxymbox{\hyperlink{class_zmogus_a8bc6d11547d75c71a38567f750f02612}{Zmogus::operator=}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus}}\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_zmogus_a80e72cd553492344884a264a72ce33d2}{vardas\_}}\ =\ other.\doxymbox{\hyperlink{class_zmogus_a80e72cd553492344884a264a72ce33d2}{vardas\_}};}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{pavarde\_}}\ =\ other.\doxymbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{pavarde\_}};}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00038}00038\ \textcolor{comment}{//\ -\/-\/-\/\ Perkelimo\ priskyrimo\ operatorius\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00039}\doxymbox{\hyperlink{class_zmogus_af6745536a52d1e85a49c2680199f9a80}{00039}}\ \doxymbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus}}\&\ \doxymbox{\hyperlink{class_zmogus_a8bc6d11547d75c71a38567f750f02612}{Zmogus::operator=}}(\doxymbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus}}\&\&\ other)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_zmogus_a80e72cd553492344884a264a72ce33d2}{vardas\_}}\ =\ std::move(other.vardas\_);}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{pavarde\_}}\ =\ std::move(other.pavarde\_);}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{zmogus_8cpp_source_l00045}00045\ \}}
+
+\end{DoxyCode}

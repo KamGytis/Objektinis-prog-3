@@ -1,0 +1,536 @@
+\doxysection{testavimas\+\_\+klases.\+cpp Failo Nuoroda}
+\hypertarget{testavimas__klases_8cpp}{}\label{testavimas__klases_8cpp}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+{\ttfamily \+\#include "{}studentas.\+h"{}}\newline
+{\ttfamily \+\#include "{}zmogus.\+h"{}}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$cassert$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$algorithm$>$}\newline
+{\ttfamily \+\#include $<$iomanip$>$}\newline
+\doxysubsubsection*{Funkcijos}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}} (bool salyga, const std::\+string \&pavadinimas)
+\item 
+static void \doxymbox{\hyperlink{testavimas__klases_8cpp_a71f86993379924d9ac74a1474264049f}{sekcija}} (const std::\+string \&pavadinimas)
+\item 
+static void \doxymbox{\hyperlink{testavimas__klases_8cpp_aac24068ffcea10807f84c677841493ce}{testuoti\+\_\+konstruktorius}} ()
+\item 
+static void \doxymbox{\hyperlink{testavimas__klases_8cpp_af3bb63128c939af36f746e34336b843f}{testuoti\+\_\+priskyrima}} ()
+\item 
+static void \doxymbox{\hyperlink{testavimas__klases_8cpp_a9a554fb4a7358c0cac98aece6f0100e3}{testuoti\+\_\+palyginimo\+\_\+operatorius}} ()
+\item 
+static void \doxymbox{\hyperlink{testavimas__klases_8cpp_a5c73eca3b584f3643ba80abdb8d95907}{testuoti\+\_\+srautu\+\_\+operatorius}} ()
+\item 
+static void \doxymbox{\hyperlink{testavimas__klases_8cpp_a746eeacc4f4f3bf5ff86fc8eb7065a73}{testuoti\+\_\+metodus}} ()
+\item 
+static void \doxymbox{\hyperlink{testavimas__klases_8cpp_a021eb8a72b676503e6a2a1f0899a3059}{testuoti\+\_\+su\+\_\+stl}} ()
+\item 
+static void \doxymbox{\hyperlink{testavimas__klases_8cpp_a3a98a0d2c79557ee82dc667dadc213fd}{testuoti\+\_\+zmogus\+\_\+abstrakti}} ()
+\item 
+void \doxymbox{\hyperlink{testavimas__klases_8cpp_aa5e9a95d5e1eb9d20b8773a976628767}{atlikti\+\_\+klases\+\_\+testus}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Kintamieji}
+\begin{DoxyCompactItemize}
+\item 
+static int \doxymbox{\hyperlink{testavimas__klases_8cpp_afb249f1649dc2d1253dea730f61de467}{testai\+\_\+is\+\_\+viso}} = 0
+\item 
+static int \doxymbox{\hyperlink{testavimas__klases_8cpp_ade8e1c06d45e6f24fe41affb80bf1577}{testai\+\_\+pavyke}} = 0
+\end{DoxyCompactItemize}
+
+
+\label{testavimas__klases_8cpp_doc-func-members}
+\Hypertarget{testavimas__klases_8cpp_doc-func-members}
+\doxysubsection{Funkcijos Dokumentacija}
+\Hypertarget{testavimas__klases_8cpp_aa5e9a95d5e1eb9d20b8773a976628767}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}!atlikti\_klases\_testus@{atlikti\_klases\_testus}}
+\index{atlikti\_klases\_testus@{atlikti\_klases\_testus}!testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+\doxysubsubsection{\texorpdfstring{atlikti\_klases\_testus()}{atlikti\_klases\_testus()}}
+{\footnotesize\ttfamily \label{testavimas__klases_8cpp_aa5e9a95d5e1eb9d20b8773a976628767} 
+void atlikti\+\_\+klases\+\_\+testus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{testavimas__klases_8cpp_source}{testavimas\+\_\+klases.\+cpp}} eilutėje \doxymbox{\hyperlink{testavimas__klases_8cpp_source_l00330}{330}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00331\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00332\ \ \ \ \ std::cout\ <<\ std::string(55,\ \textcolor{charliteral}{'='})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00333\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ \ STUDENTAS\ KLASES\ TESTAVIMAS\ \ (v1.2)\(\backslash\)n"{}};}
+\DoxyCodeLine{00334\ \ \ \ \ std::cout\ <<\ std::string(55,\ \textcolor{charliteral}{'='})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_aac24068ffcea10807f84c677841493ce}{testuoti\_konstruktorius}}();}
+\DoxyCodeLine{00337\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_af3bb63128c939af36f746e34336b843f}{testuoti\_priskyrima}}();}
+\DoxyCodeLine{00338\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9a554fb4a7358c0cac98aece6f0100e3}{testuoti\_palyginimo\_operatorius}}();}
+\DoxyCodeLine{00339\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a5c73eca3b584f3643ba80abdb8d95907}{testuoti\_srautu\_operatorius}}();}
+\DoxyCodeLine{00340\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a746eeacc4f4f3bf5ff86fc8eb7065a73}{testuoti\_metodus}}();}
+\DoxyCodeLine{00341\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a021eb8a72b676503e6a2a1f0899a3059}{testuoti\_su\_stl}}();}
+\DoxyCodeLine{00342\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a3a98a0d2c79557ee82dc667dadc213fd}{testuoti\_zmogus\_abstrakti}}();}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ std::string(55,\ \textcolor{charliteral}{'='})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00345\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ Rezultatas:\ "{}}\ <<\ \doxymbox{\hyperlink{testavimas__klases_8cpp_ade8e1c06d45e6f24fe41affb80bf1577}{testai\_pavyke}}\ <<\ \textcolor{stringliteral}{"{}\ /\ "{}}}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ <<\ \doxymbox{\hyperlink{testavimas__klases_8cpp_afb249f1649dc2d1253dea730f61de467}{testai\_is\_viso}}\ <<\ \textcolor{stringliteral}{"{}\ testu\ pavyko\(\backslash\)n"{}};}
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{testavimas__klases_8cpp_ade8e1c06d45e6f24fe41affb80bf1577}{testai\_pavyke}}\ ==\ \doxymbox{\hyperlink{testavimas__klases_8cpp_afb249f1649dc2d1253dea730f61de467}{testai\_is\_viso}})}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ Visi\ testai\ pavyko!\(\backslash\)n"{}};}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ DEMESIO:\ "{}}}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ <<\ (\doxymbox{\hyperlink{testavimas__klases_8cpp_afb249f1649dc2d1253dea730f61de467}{testai\_is\_viso}}\ -\/\ \doxymbox{\hyperlink{testavimas__klases_8cpp_ade8e1c06d45e6f24fe41affb80bf1577}{testai\_pavyke}})}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ testai\ nepavyko!\(\backslash\)n"{}};}
+\DoxyCodeLine{00353\ \ \ \ \ std::cout\ <<\ std::string(55,\ \textcolor{charliteral}{'='})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00354\ \}}
+
+\end{DoxyCode}
+\Hypertarget{testavimas__klases_8cpp_a71f86993379924d9ac74a1474264049f}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}!sekcija@{sekcija}}
+\index{sekcija@{sekcija}!testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+\doxysubsubsection{\texorpdfstring{sekcija()}{sekcija()}}
+{\footnotesize\ttfamily \label{testavimas__klases_8cpp_a71f86993379924d9ac74a1474264049f} 
+void sekcija (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{pavadinimas}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{testavimas__klases_8cpp_source}{testavimas\+\_\+klases.\+cpp}} eilutėje \doxymbox{\hyperlink{testavimas__klases_8cpp_source_l00026}{26}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n=======\ "{}}\ <<\ pavadinimas\ <<\ \textcolor{stringliteral}{"{}\ =======\(\backslash\)n"{}};}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+\Hypertarget{testavimas__klases_8cpp_aac24068ffcea10807f84c677841493ce}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}!testuoti\_konstruktorius@{testuoti\_konstruktorius}}
+\index{testuoti\_konstruktorius@{testuoti\_konstruktorius}!testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+\doxysubsubsection{\texorpdfstring{testuoti\_konstruktorius()}{testuoti\_konstruktorius()}}
+{\footnotesize\ttfamily \label{testavimas__klases_8cpp_aac24068ffcea10807f84c677841493ce} 
+void testuoti\+\_\+konstruktorius (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{testavimas__klases_8cpp_source}{testavimas\+\_\+klases.\+cpp}} eilutėje \doxymbox{\hyperlink{testavimas__klases_8cpp_source_l00032}{32}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a71f86993379924d9ac74a1474264049f}{sekcija}}(\textcolor{stringliteral}{"{}Konstruktoriai\ (Rules\ of\ five)"{}});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//Numatyti\ konstruktoriai}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ a;}
+\DoxyCodeLine{00038\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a.\doxymbox{\hyperlink{class_zmogus_acf4a7481cb123bbb30cb82dd50102ebd}{getVardas}}()\ ==\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}Numatytasis\ vardas\ tuscias"{}});}
+\DoxyCodeLine{00039\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a.\doxymbox{\hyperlink{class_zmogus_af6fa0216be160cd70589a193709a0b36}{getPavarde}}()\ ==\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}Numatytasis\ pavarde\ tuscias"{}});}
+\DoxyCodeLine{00040\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a.\doxymbox{\hyperlink{class_studentas_a2f9dcb2fef2e6b3dbc1581779a90a68a}{getEgz}}()\ ==\ 0,\ \textcolor{stringliteral}{"{}Numatytasis\ egzaminas\ 0"{}});}
+\DoxyCodeLine{00041\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a.\doxymbox{\hyperlink{class_studentas_a96a5c56d0b94ab196e7f1e30275e9737}{getRez}}()\ ==\ 0.0,\ \textcolor{stringliteral}{"{}Numatytasis\ rezultatas\ 0.0"{}});}
+\DoxyCodeLine{00042\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a.\doxymbox{\hyperlink{class_studentas_ad8939c9dc002dd7429853e195c5ec6f8}{getPazSkaicius}}()\ ==\ 0,\ \textcolor{stringliteral}{"{}Numatytasis\ paz\ saras\ tuscias"{}});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//Parametriniai\ konstruktoriai}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ b(\textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Jonaitis"{}},\ \{\ 8,\ 9,\ 7\ \},\ 10);}
+\DoxyCodeLine{00047\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.getVardas()\ ==\ \textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Parametrinis\ vardas"{}});}
+\DoxyCodeLine{00048\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.getPavarde()\ ==\ \textcolor{stringliteral}{"{}Jonaitis"{}},\ \textcolor{stringliteral}{"{}Parametrinis\ pavarde"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.getEgz()\ ==\ 10,\ \textcolor{stringliteral}{"{}Parametrinis\ egzaminas"{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.getRez()\ ==\ 0.0,\ \textcolor{stringliteral}{"{}Parametrinis\ rezultatas\ (pries\ skaiciavima)"{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.getPazSkaicius()\ ==\ 3,\ \textcolor{stringliteral}{"{}Parametrinis\ paz\ skaicius"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.getPaz()[0]\ ==8,\ \textcolor{stringliteral}{"{}Parametrinis\ pazymiai\ paz[0]\ =\ 8"{}});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//Kopijavimo\ konstruktorius}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ c(b);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(c.getVardas()\ ==\ b.getVardas(),\ \textcolor{stringliteral}{"{}Kopijavimo\ vardas\ sutampa"{}});}
+\DoxyCodeLine{00059\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(c.getPavarde()\ ==\ b.getPavarde(),\ \textcolor{stringliteral}{"{}Kopijavimo\ pavarde\ sutampa"{}});}
+\DoxyCodeLine{00060\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(c.getEgz()\ ==\ b.getEgz(),\ \textcolor{stringliteral}{"{}Kopijavimo\ egzaminas\ sutampa"{}});}
+\DoxyCodeLine{00061\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(c.getPazSkaicius()\ ==\ b.getPazSkaicius(),\ \textcolor{stringliteral}{"{}Kopijavimo\ paz\ skaicius\ sutampa"{}});}
+\DoxyCodeLine{00062\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(c.getPaz()\ ==\ b.getPaz(),\ \textcolor{stringliteral}{"{}Kopijavimo\ pazymiai\ sutampa"{}});}
+\DoxyCodeLine{00063\ \ \ \ \ c.setVardas(\textcolor{stringliteral}{"{}Petras"{}});}
+\DoxyCodeLine{00064\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.getVardas()\ ==\ \textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Kopijavimo\ gili\ kopija\ (b)\ nepakito"{}});}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//Perkelimo\ konstruktorius}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ d\_orig(\textcolor{stringliteral}{"{}Ona"{}},\ \textcolor{stringliteral}{"{}Onaite"{}},\ \{5,\ 6\},\ 7);}
+\DoxyCodeLine{00069\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ d(std::move(d\_orig));}
+\DoxyCodeLine{00070\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(d.getVardas()\ ==\ \textcolor{stringliteral}{"{}Ona"{}},\ \textcolor{stringliteral}{"{}Perkelimo\ vardas"{}});}
+\DoxyCodeLine{00071\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(d.getPavarde()\ ==\ \textcolor{stringliteral}{"{}Onaite"{}},\ \textcolor{stringliteral}{"{}Perkelimo\ pavarde"{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(d.getEgz()\ ==\ 7,\ \textcolor{stringliteral}{"{}Perkelimo\ egzaminas"{}});}
+\DoxyCodeLine{00073\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(d.getPazSkaicius()\ ==\ 2,\ \textcolor{stringliteral}{"{}Perkelimo\ paz\ skaicius"{}});}
+\DoxyCodeLine{00074\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(d\_orig.getPazSkaicius()\ ==\ 0,\ \textcolor{stringliteral}{"{}Perkelimo\ orginalas\ tuscias"{}});}
+\DoxyCodeLine{00075\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(d\_orig.getVardas()\ ==\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}Perkelimo\ orginalo\ vardas\ tuscias"{}});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//Destruktorius.}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ laikinas(\textcolor{stringliteral}{"{}Laikinas"{}},\ \textcolor{stringliteral}{"{}Laikinaitis"{}},\ \{\ 1,\ 2\ \},\ 3);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ (void)laikinas;\ \textcolor{comment}{//\ Kad\ destruktorius\ nebutu\ pazymetas\ kaip\ nenaudojamas}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(\textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}Destruktorius\ iskvieciamas\ (neuzstringa)"{}});}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{testavimas__klases_8cpp_a746eeacc4f4f3bf5ff86fc8eb7065a73}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}!testuoti\_metodus@{testuoti\_metodus}}
+\index{testuoti\_metodus@{testuoti\_metodus}!testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+\doxysubsubsection{\texorpdfstring{testuoti\_metodus()}{testuoti\_metodus()}}
+{\footnotesize\ttfamily \label{testavimas__klases_8cpp_a746eeacc4f4f3bf5ff86fc8eb7065a73} 
+void testuoti\+\_\+metodus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{testavimas__klases_8cpp_source}{testavimas\+\_\+klases.\+cpp}} eilutėje \doxymbox{\hyperlink{testavimas__klases_8cpp_source_l00201}{201}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a71f86993379924d9ac74a1474264049f}{sekcija}}(\textcolor{stringliteral}{"{}Metodai:\ vidurkis,\ mediana,\ skaiciuotiRez,\ islaike"{}});}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{comment}{//\ vidurkis}}
+\DoxyCodeLine{00205\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ a(\textcolor{stringliteral}{"{}X"{}},\ \textcolor{stringliteral}{"{}Y"{}},\ \{\ 6,\ 8,\ 10\ \},\ 0);}
+\DoxyCodeLine{00206\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(std::abs(a.vidurkis()\ -\/\ 8.0)\ <\ 1e-\/9,\ \textcolor{stringliteral}{"{}vidurkis():\ (6+8+10)/3\ =\ 8.0"{}});}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{comment}{//\ vidurkis\ su\ tusciu\ sarasu}}
+\DoxyCodeLine{00209\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ b;}
+\DoxyCodeLine{00210\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.\doxymbox{\hyperlink{class_studentas_a0e85ff82a3ab64d4d318da28c9ee06dc}{vidurkis}}()\ ==\ 0.0,\ \textcolor{stringliteral}{"{}vidurkis():\ tuscias\ sarasas\ =\ 0.0"{}});}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{comment}{//\ mediana\ �\ nelyginis\ skaicius}}
+\DoxyCodeLine{00213\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ c(\textcolor{stringliteral}{"{}X"{}},\ \textcolor{stringliteral}{"{}Y"{}},\ \{\ 3,\ 9,\ 5\ \},\ 0);}
+\DoxyCodeLine{00214\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(std::abs(c.mediana()\ -\/\ 5.0)\ <\ 1e-\/9,\ \textcolor{stringliteral}{"{}mediana():\ \{3,9,5\}\ -\/>\ 5.0"{}});}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{comment}{//\ mediana\ �\ lyginis\ skaicius}}
+\DoxyCodeLine{00217\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ d(\textcolor{stringliteral}{"{}X"{}},\ \textcolor{stringliteral}{"{}Y"{}},\ \{\ 2,\ 4,\ 6,\ 8\ \},\ 0);}
+\DoxyCodeLine{00218\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(std::abs(d.mediana()\ -\/\ 5.0)\ <\ 1e-\/9,\ \textcolor{stringliteral}{"{}mediana():\ \{2,4,6,8\}\ -\/>\ 5.0"{}});}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{comment}{//\ skaiciuotiRez\ su\ vidurkiu}}
+\DoxyCodeLine{00221\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ e(\textcolor{stringliteral}{"{}X"{}},\ \textcolor{stringliteral}{"{}Y"{}},\ \{\ 8,\ 10,\ 6\ \},\ 8);}
+\DoxyCodeLine{00222\ \ \ \ \ e.\doxymbox{\hyperlink{class_studentas_ac4d14762e601179e54e166075a1b98ee}{skaiciuotiRez}}(1);\ \textcolor{comment}{//\ vidurkis\ =\ 8,\ rez\ =\ 8*0.4\ +\ 8*0.6\ =\ 8.0}}
+\DoxyCodeLine{00223\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(std::abs(e.getRez()\ -\/\ 8.0)\ <\ 1e-\/9,\ \textcolor{stringliteral}{"{}skaiciuotiRez(1):\ rez\ =\ 8.0"{}});}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{comment}{//\ skaiciuotiRez\ su\ mediana}}
+\DoxyCodeLine{00226\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ f(\textcolor{stringliteral}{"{}X"{}},\ \textcolor{stringliteral}{"{}Y"{}},\ \{\ 4,\ 6,\ 8\ \},\ 10);}
+\DoxyCodeLine{00227\ \ \ \ \ f.\doxymbox{\hyperlink{class_studentas_ac4d14762e601179e54e166075a1b98ee}{skaiciuotiRez}}(2);\ \textcolor{comment}{//\ mediana\ =\ 6,\ rez\ =\ 6*0.4\ +\ 10*0.6\ =\ 2.4+6.0\ =\ 8.4}}
+\DoxyCodeLine{00228\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(std::abs(f.getRez()\ -\/\ 8.4)\ <\ 1e-\/9,\ \textcolor{stringliteral}{"{}skaiciuotiRez(2):\ rez\ =\ 8.4"{}});}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{comment}{//\ islaike}}
+\DoxyCodeLine{00231\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ g(\textcolor{stringliteral}{"{}X"{}},\ \textcolor{stringliteral}{"{}Y"{}},\ \{\},\ 0);}
+\DoxyCodeLine{00232\ \ \ \ \ g.\doxymbox{\hyperlink{class_studentas_abd5e5804e13a6ca6c960ac1ad24faa08}{setRez}}(4.9);}
+\DoxyCodeLine{00233\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(!g.islaike(),\ \textcolor{stringliteral}{"{}islaike():\ 4.9\ <\ 5.0\ -\/>\ false"{}});}
+\DoxyCodeLine{00234\ \ \ \ \ g.setRez(5.0);}
+\DoxyCodeLine{00235\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(g.islaike(),\ \textcolor{stringliteral}{"{}islaike():\ 5.0\ >=\ 5.0\ -\/>\ true"{}});}
+\DoxyCodeLine{00236\ \ \ \ \ g.setRez(8.5);}
+\DoxyCodeLine{00237\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(g.islaike(),\ \textcolor{stringliteral}{"{}islaike():\ 8.5\ >=\ 5.0\ -\/>\ true"{}});}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{comment}{//\ addPazymys\ ir\ clearPazymiai}}
+\DoxyCodeLine{00240\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ h;}
+\DoxyCodeLine{00241\ \ \ \ \ h.\doxymbox{\hyperlink{class_studentas_af7d66b90b71aa433ecf2c179044271aa}{addPazymys}}(7);}
+\DoxyCodeLine{00242\ \ \ \ \ h.\doxymbox{\hyperlink{class_studentas_af7d66b90b71aa433ecf2c179044271aa}{addPazymys}}(9);}
+\DoxyCodeLine{00243\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(h.\doxymbox{\hyperlink{class_studentas_ad8939c9dc002dd7429853e195c5ec6f8}{getPazSkaicius}}()\ ==\ 2,\ \textcolor{stringliteral}{"{}addPazymys():\ 2\ pazymiai"{}});}
+\DoxyCodeLine{00244\ \ \ \ \ h.\doxymbox{\hyperlink{class_studentas_a9833ccfffe1cbb3b719766bacd0ad46a}{clearPazymiai}}();}
+\DoxyCodeLine{00245\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(h.\doxymbox{\hyperlink{class_studentas_ad8939c9dc002dd7429853e195c5ec6f8}{getPazSkaicius}}()\ ==\ 0,\ \textcolor{stringliteral}{"{}clearPazymiai():\ sarasas\ tuscias"{}});}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{comment}{//\ getteriai\ ir\ setteriai}}
+\DoxyCodeLine{00248\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ i;}
+\DoxyCodeLine{00249\ \ \ \ \ i.\doxymbox{\hyperlink{class_zmogus_a1cfb82338adcdbeecccebb8c77b4aaf4}{setVardas}}(\textcolor{stringliteral}{"{}Inga"{}});}
+\DoxyCodeLine{00250\ \ \ \ \ i.\doxymbox{\hyperlink{class_zmogus_a604c508fa587671a7d1df8f0522c63e9}{setPavarde}}(\textcolor{stringliteral}{"{}Ingaite"{}});}
+\DoxyCodeLine{00251\ \ \ \ \ i.\doxymbox{\hyperlink{class_studentas_af7a2740c86cee79b07ea47b3eb819280}{setEgz}}(7);}
+\DoxyCodeLine{00252\ \ \ \ \ i.\doxymbox{\hyperlink{class_studentas_abd5e5804e13a6ca6c960ac1ad24faa08}{setRez}}(6.5);}
+\DoxyCodeLine{00253\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(i.\doxymbox{\hyperlink{class_zmogus_acf4a7481cb123bbb30cb82dd50102ebd}{getVardas}}()\ ==\ \textcolor{stringliteral}{"{}Inga"{}},\ \textcolor{stringliteral}{"{}setter/getter:\ vardas"{}});}
+\DoxyCodeLine{00254\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(i.\doxymbox{\hyperlink{class_zmogus_af6fa0216be160cd70589a193709a0b36}{getPavarde}}()\ ==\ \textcolor{stringliteral}{"{}Ingaite"{}},\ \textcolor{stringliteral}{"{}setter/getter:\ pavarde"{}});}
+\DoxyCodeLine{00255\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(i.\doxymbox{\hyperlink{class_studentas_a2f9dcb2fef2e6b3dbc1581779a90a68a}{getEgz}}()\ ==\ 7,\ \textcolor{stringliteral}{"{}setter/getter:\ egz"{}});}
+\DoxyCodeLine{00256\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(std::abs(i.\doxymbox{\hyperlink{class_studentas_a96a5c56d0b94ab196e7f1e30275e9737}{getRez}}()\ -\/\ 6.5)\ <\ 1e-\/9,\ \textcolor{stringliteral}{"{}setter/getter:\ rez"{}});}
+\DoxyCodeLine{00257\ \}}
+
+\end{DoxyCode}
+\Hypertarget{testavimas__klases_8cpp_a9a554fb4a7358c0cac98aece6f0100e3}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}!testuoti\_palyginimo\_operatorius@{testuoti\_palyginimo\_operatorius}}
+\index{testuoti\_palyginimo\_operatorius@{testuoti\_palyginimo\_operatorius}!testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+\doxysubsubsection{\texorpdfstring{testuoti\_palyginimo\_operatorius()}{testuoti\_palyginimo\_operatorius()}}
+{\footnotesize\ttfamily \label{testavimas__klases_8cpp_a9a554fb4a7358c0cac98aece6f0100e3} 
+void testuoti\+\_\+palyginimo\+\_\+operatorius (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{testavimas__klases_8cpp_source}{testavimas\+\_\+klases.\+cpp}} eilutėje \doxymbox{\hyperlink{testavimas__klases_8cpp_source_l00124}{124}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a71f86993379924d9ac74a1474264049f}{sekcija}}(\textcolor{stringliteral}{"{}Palyginimo\ operatoriai"{}});}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ a(\textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Jonaitis"{}},\ \{\ 8,\ 9,\ 7\ \},\ 10);}
+\DoxyCodeLine{00129\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ b(\textcolor{stringliteral}{"{}Petras"{}},\ \textcolor{stringliteral}{"{}Petraitis"{}},\ \{\ 4,\ 3,\ 5\ \},\ 4);}
+\DoxyCodeLine{00130\ \ \ \ \ a.\doxymbox{\hyperlink{class_studentas_ac4d14762e601179e54e166075a1b98ee}{skaiciuotiRez}}(1);\ \textcolor{comment}{//\ rez\_\ =\ 8.0*0.4\ +\ 10*0.6\ =\ 3.2+6\ =\ 9.2\ \ (vidurkis=(8+9+7)/3=8)}}
+\DoxyCodeLine{00131\ \ \ \ \ b.skaiciuotiRez(1);\ \textcolor{comment}{//\ rez\_\ =\ 4.0*0.4\ +\ 4*0.6\ \ =\ 1.6+2.4\ =\ 4.0}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a\ >\ b,\ \textcolor{stringliteral}{"{}operator>\ \ :\ a.rez\ >\ b.rez"{}});}
+\DoxyCodeLine{00134\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b\ <\ a,\ \textcolor{stringliteral}{"{}operator<\ \ :\ b.rez\ <\ a.rez"{}});}
+\DoxyCodeLine{00135\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a\ >=\ b,\ \textcolor{stringliteral}{"{}operator>=\ :\ a.rez\ >=\ b.rez"{}});}
+\DoxyCodeLine{00136\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b\ <=\ a,\ \textcolor{stringliteral}{"{}operator<=\ :\ b.rez\ <=\ a.rez"{}});}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//Lygybe\ -\/\ pagal\ varda\ ir\ pavarde}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ c(\textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Jonaitis"{}},\ \{\ 1\ \},\ 1);}
+\DoxyCodeLine{00141\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a\ ==\ c,\ \textcolor{stringliteral}{"{}operator==\ :\ tas\ pats\ vardas\ ir\ pavarde"{}});}
+\DoxyCodeLine{00142\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a\ !=\ b,\ \textcolor{stringliteral}{"{}operator!=\ :\ skirtingas\ vardas\ ir\ pavarde"{}});}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{//lygus\ sau}}
+\DoxyCodeLine{00145\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a\ ==\ a,\ \textcolor{stringliteral}{"{}operator==\ :\ lygus\ sau"{}});}
+\DoxyCodeLine{00146\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(!(a\ !=\ a),\ \textcolor{stringliteral}{"{}operator!=\ :\ nelygus\ sau"{}});}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{//\ <=\ ir\ >=\ su\ lygiais\ rezultatais}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ d(\textcolor{stringliteral}{"{}Dalia"{}},\ \textcolor{stringliteral}{"{}Dalaite"{}},\ \{\ 8,\ 9\ ,7\ \},\ 10);}
+\DoxyCodeLine{00151\ \ \ \ \ d.\doxymbox{\hyperlink{class_studentas_ac4d14762e601179e54e166075a1b98ee}{skaiciuotiRez}}(1);\ \textcolor{comment}{//tas\ patas\ rezultatas\ kaip\ a,\ bet\ skirtingas\ vardas\ ir\ pavarde}}
+\DoxyCodeLine{00152\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a\ <=\ d,\ \textcolor{stringliteral}{"{}operator<=\ lygus\ rez\ (a\ <=\ d)"{}});}
+\DoxyCodeLine{00153\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a\ >=\ d,\ \textcolor{stringliteral}{"{}operator>=\ lygus\ rez\ (a\ >=\ d)"{}});}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \}}
+
+\end{DoxyCode}
+\Hypertarget{testavimas__klases_8cpp_af3bb63128c939af36f746e34336b843f}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}!testuoti\_priskyrima@{testuoti\_priskyrima}}
+\index{testuoti\_priskyrima@{testuoti\_priskyrima}!testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+\doxysubsubsection{\texorpdfstring{testuoti\_priskyrima()}{testuoti\_priskyrima()}}
+{\footnotesize\ttfamily \label{testavimas__klases_8cpp_af3bb63128c939af36f746e34336b843f} 
+void testuoti\+\_\+priskyrima (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{testavimas__klases_8cpp_source}{testavimas\+\_\+klases.\+cpp}} eilutėje \doxymbox{\hyperlink{testavimas__klases_8cpp_source_l00088}{88}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a71f86993379924d9ac74a1474264049f}{sekcija}}(\textcolor{stringliteral}{"{}Priskyrimo\ operatoriai\ (Rule\ of\ Five)"{}});}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ a(\textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Jonaitis"{}},\ \{\ 8,\ 9\},\ 10);}
+\DoxyCodeLine{00092\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ b;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//kopijavimo\ priskyrimo\ operatorius}}
+\DoxyCodeLine{00095\ \ \ \ \ b\ =\ a;}
+\DoxyCodeLine{00096\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.getVardas()\ ==\ \textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Kopijavimo\ priskyrimo\ vardas"{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.getPavarde()\ ==\ \textcolor{stringliteral}{"{}Jonaitis"{}},\ \textcolor{stringliteral}{"{}Kopijavimo\ priskyrimo\ pavarde"{}});}
+\DoxyCodeLine{00098\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.getEgz()\ ==\ 10,\ \textcolor{stringliteral}{"{}Kopijavimas\ priskyrimas\ egz"{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.getPaz()\ ==\ a.getPaz(),\ \textcolor{stringliteral}{"{}Kopijavimo\ priskyrimo\ pazymiai\ sutampa"{}});}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//Gilios\ kopijos\ tikrinimas}}
+\DoxyCodeLine{00101\ \ \ \ \ b.setVardas(\textcolor{stringliteral}{"{}kitas"{}});}
+\DoxyCodeLine{00102\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a.getVardas()\ ==\ \textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Kopijavimo\ priskyrimo\ gili\ kopija\ (a)\ nepakito"{}});}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//saves\ priskyrimo\ operatorius}}
+\DoxyCodeLine{00105\ \ \ \ \ a\ =\ a;}
+\DoxyCodeLine{00106\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a.getVardas()\ ==\ \textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Saves\ priskyrimo\ vardas\ nepakito"{}});}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//perkelimo\ priskyrimo\ operatorius}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ c(\textcolor{stringliteral}{"{}Ona"{}},\ \textcolor{stringliteral}{"{}Onaite"{}},\ \{\ 5,\ 6\ \},\ 7);}
+\DoxyCodeLine{00111\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ d;}
+\DoxyCodeLine{00112\ \ \ \ \ d\ =\ std::move(c);}
+\DoxyCodeLine{00113\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(d.getVardas()\ ==\ \textcolor{stringliteral}{"{}Ona"{}},\ \textcolor{stringliteral}{"{}Perkelimo\ priskyrimo\ vardas"{}});}
+\DoxyCodeLine{00114\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(d.getPazSkaicius()\ ==\ 2,\ \textcolor{stringliteral}{"{}Perkelimo\ priskyrimo\ paz\ skaicius"{}});}
+\DoxyCodeLine{00115\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(c.getVardas()\ ==\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}Perkelimo\ priskyrimo\ originalo\ vardas\ tuscias"{}});}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//Grandininis\ priskyrimas}}
+\DoxyCodeLine{00118\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ x(\textcolor{stringliteral}{"{}A"{}},\ \textcolor{stringliteral}{"{}B"{}},\ \{\ 1\ \},\ 2);}
+\DoxyCodeLine{00119\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ y,\ z;}
+\DoxyCodeLine{00120\ \ \ \ \ z\ =\ y\ =\ x;}
+\DoxyCodeLine{00121\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(y.getVardas()\ ==\ \textcolor{stringliteral}{"{}A"{}}\ \&\&\ z.getVardas()\ ==\ \textcolor{stringliteral}{"{}A"{}},\ \textcolor{stringliteral}{"{}Grandininis\ priskyrimas\ y\ =\ z\ =\ x"{}});}
+\DoxyCodeLine{00122\ \}}
+
+\end{DoxyCode}
+\Hypertarget{testavimas__klases_8cpp_a5c73eca3b584f3643ba80abdb8d95907}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}!testuoti\_srautu\_operatorius@{testuoti\_srautu\_operatorius}}
+\index{testuoti\_srautu\_operatorius@{testuoti\_srautu\_operatorius}!testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+\doxysubsubsection{\texorpdfstring{testuoti\_srautu\_operatorius()}{testuoti\_srautu\_operatorius()}}
+{\footnotesize\ttfamily \label{testavimas__klases_8cpp_a5c73eca3b584f3643ba80abdb8d95907} 
+void testuoti\+\_\+srautu\+\_\+operatorius (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{testavimas__klases_8cpp_source}{testavimas\+\_\+klases.\+cpp}} eilutėje \doxymbox{\hyperlink{testavimas__klases_8cpp_source_l00158}{158}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a71f86993379924d9ac74a1474264049f}{sekcija}}(\textcolor{stringliteral}{"{}Srautu\ operatoriai"{}});}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{comment}{//opperator>>\ su\ istringstream}}
+\DoxyCodeLine{00162\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ a;}
+\DoxyCodeLine{00163\ \ \ \ \ std::istringstream\ iss(\textcolor{stringliteral}{"{}Jonas\ Jonaitis\ 8\ 9\ 7\ 10"{}});}
+\DoxyCodeLine{00164\ \ \ \ \ iss\ >>\ a;}
+\DoxyCodeLine{00165\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a.\doxymbox{\hyperlink{class_zmogus_acf4a7481cb123bbb30cb82dd50102ebd}{getVardas}}()\ ==\ \textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}operator>>\ vardas"{}});}
+\DoxyCodeLine{00166\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a.\doxymbox{\hyperlink{class_zmogus_af6fa0216be160cd70589a193709a0b36}{getPavarde}}()\ ==\ \textcolor{stringliteral}{"{}Jonaitis"{}},\ \textcolor{stringliteral}{"{}operator>>\ pavarde"{}});}
+\DoxyCodeLine{00167\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a.\doxymbox{\hyperlink{class_studentas_ad8939c9dc002dd7429853e195c5ec6f8}{getPazSkaicius}}()\ ==\ 3,\ \textcolor{stringliteral}{"{}operator>>\ paz\ skaicius"{}});}
+\DoxyCodeLine{00168\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a.\doxymbox{\hyperlink{class_studentas_af6d51bf9a3db3e7d4ae4c160792c4b93}{getPaz}}()[0]\ ==\ 8,\ \textcolor{stringliteral}{"{}operator>>\ pazymiai\ paz[0]\ ==\ 8"{}});}
+\DoxyCodeLine{00169\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(a.\doxymbox{\hyperlink{class_studentas_af6d51bf9a3db3e7d4ae4c160792c4b93}{getPaz}}()[2]\ ==\ 7,\ \textcolor{stringliteral}{"{}operator>>\ pazymiai\ paz[2]\ ==\ 7"{}});}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{comment}{//operator>>\ su\ vienu\ skaiciumi\ (tik\ egzaminas,0\ namu\ darbu)}}
+\DoxyCodeLine{00172\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ b;}
+\DoxyCodeLine{00173\ \ \ \ \ std::istringstream\ iss2(\textcolor{stringliteral}{"{}Ona\ Onaite\ 5"{}});}
+\DoxyCodeLine{00174\ \ \ \ \ iss2\ >>\ b;}
+\DoxyCodeLine{00175\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.\doxymbox{\hyperlink{class_studentas_a2f9dcb2fef2e6b3dbc1581779a90a68a}{getEgz}}()\ ==\ 5,\ \textcolor{stringliteral}{"{}operator>>\ egzaminas"{}});}
+\DoxyCodeLine{00176\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(b.\doxymbox{\hyperlink{class_studentas_ad8939c9dc002dd7429853e195c5ec6f8}{getPazSkaicius}}()\ ==\ 0,\ \textcolor{stringliteral}{"{}operator>>\ paz\ skaicius\ 0"{}});}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{comment}{//operator<<\ su\ ostringstream}}
+\DoxyCodeLine{00179\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ c(\textcolor{stringliteral}{"{}Petras"{}},\ \textcolor{stringliteral}{"{}Petraitis"{}},\ \{\ 6,8\ \},\ 9);}
+\DoxyCodeLine{00180\ \ \ \ \ c.\doxymbox{\hyperlink{class_studentas_ac4d14762e601179e54e166075a1b98ee}{skaiciuotiRez}}(1);}
+\DoxyCodeLine{00181\ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00182\ \ \ \ \ oss\ <<\ c;}
+\DoxyCodeLine{00183\ \ \ \ \ std::string\ isvestis\ =\ oss.str();}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(isvestis.find(\textcolor{stringliteral}{"{}Petras"{}})\ !=\ std::string::npos,\ \textcolor{stringliteral}{"{}operator<<:\ yra\ vardas"{}});}
+\DoxyCodeLine{00186\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(isvestis.find(\textcolor{stringliteral}{"{}Petraitis"{}})\ !=\ std::string::npos,\ \textcolor{stringliteral}{"{}operator<<:\ yra\ pavarde"{}});}
+\DoxyCodeLine{00187\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(isvestis.find(\textcolor{stringliteral}{"{}Egz"{}})\ !=\ std::string::npos,\ \textcolor{stringliteral}{"{}operator<<:\ yra\ Egz."{}});}
+\DoxyCodeLine{00188\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(isvestis.find(\textcolor{stringliteral}{"{}Rez"{}})\ !=\ std::string::npos,\ \textcolor{stringliteral}{"{}operator<<:\ yra\ Rez."{}});}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{comment}{//\ Apvalus\ testas:\ >>\ tada\ <<}}
+\DoxyCodeLine{00191\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ d;}
+\DoxyCodeLine{00192\ \ \ \ \ std::istringstream\ iss3(\textcolor{stringliteral}{"{}Inga\ Ingaite\ 7\ 8\ 9\ 6"{}});}
+\DoxyCodeLine{00193\ \ \ \ \ iss3\ >>\ d;}
+\DoxyCodeLine{00194\ \ \ \ \ std::ostringstream\ oss2;}
+\DoxyCodeLine{00195\ \ \ \ \ oss2\ <<\ d;}
+\DoxyCodeLine{00196\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(oss2.str().find(\textcolor{stringliteral}{"{}Inga"{}})\ !=\ std::string::npos,}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}operator<<\ po\ >>:\ vardas\ isvestyje"{}});}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \}}
+
+\end{DoxyCode}
+\Hypertarget{testavimas__klases_8cpp_a021eb8a72b676503e6a2a1f0899a3059}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}!testuoti\_su\_stl@{testuoti\_su\_stl}}
+\index{testuoti\_su\_stl@{testuoti\_su\_stl}!testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+\doxysubsubsection{\texorpdfstring{testuoti\_su\_stl()}{testuoti\_su\_stl()}}
+{\footnotesize\ttfamily \label{testavimas__klases_8cpp_a021eb8a72b676503e6a2a1f0899a3059} 
+void testuoti\+\_\+su\+\_\+stl (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{testavimas__klases_8cpp_source}{testavimas\+\_\+klases.\+cpp}} eilutėje \doxymbox{\hyperlink{testavimas__klases_8cpp_source_l00259}{259}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a71f86993379924d9ac74a1474264049f}{sekcija}}(\textcolor{stringliteral}{"{}Naudojimas\ su\ STL\ konteineriais\ ir\ algoritmais"{}});}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ std::vector<Studentas>\ studentai\ =\ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}(\textcolor{stringliteral}{"{}C"{}},\ \textcolor{stringliteral}{"{}C"{}},\ \{4,4\},\ 4),}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}(\textcolor{stringliteral}{"{}A"{}},\ \textcolor{stringliteral}{"{}A"{}},\ \{9,9\},\ 9),}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}(\textcolor{stringliteral}{"{}B"{}},\ \textcolor{stringliteral}{"{}B"{}},\ \{6,6\},\ 6)}
+\DoxyCodeLine{00266\ \ \ \ \ \};}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ s\ :\ studentai)\ s.skaiciuotiRez(1);}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{comment}{//\ std::sort\ su\ operator<}}
+\DoxyCodeLine{00270\ \ \ \ \ std::sort(studentai.begin(),\ studentai.end());}
+\DoxyCodeLine{00271\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(studentai[0].getVardas()\ ==\ \textcolor{stringliteral}{"{}C"{}}\ \&\&}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ studentai[1].getVardas()\ ==\ \textcolor{stringliteral}{"{}B"{}}\ \&\&}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ studentai[2].getVardas()\ ==\ \textcolor{stringliteral}{"{}A"{}},}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}std::sort\ su\ operator<:\ rusiuoja\ pagal\ rez\_"{}});}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{comment}{//\ std::find\_if\ su\ islaike}}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keyword}{auto}\ pirmas\_islaikes\ =\ std::find\_if(studentai.begin(),\ studentai.end(),}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{\ return\ s.islaike();\ \});}
+\DoxyCodeLine{00279\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(pirmas\_islaikes\ !=\ studentai.end()\ \&\&}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ pirmas\_islaikes-\/>getVardas()\ ==\ \textcolor{stringliteral}{"{}B"{}},}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}std::find\_if\ su\ islaike():\ randa\ pirma\ islaikiusi"{}});}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{comment}{//\ std::partition\ su\ operator>=}}
+\DoxyCodeLine{00283\ \ \ \ \ std::vector<Studentas>\ v\ =\ studentai;}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keyword}{auto}\ pivot\ =\ std::partition(v.begin(),\ v.end(),}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{\ return\ s.islaike();\ \});}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordtype}{int}\ islaike\ =\ (int)std::distance(v.begin(),\ pivot);}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{int}\ neislaike\ =\ (int)std::distance(pivot,\ v.end());}
+\DoxyCodeLine{00288\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(islaike\ ==\ 2\ \&\&\ neislaike\ ==\ 1,}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}std::partition\ +\ islaike():\ 2\ islaike,\ 1\ neislaike"{}});}
+\DoxyCodeLine{00290\ \}}
+
+\end{DoxyCode}
+\Hypertarget{testavimas__klases_8cpp_a3a98a0d2c79557ee82dc667dadc213fd}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}!testuoti\_zmogus\_abstrakti@{testuoti\_zmogus\_abstrakti}}
+\index{testuoti\_zmogus\_abstrakti@{testuoti\_zmogus\_abstrakti}!testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+\doxysubsubsection{\texorpdfstring{testuoti\_zmogus\_abstrakti()}{testuoti\_zmogus\_abstrakti()}}
+{\footnotesize\ttfamily \label{testavimas__klases_8cpp_a3a98a0d2c79557ee82dc667dadc213fd} 
+void testuoti\+\_\+zmogus\+\_\+abstrakti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{testavimas__klases_8cpp_source}{testavimas\+\_\+klases.\+cpp}} eilutėje \doxymbox{\hyperlink{testavimas__klases_8cpp_source_l00293}{293}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a71f86993379924d9ac74a1474264049f}{sekcija}}(\textcolor{stringliteral}{"{}Zmogus\ abstrakti\ klase\ (v1.5)"{}});}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{comment}{//\ Zmogus\ objekto\ sukurti\ NEGALIMA\ �\ klase\ abstrakti.}}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{comment}{//\ Toliau\ pateiktas\ kodas\ NEKOMPILIUOJAS\ (tai\ yra\ tinkamas\ elgesys):}}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{comment}{//\ \ \ Zmogus\ z;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ KLAIDA:\ cannot\ instantiate\ abstract\ class}}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{comment}{//\ \ \ Zmogus\ z("{}A"{},\ "{}B"{});\ \ \ \ \ \ \ \ //\ KLAIDA:\ cannot\ instantiate\ abstract\ class}}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{comment}{//\ Tai\ irodo\ kad\ abstraktumas\ veikia\ teisingai.}}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{comment}{//\ Galima\ sukurti\ tik\ Studentas\ objekta\ (isvestine\ klase):}}
+\DoxyCodeLine{00303\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ s(\textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Jonaitis"{}},\ \{\ 8,\ 9\ \},\ 10);}
+\DoxyCodeLine{00304\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(\textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}Zmogus\ abstrakti:\ Studentas\ objektas\ sukurtas\ sekmingai"{}});}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{comment}{//\ Studentas\ yra\ Zmogus\ tipo\ (polimorfizmas)}}
+\DoxyCodeLine{00307\ \ \ \ \ \doxymbox{\hyperlink{class_zmogus}{Zmogus}}*\ ptr\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}(\textcolor{stringliteral}{"{}Ona"{}},\ \textcolor{stringliteral}{"{}Onaite"{}},\ \{\ 7,\ 8\ \},\ 9);}
+\DoxyCodeLine{00308\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(ptr\ !=\ \textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}Zmogus\ abstrakti:\ Zmogus*\ rodo\ i\ Studentas\ objekta"{}});}
+\DoxyCodeLine{00309\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(ptr-\/>\doxymbox{\hyperlink{class_zmogus_acf4a7481cb123bbb30cb82dd50102ebd}{getVardas}}()\ ==\ \textcolor{stringliteral}{"{}Ona"{}},\ \textcolor{stringliteral}{"{}Zmogus\ abstrakti:\ getVardas()\ per\ bazine\ klase"{}});}
+\DoxyCodeLine{00310\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(ptr-\/>\doxymbox{\hyperlink{class_zmogus_af6fa0216be160cd70589a193709a0b36}{getPavarde}}()\ ==\ \textcolor{stringliteral}{"{}Onaite"{}},\ \textcolor{stringliteral}{"{}Zmogus\ abstrakti:\ getPavarde()\ per\ bazine\ klase"{}});}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{comment}{//\ operator<<\ per\ bazine\ klase\ naudoja\ virtual\ print()}}
+\DoxyCodeLine{00313\ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00314\ \ \ \ \ oss\ <<\ *ptr;}
+\DoxyCodeLine{00315\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(oss.str().find(\textcolor{stringliteral}{"{}Ona"{}})\ !=\ std::string::npos,}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Zmogus\ abstrakti:\ operator<<\ per\ Zmogus\&\ naudoja\ virtual\ print()"{}});}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{comment}{//\ Virtualus\ destruktorius\ �\ teisingai\ iskvieciamas\ Studentas\ destruktorius}}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keyword}{delete}\ ptr;}
+\DoxyCodeLine{00320\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(\textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}Zmogus\ abstrakti:\ virtualus\ destruktorius\ iskviestas\ teisingai"{}});}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{comment}{//\ Bazines\ klases\ getteriai\ ir\ setteriai\ veikia\ per\ isvestine\ klase}}
+\DoxyCodeLine{00323\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ t;}
+\DoxyCodeLine{00324\ \ \ \ \ t.\doxymbox{\hyperlink{class_zmogus_a1cfb82338adcdbeecccebb8c77b4aaf4}{setVardas}}(\textcolor{stringliteral}{"{}Petras"{}});}
+\DoxyCodeLine{00325\ \ \ \ \ t.\doxymbox{\hyperlink{class_zmogus_a604c508fa587671a7d1df8f0522c63e9}{setPavarde}}(\textcolor{stringliteral}{"{}Petraitis"{}});}
+\DoxyCodeLine{00326\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(t.\doxymbox{\hyperlink{class_zmogus_acf4a7481cb123bbb30cb82dd50102ebd}{getVardas}}()\ ==\ \textcolor{stringliteral}{"{}Petras"{}},\ \textcolor{stringliteral}{"{}Zmogus\ abstrakti:\ setVardas/getVardas\ is\ bazines"{}});}
+\DoxyCodeLine{00327\ \ \ \ \ \doxymbox{\hyperlink{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}{tikrinti}}(t.\doxymbox{\hyperlink{class_zmogus_af6fa0216be160cd70589a193709a0b36}{getPavarde}}()\ ==\ \textcolor{stringliteral}{"{}Petraitis"{}},\ \textcolor{stringliteral}{"{}Zmogus\ abstrakti:\ setPavarde/getPavarde\ is\ bazines"{}});}
+\DoxyCodeLine{00328\ \}}
+
+\end{DoxyCode}
+\Hypertarget{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}!tikrinti@{tikrinti}}
+\index{tikrinti@{tikrinti}!testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+\doxysubsubsection{\texorpdfstring{tikrinti()}{tikrinti()}}
+{\footnotesize\ttfamily \label{testavimas__klases_8cpp_a9542e10525afd9381ddd37250a3c8b4d} 
+void tikrinti (\begin{DoxyParamCaption}\item[{bool}]{salyga}{, }\item[{const std::\+string \&}]{pavadinimas}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{testavimas__klases_8cpp_source}{testavimas\+\_\+klases.\+cpp}} eilutėje \doxymbox{\hyperlink{testavimas__klases_8cpp_source_l00015}{15}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ ++\doxymbox{\hyperlink{testavimas__klases_8cpp_afb249f1649dc2d1253dea730f61de467}{testai\_is\_viso}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (salyga)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ ++\doxymbox{\hyperlink{testavimas__klases_8cpp_ade8e1c06d45e6f24fe41affb80bf1577}{testai\_pavyke}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Testas\ pavykes:\ "{}}\ <<\ pavadinimas\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Testas\ nepavykes:\ "{}}\ <<\ pavadinimas\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \}}
+
+\end{DoxyCode}
+
+
+\label{testavimas__klases_8cpp_doc-var-members}
+\Hypertarget{testavimas__klases_8cpp_doc-var-members}
+\doxysubsection{Kintamojo Dokumentacija}
+\Hypertarget{testavimas__klases_8cpp_afb249f1649dc2d1253dea730f61de467}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}!testai\_is\_viso@{testai\_is\_viso}}
+\index{testai\_is\_viso@{testai\_is\_viso}!testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+\doxysubsubsection{\texorpdfstring{testai\_is\_viso}{testai\_is\_viso}}
+{\footnotesize\ttfamily \label{testavimas__klases_8cpp_afb249f1649dc2d1253dea730f61de467} 
+int testai\+\_\+is\+\_\+viso = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{testavimas__klases_8cpp_source}{testavimas\+\_\+klases.\+cpp}} eilutėje \doxymbox{\hyperlink{testavimas__klases_8cpp_source_l00012}{12}}.
+
+\Hypertarget{testavimas__klases_8cpp_ade8e1c06d45e6f24fe41affb80bf1577}\index{testavimas\_klases.cpp@{testavimas\_klases.cpp}!testai\_pavyke@{testai\_pavyke}}
+\index{testai\_pavyke@{testai\_pavyke}!testavimas\_klases.cpp@{testavimas\_klases.cpp}}
+\doxysubsubsection{\texorpdfstring{testai\_pavyke}{testai\_pavyke}}
+{\footnotesize\ttfamily \label{testavimas__klases_8cpp_ade8e1c06d45e6f24fe41affb80bf1577} 
+int testai\+\_\+pavyke = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{testavimas__klases_8cpp_source}{testavimas\+\_\+klases.\+cpp}} eilutėje \doxymbox{\hyperlink{testavimas__klases_8cpp_source_l00013}{13}}.
+

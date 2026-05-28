@@ -1,0 +1,152 @@
+\doxysection{utils.\+h Failo Nuoroda}
+\hypertarget{utils_8h}{}\label{utils_8h}\index{utils.h@{utils.h}}
+{\ttfamily \+\#include $<$string$>$}\newline
+\doxysubsubsection*{Funkcijos}
+\begin{DoxyCompactItemize}
+\item 
+std::\+string \doxymbox{\hyperlink{utils_8h_a9d04077c4a0eaf6295282e25c1b58a43}{ivesti\+\_\+varda\+\_\+ar\+\_\+pavarde}} (const std::\+string \&zinute)
+\item 
+int \doxymbox{\hyperlink{utils_8h_a8e884b90bfaead63df6dc78fe6c7d6cd}{ivesties\+\_\+tikrinimas}} (const std::\+string \&zinute)
+\item 
+int \doxymbox{\hyperlink{utils_8h_ad59ac7bce431536c38a4ea527df1dfe0}{ivesties\+\_\+skaicius}} (const std::\+string \&zinute)
+\item 
+int \doxymbox{\hyperlink{utils_8h_a46df75784cbda4b15354edd6a90443c5}{skaiciavimo\+\_\+metodas}} ()
+\end{DoxyCompactItemize}
+
+
+\label{utils_8h_doc-func-members}
+\Hypertarget{utils_8h_doc-func-members}
+\doxysubsection{Funkcijos Dokumentacija}
+\Hypertarget{utils_8h_a9d04077c4a0eaf6295282e25c1b58a43}\index{utils.h@{utils.h}!ivesti\_varda\_ar\_pavarde@{ivesti\_varda\_ar\_pavarde}}
+\index{ivesti\_varda\_ar\_pavarde@{ivesti\_varda\_ar\_pavarde}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{ivesti\_varda\_ar\_pavarde()}{ivesti\_varda\_ar\_pavarde()}}
+{\footnotesize\ttfamily \label{utils_8h_a9d04077c4a0eaf6295282e25c1b58a43} 
+std::\+string ivesti\+\_\+varda\+\_\+ar\+\_\+pavarde (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{zinute}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}} eilutėje \doxymbox{\hyperlink{utils_8cpp_source_l00005}{5}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ std::string\ tekstas;}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ std::cout\ <<\ zinute;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ std::cin\ >>\ tekstas;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!tekstas.empty())\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tekstas;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ivestis\ negali\ buti\ tuscia\(\backslash\)n"{}};}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ \}}
+
+\end{DoxyCode}
+\Hypertarget{utils_8h_ad59ac7bce431536c38a4ea527df1dfe0}\index{utils.h@{utils.h}!ivesties\_skaicius@{ivesties\_skaicius}}
+\index{ivesties\_skaicius@{ivesties\_skaicius}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{ivesties\_skaicius()}{ivesties\_skaicius()}}
+{\footnotesize\ttfamily \label{utils_8h_ad59ac7bce431536c38a4ea527df1dfe0} 
+int ivesties\+\_\+skaicius (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{zinute}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}} eilutėje \doxymbox{\hyperlink{utils_8cpp_source_l00044}{44}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ value;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ std::cout\ <<\ zinute;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::cin\ >>\ value;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail())}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ivestis\ turi\ buti\ skaicius,\ bandykite\ dar\ karta\(\backslash\)n"{}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ >=\ 1)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ivestis\ turi\ buti\ teigiamas\ skaicius\(\backslash\)n"{}};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}
+\Hypertarget{utils_8h_a8e884b90bfaead63df6dc78fe6c7d6cd}\index{utils.h@{utils.h}!ivesties\_tikrinimas@{ivesties\_tikrinimas}}
+\index{ivesties\_tikrinimas@{ivesties\_tikrinimas}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{ivesties\_tikrinimas()}{ivesties\_tikrinimas()}}
+{\footnotesize\ttfamily \label{utils_8h_a8e884b90bfaead63df6dc78fe6c7d6cd} 
+int ivesties\+\_\+tikrinimas (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{zinute}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}} eilutėje \doxymbox{\hyperlink{utils_8cpp_source_l00018}{18}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ value;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::cout\ <<\ zinute;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::cin\ >>\ value;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail())}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ivestis\ turi\ buti\ skaicius,\ bandykite\ dar\ karta\(\backslash\)n"{}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ ==\ -\/1\ ||\ (value\ >=\ 0\ \&\&\ value\ <=\ 10))}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ivestis\ turi\ buti\ tarp\ 0\ ir\ 10\ (arba\ -\/1\ baigti)\(\backslash\)n"{}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+\Hypertarget{utils_8h_a46df75784cbda4b15354edd6a90443c5}\index{utils.h@{utils.h}!skaiciavimo\_metodas@{skaiciavimo\_metodas}}
+\index{skaiciavimo\_metodas@{skaiciavimo\_metodas}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{skaiciavimo\_metodas()}{skaiciavimo\_metodas()}}
+{\footnotesize\ttfamily \label{utils_8h_a46df75784cbda4b15354edd6a90443c5} 
+int skaiciavimo\+\_\+metodas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}} eilutėje \doxymbox{\hyperlink{utils_8cpp_source_l00070}{70}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ metodas;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Pasirinkite\ skaiciavimo\ metoda\ (1\ -\/\ vidurkis,\ 2\ -\/\ mediana):\ "{}};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(std::cin\ >>\ metodas))\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ivestis\ turi\ buti\ skaicius\ 1\ arba\ 2,\ bandykite\ dar\ karta\(\backslash\)n"{}};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (metodas\ ==\ 1\ ||\ metodas\ ==\ 2)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ metodas;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Neteisingas\ pasirinkimas.\ Pasirinkite\ 1\ arba\ 2.\(\backslash\)n"{}};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \}}
+
+\end{DoxyCode}

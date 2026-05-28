@@ -1,0 +1,120 @@
+\doxysection{deque\+\_\+ops.\+cpp}
+\hypertarget{deque__ops_8cpp_source}{}\label{deque__ops_8cpp_source}\doxymbox{\hyperlink{deque__ops_8cpp}{Eiti į šio failo dokumentaciją.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{deque__ops_8h}{deque\_ops.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{vector_8h}{vector.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00011}\doxymbox{\hyperlink{deque__ops_8cpp_a46f1bb732ce30e94017e8f5ad83cf5ee}{00011}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{deque__ops_8cpp_a46f1bb732ce30e94017e8f5ad83cf5ee}{skaitymas\_is\_failo\_d}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ std::deque<Studentas>\&\ studentai)\ \{}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00012}00012\ \ \ \ \ std::ifstream\ file(filename);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Nepavyko\ atidaryti\ failo:\ "{}}\ +\ filename);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00015}00015\ \ \ \ \ studentai.clear();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00016}00016\ \ \ \ \ std::string\ header,\ line;}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00017}00017\ \ \ \ \ std::getline(file,\ header);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{int}\ nr\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ ++nr;}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ std::stringstream\ ss(line);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ std::string\ vardas,\ pavarde;}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ ss\ >>\ vardas\ >>\ pavarde;}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ paz;}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ v;}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ss\ >>\ v)\ paz.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(v);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (paz.\doxymbox{\hyperlink{class_vector_ad5e31c0f82683ece1b5b020c15a8b77b}{empty}}())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ egz\ =\ paz.\doxymbox{\hyperlink{class_vector_a0977f3472b15fe46a8895efb09494bed}{back}}();\ paz.\doxymbox{\hyperlink{class_vector_a96a0a7cacee7603cb7bce3e82c34d0ae}{pop\_back}}();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ studentai.emplace\_back(vardas,\ pavarde,\ paz,\ egz);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nr\ \%\ 1000000\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ Nuskaityta:\ "{}}\ <<\ nr\ <<\ \textcolor{stringliteral}{"{}\ studentu...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00033}00033\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ Is\ viso\ nuskaityta:\ "{}}\ <<\ studentai.size()\ <<\ \textcolor{stringliteral}{"{}\ studentu\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00036}\doxymbox{\hyperlink{deque__ops_8cpp_a338c324463bc5f3f546b5a947302bb40}{00036}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{deque__ops_8cpp_a338c324463bc5f3f546b5a947302bb40}{isvedimas\_i\_faila\_d}}(\textcolor{keyword}{const}\ std::deque<Studentas>\&\ studentai,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ filename,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ kategorija)\ \{}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00039}00039\ \ \ \ \ std::ofstream\ out(filename);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (!out.is\_open())}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Nepavyko\ sukurti\ failo:\ "{}}\ +\ filename);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00042}00042\ \ \ \ \ out\ <<\ std::left\ <<\ std::setw(20)\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ <<\ std::setw(20)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ <<\ std::right\ <<\ std::setw(20)\ <<\ \textcolor{stringliteral}{"{}Galutinis\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ <<\ std::string(60,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ s\ :\ studentai)\ out\ <<\ s\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00047}00047\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ ["{}}\ <<\ kategorija\ <<\ \textcolor{stringliteral}{"{}]\ "{}}\ <<\ studentai.size()}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ studentu\ -\/>\ "{}}\ <<\ filename\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00051}\doxymbox{\hyperlink{deque__ops_8cpp_abab0a69041ed040c5ddc604ee491b01f}{00051}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{deque__ops_8cpp_abab0a69041ed040c5ddc604ee491b01f}{pasirinkimo\_metodas\_d}}(\textcolor{keywordtype}{int}\ tipas,\ std::deque<Studentas>\&\ studentai)\ \{}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ s\ :\ studentai)\ s.skaiciuotiRez(tipas);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00055}00055\ \textcolor{comment}{//\ deque\ turi\ atsitiktine\ prieiga\ -\/\ naudojame\ std::sort}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00056}\doxymbox{\hyperlink{deque__ops_8cpp_af42199cfc780183e959b4690b4d2c48e}{00056}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{deque__ops_8cpp_af42199cfc780183e959b4690b4d2c48e}{rusiavimas\_d}}(std::deque<Studentas>\&\ studentai)\ \{}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00057}00057\ \ \ \ \ std::sort(studentai.begin(),\ studentai.end(),}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{\ return\ a.getRez()\ <\ b.getRez();\ \});}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00061}\doxymbox{\hyperlink{deque__ops_8cpp_a0a1bfcc2c94c685b17beae3374d63c2a}{00061}}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{deque__ops_8cpp_a0a1bfcc2c94c685b17beae3374d63c2a}{skirstymas\_i\_grupes\_d}}(\textcolor{keyword}{const}\ std::deque<Studentas>\&\ visi,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00062}00062\ \ \ \ \ std::deque<Studentas>\&\ kieti,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00063}00063\ \ \ \ \ std::deque<Studentas>\&\ vargsai)\ \{}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{auto}\ t0\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00065}00065\ \ \ \ \ kieti.clear();\ vargsai.clear();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00066}00066\ \ \ \ \ std::copy\_if(visi.begin(),\ visi.end(),\ std::back\_inserter(vargsai),}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{\ return\ s.getRez()\ <\ 5.0;\ \});}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00068}00068\ \ \ \ \ std::copy\_if(visi.begin(),\ visi.end(),\ std::back\_inserter(kieti),}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{\ return\ s.getRez()\ >=\ 5.0;\ \});}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{return}\ std::chrono::duration<double>(}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ std::chrono::high\_resolution\_clock::now()\ -\/\ t0).count();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00074}00074\ \textcolor{comment}{//\ STRATEGIJA\ 1\ -\/\ du\ nauji\ konteineriai,\ originalas\ lieka}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00075}00075\ \textcolor{comment}{//\ Naudoja\ std::copy\_if}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00076}\doxymbox{\hyperlink{deque__ops_8cpp_a7cbf3ae10bfc6a1058d0edb264776e00}{00076}}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{deque__ops_8cpp_a7cbf3ae10bfc6a1058d0edb264776e00}{skirstymas\_s1\_d}}(\textcolor{keyword}{const}\ std::deque<Studentas>\&\ visi,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00077}00077\ \ \ \ \ std::deque<Studentas>\&\ kieti,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00078}00078\ \ \ \ \ std::deque<Studentas>\&\ vargsai)\ \{}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{auto}\ t0\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00080}00080\ \ \ \ \ kieti.clear();\ vargsai.clear();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00081}00081\ \ \ \ \ std::copy\_if(visi.begin(),\ visi.end(),\ std::back\_inserter(kieti),}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{\ return\ s.getRez()\ >=\ 5.0;\ \});}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00083}00083\ \ \ \ \ std::copy\_if(visi.begin(),\ visi.end(),\ std::back\_inserter(vargsai),}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{\ return\ s.getRez()\ <\ 5.0;\ \});}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{return}\ std::chrono::duration<double>(}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ std::chrono::high\_resolution\_clock::now()\ -\/\ t0).count();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00089}00089\ \textcolor{comment}{//\ STRATEGIJA\ 2\ -\/\ vienas\ naujas\ konteineris\ +\ erase/remove\_if}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00090}\doxymbox{\hyperlink{deque__ops_8cpp_ab2c3656fbd43a45e00bc6fa7d4d413a4}{00090}}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{deque__ops_8cpp_ab2c3656fbd43a45e00bc6fa7d4d413a4}{skirstymas\_s2\_d}}(std::deque<Studentas>\&\ studentai,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00091}00091\ \ \ \ \ std::deque<Studentas>\&\ vargsai)\ \{}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{auto}\ t0\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00093}00093\ \ \ \ \ vargsai.clear();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00094}00094\ \ \ \ \ std::copy\_if(studentai.begin(),\ studentai.end(),\ std::back\_inserter(vargsai),}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{\ return\ s.getRez()\ <\ 5.0;\ \});}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00096}00096\ \ \ \ \ studentai.erase(}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ std::remove\_if(studentai.begin(),\ studentai.end(),}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{\ return\ s.getRez()\ <\ 5.0;\ \}),}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ studentai.end());}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{return}\ std::chrono::duration<double>(}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ std::chrono::high\_resolution\_clock::now()\ -\/\ t0).count();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00104}00104\ \textcolor{comment}{//\ STRATEGIJA\ 3\ -\/\ stable\_partition\ (greiciausia\ deque\ atveju)}}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00105}\doxymbox{\hyperlink{deque__ops_8cpp_abf2f5f53c2bf7fe36381ada717c8389c}{00105}}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{deque__ops_8cpp_abf2f5f53c2bf7fe36381ada717c8389c}{skirstymas\_s3\_d}}(std::deque<Studentas>\&\ studentai,}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00106}00106\ \ \ \ \ std::deque<Studentas>\&\ vargsai)\ \{}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keyword}{auto}\ t0\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00108}00108\ \ \ \ \ vargsai.clear();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keyword}{auto}\ pivot\ =\ std::stable\_partition(studentai.begin(),\ studentai.end(),}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{\ return\ s.getRez()\ <\ 5.0;\ \});}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00111}00111\ \ \ \ \ vargsai.assign(studentai.begin(),\ pivot);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00112}00112\ \ \ \ \ studentai.erase(studentai.begin(),\ pivot);}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{return}\ std::chrono::duration<double>(}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ std::chrono::high\_resolution\_clock::now()\ -\/\ t0).count();}
+\DoxyCodeLine{\Hypertarget{deque__ops_8cpp_source_l00115}00115\ \}}
+
+\end{DoxyCode}

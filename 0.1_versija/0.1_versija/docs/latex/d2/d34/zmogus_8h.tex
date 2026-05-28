@@ -1,0 +1,71 @@
+\doxysection{zmogus.\+h Failo Nuoroda}
+\hypertarget{zmogus_8h}{}\label{zmogus_8h}\index{zmogus.h@{zmogus.h}}
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+\doxysubsubsection*{Klasės}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_zmogus}{Zmogus}}
+\begin{DoxyCompactList}\small\item\em Abstrakti bazine klase, atstovaujanti zmogu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Apibrėžimai}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{zmogus_8h_a2fff5759f39a466884cdbf46c5a74fb8}{ZMOGUS\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcijos}
+\begin{DoxyCompactItemize}
+\item 
+std::\+ostream \& \doxymbox{\hyperlink{zmogus_8h_aedf96ee29ef7e067065e26c678466c6d}{operator$<$$<$}} (std::\+ostream \&os, const \doxymbox{\hyperlink{class_zmogus}{Zmogus}} \&z)
+\begin{DoxyCompactList}\small\item\em Globalus isvedimo operatorius. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{zmogus_8h_doc-define-members}
+\Hypertarget{zmogus_8h_doc-define-members}
+\doxysubsection{Apibrėžimų Dokumentacija}
+\Hypertarget{zmogus_8h_a2fff5759f39a466884cdbf46c5a74fb8}\index{zmogus.h@{zmogus.h}!ZMOGUS\_H@{ZMOGUS\_H}}
+\index{ZMOGUS\_H@{ZMOGUS\_H}!zmogus.h@{zmogus.h}}
+\doxysubsubsection{\texorpdfstring{ZMOGUS\_H}{ZMOGUS\_H}}
+{\footnotesize\ttfamily \label{zmogus_8h_a2fff5759f39a466884cdbf46c5a74fb8} 
+\+\#define ZMOGUS\+\_\+H}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{zmogus_8h_source}{zmogus.\+h}} eilutėje \doxymbox{\hyperlink{zmogus_8h_source_l00003}{3}}.
+
+
+
+\label{zmogus_8h_doc-func-members}
+\Hypertarget{zmogus_8h_doc-func-members}
+\doxysubsection{Funkcijos Dokumentacija}
+\Hypertarget{zmogus_8h_aedf96ee29ef7e067065e26c678466c6d}\index{zmogus.h@{zmogus.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!zmogus.h@{zmogus.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{zmogus_8h_aedf96ee29ef7e067065e26c678466c6d} 
+std::\+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std::\+ostream \&}]{os}{, }\item[{const \doxymbox{\hyperlink{class_zmogus}{Zmogus}} \&}]{z}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Globalus isvedimo operatorius. 
+
+
+\begin{DoxyParams}{Parametrai}
+{\em os} & Isvesties srautas \\
+\hline
+{\em z} & Nuoroda i \doxylink{class_zmogus}{Zmogus} objekta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Gražina}
+Nuoroda i isvesties srauta
+\end{DoxyReturn}
+Naudoja virtualu print() metoda polimorfizmui uztikrinti 
+
+Apibrėžimas failo \doxymbox{\hyperlink{zmogus_8h_source}{zmogus.\+h}} eilutėje \doxymbox{\hyperlink{zmogus_8h_source_l00113}{113}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ z.\doxymbox{\hyperlink{class_zmogus_a54c34a84f8fee7c318a3c69072521b5f}{print}}(os);}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00116\ \}}
+
+\end{DoxyCode}

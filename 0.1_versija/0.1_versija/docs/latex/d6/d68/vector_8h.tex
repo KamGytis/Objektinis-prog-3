@@ -1,0 +1,268 @@
+\doxysection{vector.\+h Failo Nuoroda}
+\hypertarget{vector_8h}{}\label{vector_8h}\index{vector.h@{vector.h}}
+
+
+Nuosavos \doxylink{class_vector}{Vector} konteinerio klasės aprašas.  
+
+
+{\ttfamily \+\#include $<$memory$>$}\newline
+{\ttfamily \+\#include $<$stdexcept$>$}\newline
+{\ttfamily \+\#include $<$algorithm$>$}\newline
+{\ttfamily \+\#include $<$iterator$>$}\newline
+{\ttfamily \+\#include $<$initializer\+\_\+list$>$}\newline
+{\ttfamily \+\#include $<$limits$>$}\newline
+{\ttfamily \+\#include $<$cassert$>$}\newline
+\doxysubsubsection*{Klasės}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_vector}{Vector$<$ T, Allocator $>$}}
+\begin{DoxyCompactList}\small\item\em Nuosava \doxylink{class_vector}{Vector} konteinerio klasė. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcijos}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T, typename A$>$ }\\bool \doxymbox{\hyperlink{vector_8h_a850ba948cc32e0dfe80f001e30eb4c93}{operator==}} (const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&lhs, const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Lygybės operatorius. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename A$>$ }\\bool \doxymbox{\hyperlink{vector_8h_ab418777b944ec901d03a575496924ea6}{operator!=}} (const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&lhs, const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Nelygybės operatorius. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename A$>$ }\\bool \doxymbox{\hyperlink{vector_8h_a59dcdfd8d666e78feae067bcfefaa2aa}{operator$<$}} (const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&lhs, const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Leksikografinis \texorpdfstring{$<$}{<} palyginimas. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename A$>$ }\\bool \doxymbox{\hyperlink{vector_8h_a313db9dcd8f2dcf409b9cc7a872089c2}{operator$<$=}} (const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&lhs, const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Leksikografinis \texorpdfstring{$<$}{<}= palyginimas. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename A$>$ }\\bool \doxymbox{\hyperlink{vector_8h_ae9b01bb24bf849332baaebc57287d653}{operator$>$}} (const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&lhs, const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Leksikografinis \texorpdfstring{$>$}{>} palyginimas. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename A$>$ }\\bool \doxymbox{\hyperlink{vector_8h_af951f2567334e44de372780037b94fcc}{operator$>$=}} (const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&lhs, const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Leksikografinis \texorpdfstring{$>$}{>}= palyginimas. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename A$>$ }\\void \doxymbox{\hyperlink{vector_8h_a4ca7f223315f4e55bf9fdb64a1e57a19}{swap}} (\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&lhs, \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&rhs) noexcept
+\begin{DoxyCompactList}\small\item\em Globalus swap (ADL). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename A, typename U$>$ }\\\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$::\+size\+\_\+type \doxymbox{\hyperlink{vector_8h_a27485ee5e248708d46f9ee5070bd83dd}{erase}} (\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&c, const U \&value)
+\begin{DoxyCompactList}\small\item\em Ištrina elementus pagal reikšmę (C++20 stilius). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename A, typename Pred$>$ }\\\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$::\+size\+\_\+type \doxymbox{\hyperlink{vector_8h_a37ac162f755710a56ee55d3b5f34511e}{erase\+\_\+if}} (\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&c, Pred pred)
+\begin{DoxyCompactList}\small\item\em Ištrina elementus pagal predikato sąlygą (C++20 stilius). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Smulkus aprašymas}
+Nuosavos \doxylink{class_vector}{Vector} konteinerio klasės aprašas. 
+
+Pilnavertė std::\+vector alternatyva, realizuojanti visus Member types, Member functions ir Non-\/member functions pagal:\+ \href{https://en.cppreference.com/w/cpp/container/vector}{\texttt{https:\+/\+/\+en.\+cppreference.\+com/\+w/\+cpp/\+container/\+vector}}
+
+\begin{DoxyAuthor}{Autorius}
+\doxylink{class_studentas}{Studentas} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versija}
+3.\+0 
+\end{DoxyVersion}
+
+
+Apibrėžimas faile \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}}.
+
+
+
+\label{vector_8h_doc-func-members}
+\Hypertarget{vector_8h_doc-func-members}
+\doxysubsection{Funkcijos Dokumentacija}
+\Hypertarget{vector_8h_a27485ee5e248708d46f9ee5070bd83dd}\index{vector.h@{vector.h}!erase@{erase}}
+\index{erase@{erase}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily \label{vector_8h_a27485ee5e248708d46f9ee5070bd83dd} 
+template$<$typename T, typename A, typename U$>$ \\
+\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$::\+size\+\_\+type erase (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{c}{, }\item[{const U \&}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Ištrina elementus pagal reikšmę (C++20 stilius). 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l00622}{622}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00623\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::remove(c.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}(),\ c.\doxymbox{\hyperlink{class_vector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}(),\ value);}
+\DoxyCodeLine{00624\ \ \ \ \ \textcolor{keyword}{auto}\ n\ =\ c.\doxymbox{\hyperlink{class_vector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}()\ -\/\ it;}
+\DoxyCodeLine{00625\ \ \ \ \ c.\doxymbox{\hyperlink{class_vector_a9475371e34e4ce47ec3359ff25fed6ec}{erase}}(it,\ c.\doxymbox{\hyperlink{class_vector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}());}
+\DoxyCodeLine{00626\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}typename\ \doxymbox{\hyperlink{class_vector_aa296bc76ecea23add35328135cfd420e}{Vector<T,\ A>::size\_type}}\textcolor{keyword}{>}(n);}
+\DoxyCodeLine{00627\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector_8h_a37ac162f755710a56ee55d3b5f34511e}\index{vector.h@{vector.h}!erase\_if@{erase\_if}}
+\index{erase\_if@{erase\_if}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{erase\_if()}{erase\_if()}}
+{\footnotesize\ttfamily \label{vector_8h_a37ac162f755710a56ee55d3b5f34511e} 
+template$<$typename T, typename A, typename Pred$>$ \\
+\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$::\+size\+\_\+type erase\+\_\+if (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{c}{, }\item[{Pred}]{pred}{}\end{DoxyParamCaption})}
+
+
+
+Ištrina elementus pagal predikato sąlygą (C++20 stilius). 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l00631}{631}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00632\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::remove\_if(c.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}(),\ c.\doxymbox{\hyperlink{class_vector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}(),\ pred);}
+\DoxyCodeLine{00633\ \ \ \ \ \textcolor{keyword}{auto}\ n\ =\ c.\doxymbox{\hyperlink{class_vector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}()\ -\/\ it;}
+\DoxyCodeLine{00634\ \ \ \ \ c.\doxymbox{\hyperlink{class_vector_a9475371e34e4ce47ec3359ff25fed6ec}{erase}}(it,\ c.\doxymbox{\hyperlink{class_vector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}());}
+\DoxyCodeLine{00635\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}typename\ \doxymbox{\hyperlink{class_vector_aa296bc76ecea23add35328135cfd420e}{Vector<T,\ A>::size\_type}}\textcolor{keyword}{>}(n);}
+\DoxyCodeLine{00636\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector_8h_ab418777b944ec901d03a575496924ea6}\index{vector.h@{vector.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{vector_8h_ab418777b944ec901d03a575496924ea6} 
+template$<$typename T, typename A$>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{lhs}{, }\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Nelygybės operatorius. 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l00585}{585}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00586\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00587\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector_8h_a59dcdfd8d666e78feae067bcfefaa2aa}\index{vector.h@{vector.h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{vector_8h_a59dcdfd8d666e78feae067bcfefaa2aa} 
+template$<$typename T, typename A$>$ \\
+bool operator$<$ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{lhs}{, }\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Leksikografinis \texorpdfstring{$<$}{<} palyginimas. 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l00591}{591}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00592\ \ \ \ \ \textcolor{keywordflow}{return}\ std::lexicographical\_compare(lhs.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}(),\ lhs.\doxymbox{\hyperlink{class_vector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}(),}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ rhs.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}(),\ rhs.\doxymbox{\hyperlink{class_vector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}());}
+\DoxyCodeLine{00594\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector_8h_a313db9dcd8f2dcf409b9cc7a872089c2}\index{vector.h@{vector.h}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \label{vector_8h_a313db9dcd8f2dcf409b9cc7a872089c2} 
+template$<$typename T, typename A$>$ \\
+bool operator$<$= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{lhs}{, }\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Leksikografinis \texorpdfstring{$<$}{<}= palyginimas. 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l00598}{598}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00599\ \ \ \ \ \textcolor{keywordflow}{return}\ !(rhs\ <\ lhs);}
+\DoxyCodeLine{00600\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector_8h_a850ba948cc32e0dfe80f001e30eb4c93}\index{vector.h@{vector.h}!operator==@{operator==}}
+\index{operator==@{operator==}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{vector_8h_a850ba948cc32e0dfe80f001e30eb4c93} 
+template$<$typename T, typename A$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{lhs}{, }\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Lygybės operatorius. 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l00578}{578}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00579\ \ \ \ \ \textcolor{keywordflow}{if}\ (lhs.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}()\ !=\ rhs.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00580\ \ \ \ \ \textcolor{keywordflow}{return}\ std::equal(lhs.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}(),\ lhs.\doxymbox{\hyperlink{class_vector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}(),\ rhs.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}());}
+\DoxyCodeLine{00581\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector_8h_ae9b01bb24bf849332baaebc57287d653}\index{vector.h@{vector.h}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily \label{vector_8h_ae9b01bb24bf849332baaebc57287d653} 
+template$<$typename T, typename A$>$ \\
+bool operator$>$ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{lhs}{, }\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Leksikografinis \texorpdfstring{$>$}{>} palyginimas. 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l00604}{604}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00605\ \ \ \ \ \textcolor{keywordflow}{return}\ rhs\ <\ lhs;}
+\DoxyCodeLine{00606\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector_8h_af951f2567334e44de372780037b94fcc}\index{vector.h@{vector.h}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \label{vector_8h_af951f2567334e44de372780037b94fcc} 
+template$<$typename T, typename A$>$ \\
+bool operator$>$= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{lhs}{, }\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Leksikografinis \texorpdfstring{$>$}{>}= palyginimas. 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l00610}{610}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00611\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ <\ rhs);}
+\DoxyCodeLine{00612\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector_8h_a4ca7f223315f4e55bf9fdb64a1e57a19}\index{vector.h@{vector.h}!swap@{swap}}
+\index{swap@{swap}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily \label{vector_8h_a4ca7f223315f4e55bf9fdb64a1e57a19} 
+template$<$typename T, typename A$>$ \\
+void swap (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{lhs}{, }\item[{\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T, A $>$ \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Globalus swap (ADL). 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector_8h_source}{vector.\+h}} eilutėje \doxymbox{\hyperlink{vector_8h_source_l00616}{616}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00617\ \ \ \ \ lhs.\doxymbox{\hyperlink{class_vector_ae1387b115ad4874d76690acc701ce976}{swap}}(rhs);}
+\DoxyCodeLine{00618\ \}}
+
+\end{DoxyCode}

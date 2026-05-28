@@ -1,0 +1,1470 @@
+\doxysection{vector\+\_\+unit\+\_\+tests.\+cpp Failo Nuoroda}
+\hypertarget{vector__unit__tests_8cpp}{}\label{vector__unit__tests_8cpp}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+
+
+Google Test testai nuosavai \doxylink{class_vector}{Vector} klasei.  
+
+
+{\ttfamily \+\#include $<$gtest/\+gtest.\+h$>$}\newline
+{\ttfamily \+\#include "{}Vector.\+h"{}}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$numeric$>$}\newline
+{\ttfamily \+\#include $<$chrono$>$}\newline
+\doxysubsubsection*{Funkcijos}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a9905aa36203797ca98cba50c9e40e8b1}{TEST}} (Vector\+Constructors, Default\+Constructor)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_af203507f529f86c4214d0b0ec260813f}{TEST}} (Vector\+Constructors, Count\+Value\+Constructor)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_ab8cf0985c2e44aa4393014d2433c3259}{TEST}} (Vector\+Constructors, Count\+Default\+Constructor)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a2cc0fbea2dc7787823001afe229433fa}{TEST}} (Vector\+Constructors, Range\+Constructor)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a22d831a21d1e1c3c68b865087b52ccb3}{TEST}} (Vector\+Constructors, Initializer\+List\+Constructor)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_aaad8bbf06155896321324d1dd777004a}{TEST}} (Vector\+Constructors, Copy\+Constructor)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a7b0fa62fa402fb13326bf8027113858a}{TEST}} (Vector\+Constructors, Move\+Constructor)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_acbd92f034be555c631faecc434d2a15e}{TEST}} (Vector\+Assignment, Copy\+Assignment)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a5d092d4f420e34825004258ea8b38511}{TEST}} (Vector\+Assignment, Move\+Assignment)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a0b3ee6c52098a2cfbbc9c9c901378e83}{TEST}} (Vector\+Assignment, Initializer\+List\+Assignment)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a8e899ee196fca96fd92744c6afff3dc0}{TEST}} (Vector\+Assignment, Self\+Assignment)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_ae08ef2672b20c7d24f78b843a6078bc8}{TEST}} (Vector\+Assignment, Assign\+Count\+Value)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_adfa6fcc875ae5c02d1bfc350df36312a}{TEST}} (Vector\+Assignment, Assign\+Range)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_ae8a4362d89b4cc03020d923b099703c1}{TEST}} (Vector\+Assignment, Assign\+Initializer\+List)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_ae66ea820655730f52b8d159696ddc37f}{TEST}} (Vector\+Element\+Access, Operator\+Brackets)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a9dcc39a0bb70e8335b853b99561cf3ca}{TEST}} (Vector\+Element\+Access, At\+In\+Bounds)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a857bd50f1ff4a246894a0d951fd76a53}{TEST}} (Vector\+Element\+Access, At\+Out\+Of\+Bounds)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a0919a5f449d291f8d0ee00fb65cfaa34}{TEST}} (Vector\+Element\+Access, Front\+Back)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a61c33765d847274b29b45ae0a690574f}{TEST}} (Vector\+Element\+Access, Data\+Pointer)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_ac69242530330d576f10078db3fc74c5a}{TEST}} (Vector\+Iterators, Begin\+End)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a80aa1b659352764992a87bf8fc81b494}{TEST}} (Vector\+Iterators, Range\+For)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a5e57250ceb449bef9c4ba1fc3fe12127}{TEST}} (Vector\+Iterators, Const\+Iterator)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a78c06e75e2d6cc0c6a8927dedff3415b}{TEST}} (Vector\+Iterators, Reverse\+Iterator)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a82098b5fddc36c720e99af26c36eab7f}{TEST}} (Vector\+Iterators, Std\+Algorithms)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_aaa915b8037c2166dc1b26c27ec79081f}{TEST}} (Vector\+Capacity, Empty)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a9f0a8ea5fbc8ff77b68da62674185e32}{TEST}} (Vector\+Capacity, Size)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_aa4b23ce6473cfee9ce372cee9f91b94a}{TEST}} (Vector\+Capacity, Reserve)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a6c0dfe4973688a000a30148eb90f3a60}{TEST}} (Vector\+Capacity, Reserve\+No\+Shrink)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a1e7b7b623879977ece53909100a6fc9e}{TEST}} (Vector\+Capacity, Shrink\+To\+Fit)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_ae4016159a1dd18f396e407962773d66b}{TEST}} (Vector\+Capacity, Capacity\+Growth)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a09dcb58cef39b0d3f0276e8480be1da0}{TEST}} (Vector\+Modifiers, Clear)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a9c54691319a28ef93f27534b7936f08b}{TEST}} (Vector\+Modifiers, Push\+Back)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_adfe244c168385cd3c812484f390f599b}{TEST}} (Vector\+Modifiers, Push\+Back\+Move)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a61cabbd87ce4188887d2ac4476410568}{TEST}} (Vector\+Modifiers, Pop\+Back)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a410f0a181094395d465b983489232862}{TEST}} (Vector\+Modifiers, Insert\+Single)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a1ad333b91c867747301b70f82d2538c8}{TEST}} (Vector\+Modifiers, Insert\+Count)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a85e9c76ac6e7bfc3707fa397695f1809}{TEST}} (Vector\+Modifiers, Insert\+Range)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_ac4f765d0d8777ac765feeb3c3e6c89c7}{TEST}} (Vector\+Modifiers, Insert\+Initializer\+List)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a1036c4a89c7d5dad2a678f83349b975f}{TEST}} (Vector\+Modifiers, Erase\+Single)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a53884b53b82b3e2d75d6e78b6aab6574}{TEST}} (Vector\+Modifiers, Erase\+Range)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a73cea938502faa95400d7ca1ce4961d3}{TEST}} (Vector\+Modifiers, Emplace\+Back)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_acd3fd34c64682d0f32386a4f60b0c278}{TEST}} (Vector\+Modifiers, Emplace)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a227bbbe98f6417aa3489112cc662f84a}{TEST}} (Vector\+Modifiers, Resize\+Smaller)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a30343c3081f1c2b5b8e83e6cef09c57a}{TEST}} (Vector\+Modifiers, Resize\+Larger)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_aeef11cbb5c10f0d62287578b61b3d197}{TEST}} (Vector\+Modifiers, Swap)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_afc93b8d66fd3c7fc76e169a62adb9104}{TEST}} (Vector\+Comparison, Equality)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_aec064be43c770c41a4acfc20216db933}{TEST}} (Vector\+Comparison, Lexicographic\+Order)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a720d0ae3c8422ee63bbb81128c715f3a}{TEST}} (Vector\+Non\+Member, Global\+Swap)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a16a852e2ff63cdb1e69f91656a1884a3}{TEST}} (Vector\+Non\+Member, Erase\+By\+Value)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_aad9115a7599130a9cfde563bb836287f}{TEST}} (Vector\+Non\+Member, Erase\+If)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_aeac9be131be116e0b0462e653adde394}{TEST}} (Vector\+Reallocation, Count\+Reallocations)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a6a1dba404a4bb4e7c3396fa4fe9a2218}{TEST}} (Vector\+Reallocation, Compare\+With\+Std\+Vector)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_ad6838c0da9a50caf8da7db06ed7613bd}{TEST}} (Vector\+Performance, Push\+Back10k)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a617b2197729ec52adc6750eada85b421}{TEST}} (Vector\+Performance, Push\+Back100k)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_ab0662d5df9b62a47522743c37497825e}{TEST}} (Vector\+Performance, Push\+Back1M)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_abb00479a1ff31f02bdbe9ab8811ca2f5}{TEST}} (Vector\+Performance, Std\+Vector\+Push\+Back1M)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a049c05b9caf29c98bb0b8f182bff0275}{TEST}} (Vector\+Edge\+Cases, Empty\+Vector\+Iterators)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_adf392972b67bc19e7ff19ac3fa38064f}{TEST}} (Vector\+Edge\+Cases, Move\+And\+Push\+Back)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_ae43d0db91717b41233db0b2722c7c37f}{TEST}} (Vector\+Edge\+Cases, String\+Elements)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_a0543feb21dcfd13b3232c39ab1f5d0da}{TEST}} (Vector\+Edge\+Cases, Nested\+Vector)
+\item 
+\doxymbox{\hyperlink{vector__unit__tests_8cpp_ab482939e2d37dfa9f3942054ddd1282a}{TEST}} (Vector\+Edge\+Cases, Reserve\+Before\+Push)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Smulkus aprašymas}
+Google Test testai nuosavai \doxylink{class_vector}{Vector} klasei. 
+
+Patikrina visą \doxylink{class_vector}{Vector} funkcionalumą pagal std::\+vector specifikaciją. Kiekviena testuojama grupė atitinka std::\+vector Member functions sekciją. 
+
+Apibrėžimas faile \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}}.
+
+
+
+\label{vector__unit__tests_8cpp_doc-func-members}
+\Hypertarget{vector__unit__tests_8cpp_doc-func-members}
+\doxysubsection{Funkcijos Dokumentacija}
+\Hypertarget{vector__unit__tests_8cpp_ae08ef2672b20c7d24f78b843a6078bc8}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_ae08ef2672b20c7d24f78b843a6078bc8} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Assignment}]{}{, }\item[{Assign\+Count\+Value}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00110}{110}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00112\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_addd43241ef82bb05d728d59aed9e0a2c}{assign}}(5,\ 7);}
+\DoxyCodeLine{00113\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 5u);}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 5;\ ++i)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ EXPECT\_EQ(v[i],\ 7);}
+\DoxyCodeLine{00116\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_ae8a4362d89b4cc03020d923b099703c1}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_ae8a4362d89b4cc03020d923b099703c1} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Assignment}]{}{, }\item[{Assign\+Initializer\+List}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00126}{126}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00128\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_addd43241ef82bb05d728d59aed9e0a2c}{assign}}(\{100,\ 200,\ 300\});}
+\DoxyCodeLine{00129\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00130\ \ \ \ \ EXPECT\_EQ(v[2],\ 300);}
+\DoxyCodeLine{00131\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_adfa6fcc875ae5c02d1bfc350df36312a}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_adfa6fcc875ae5c02d1bfc350df36312a} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Assignment}]{}{, }\item[{Assign\+Range}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00118}{118}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ std::vector<int>\ src\ =\ \{10,\ 20,\ 30\};}
+\DoxyCodeLine{00120\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00121\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_addd43241ef82bb05d728d59aed9e0a2c}{assign}}(src.begin(),\ src.end());}
+\DoxyCodeLine{00122\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00123\ \ \ \ \ EXPECT\_EQ(v[1],\ 20);}
+\DoxyCodeLine{00124\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_acbd92f034be555c631faecc434d2a15e}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_acbd92f034be555c631faecc434d2a15e} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Assignment}]{}{, }\item[{Copy\+Assignment}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00078}{78}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ a\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00080\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ b;}
+\DoxyCodeLine{00081\ \ \ \ \ b\ =\ a;}
+\DoxyCodeLine{00082\ \ \ \ \ EXPECT\_EQ(b.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00083\ \ \ \ \ a[0]\ =\ 99;}
+\DoxyCodeLine{00084\ \ \ \ \ EXPECT\_EQ(b[0],\ 1);\ \ \textcolor{comment}{//\ gili\ kopija}}
+\DoxyCodeLine{00085\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a0b3ee6c52098a2cfbbc9c9c901378e83}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a0b3ee6c52098a2cfbbc9c9c901378e83} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Assignment}]{}{, }\item[{Initializer\+List\+Assignment}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00096}{96}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00098\ \ \ \ \ v\ =\ \{7,\ 8,\ 9\};}
+\DoxyCodeLine{00099\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00100\ \ \ \ \ EXPECT\_EQ(v[2],\ 9);}
+\DoxyCodeLine{00101\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a5d092d4f420e34825004258ea8b38511}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [6/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a5d092d4f420e34825004258ea8b38511} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Assignment}]{}{, }\item[{Move\+Assignment}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00087}{87}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ a\ =\ \{4,\ 5,\ 6\};}
+\DoxyCodeLine{00089\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ b;}
+\DoxyCodeLine{00090\ \ \ \ \ b\ =\ std::move(a);}
+\DoxyCodeLine{00091\ \ \ \ \ EXPECT\_EQ(b.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00092\ \ \ \ \ EXPECT\_EQ(b[0],\ 4);}
+\DoxyCodeLine{00093\ \ \ \ \ EXPECT\_EQ(a.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 0u);}
+\DoxyCodeLine{00094\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a8e899ee196fca96fd92744c6afff3dc0}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [7/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a8e899ee196fca96fd92744c6afff3dc0} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Assignment}]{}{, }\item[{Self\+Assignment}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00103}{103}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00105\ \ \ \ \ v\ =\ v;\ \ \textcolor{comment}{//\ neturi\ sukelti\ klaidos}}
+\DoxyCodeLine{00106\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00107\ \ \ \ \ EXPECT\_EQ(v[0],\ 1);}
+\DoxyCodeLine{00108\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_ae4016159a1dd18f396e407962773d66b}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [8/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_ae4016159a1dd18f396e407962773d66b} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Capacity}]{}{, }\item[{Capacity\+Growth}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00251}{251}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ reallocs\ =\ 0;}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ prev\_cap\ =\ 0;}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 1000;\ ++i)\ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}()\ ==\ v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}())\ ++reallocs;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(i);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ prev\_cap\ =\ v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}();}
+\DoxyCodeLine{00259\ \ \ \ \ \}}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{comment}{//\ Turėtų\ būti\ logaritminis\ perskirstymų\ skaičius}}
+\DoxyCodeLine{00261\ \ \ \ \ EXPECT\_LT(reallocs,\ 25u);\ \ \textcolor{comment}{//\ <=\ log2(1000)\ +\ 1}}
+\DoxyCodeLine{00262\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_aaa915b8037c2166dc1b26c27ec79081f}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [9/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_aaa915b8037c2166dc1b26c27ec79081f} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Capacity}]{}{, }\item[{Empty}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00212}{212}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00214\ \ \ \ \ EXPECT\_TRUE(v.\doxymbox{\hyperlink{class_vector_ad5e31c0f82683ece1b5b020c15a8b77b}{empty}}());}
+\DoxyCodeLine{00215\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(1);}
+\DoxyCodeLine{00216\ \ \ \ \ EXPECT\_FALSE(v.\doxymbox{\hyperlink{class_vector_ad5e31c0f82683ece1b5b020c15a8b77b}{empty}}());}
+\DoxyCodeLine{00217\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_aa4b23ce6473cfee9ce372cee9f91b94a}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [10/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_aa4b23ce6473cfee9ce372cee9f91b94a} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Capacity}]{}{, }\item[{Reserve}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00227}{227}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00229\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_aae047b4b6a79dce4dcc3ffc3c39939d2}{reserve}}(100);}
+\DoxyCodeLine{00230\ \ \ \ \ EXPECT\_GE(v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}(),\ 100u);}
+\DoxyCodeLine{00231\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 0u);\ \ \textcolor{comment}{//\ dydis\ nepakito}}
+\DoxyCodeLine{00232\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a6c0dfe4973688a000a30148eb90f3a60}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [11/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a6c0dfe4973688a000a30148eb90f3a60} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Capacity}]{}{, }\item[{Reserve\+No\+Shrink}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00234}{234}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00236\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_aae047b4b6a79dce4dcc3ffc3c39939d2}{reserve}}(100);}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ cap\ =\ v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}();}
+\DoxyCodeLine{00238\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_aae047b4b6a79dce4dcc3ffc3c39939d2}{reserve}}(10);\ \ \textcolor{comment}{//\ mažesnis\ -\/\ neturėtų\ sumažėti}}
+\DoxyCodeLine{00239\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}(),\ cap);}
+\DoxyCodeLine{00240\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a1e7b7b623879977ece53909100a6fc9e}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [12/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a1e7b7b623879977ece53909100a6fc9e} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Capacity}]{}{, }\item[{Shrink\+To\+Fit}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00242}{242}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00244\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_aae047b4b6a79dce4dcc3ffc3c39939d2}{reserve}}(100);}
+\DoxyCodeLine{00245\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(1);}
+\DoxyCodeLine{00246\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(2);}
+\DoxyCodeLine{00247\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a5746026edae1b2adb3b2133b99996f32}{shrink\_to\_fit}}();}
+\DoxyCodeLine{00248\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}(),\ v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}());}
+\DoxyCodeLine{00249\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a9f0a8ea5fbc8ff77b68da62674185e32}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [13/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a9f0a8ea5fbc8ff77b68da62674185e32} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Capacity}]{}{, }\item[{Size}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00219}{219}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00221\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 0u);}
+\DoxyCodeLine{00222\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(1);}
+\DoxyCodeLine{00223\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(2);}
+\DoxyCodeLine{00224\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 2u);}
+\DoxyCodeLine{00225\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_afc93b8d66fd3c7fc76e169a62adb9104}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [14/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_afc93b8d66fd3c7fc76e169a62adb9104} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Comparison}]{}{, }\item[{Equality}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00389}{389}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ a\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00391\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ b\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00392\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ c\ =\ \{1,\ 2,\ 4\};}
+\DoxyCodeLine{00393\ \ \ \ \ EXPECT\_TRUE(a\ ==\ b);}
+\DoxyCodeLine{00394\ \ \ \ \ EXPECT\_FALSE(a\ ==\ c);}
+\DoxyCodeLine{00395\ \ \ \ \ EXPECT\_TRUE(a\ !=\ c);}
+\DoxyCodeLine{00396\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_aec064be43c770c41a4acfc20216db933}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [15/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_aec064be43c770c41a4acfc20216db933} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Comparison}]{}{, }\item[{Lexicographic\+Order}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00398}{398}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00399\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ a\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00400\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ b\ =\ \{1,\ 2,\ 4\};}
+\DoxyCodeLine{00401\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ c\ =\ \{1,\ 2,\ 3,\ 0\};}
+\DoxyCodeLine{00402\ \ \ \ \ EXPECT\_TRUE(a\ <\ b);}
+\DoxyCodeLine{00403\ \ \ \ \ EXPECT\_TRUE(a\ <\ c);}
+\DoxyCodeLine{00404\ \ \ \ \ EXPECT\_TRUE(b\ >\ a);}
+\DoxyCodeLine{00405\ \ \ \ \ EXPECT\_TRUE(a\ <=\ a);}
+\DoxyCodeLine{00406\ \ \ \ \ EXPECT\_TRUE(a\ >=\ a);}
+\DoxyCodeLine{00407\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_aaad8bbf06155896321324d1dd777004a}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [16/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_aaad8bbf06155896321324d1dd777004a} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Constructors}]{}{, }\item[{Copy\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00057}{57}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ a\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00059\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ b(a);}
+\DoxyCodeLine{00060\ \ \ \ \ EXPECT\_EQ(b.size(),\ 3u);}
+\DoxyCodeLine{00061\ \ \ \ \ EXPECT\_EQ(b[0],\ 1);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ Gili\ kopija\ -\/\ pakeitimas\ a\ neturi\ itakos\ b}}
+\DoxyCodeLine{00063\ \ \ \ \ a[0]\ =\ 99;}
+\DoxyCodeLine{00064\ \ \ \ \ EXPECT\_EQ(b[0],\ 1);}
+\DoxyCodeLine{00065\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_ab8cf0985c2e44aa4393014d2433c3259}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [17/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_ab8cf0985c2e44aa4393014d2433c3259} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Constructors}]{}{, }\item[{Count\+Default\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00034}{34}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v(4);}
+\DoxyCodeLine{00036\ \ \ \ \ EXPECT\_EQ(v.size(),\ 4u);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 4;\ ++i)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ EXPECT\_EQ(v[i],\ 0);}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_af203507f529f86c4214d0b0ec260813f}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [18/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_af203507f529f86c4214d0b0ec260813f} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Constructors}]{}{, }\item[{Count\+Value\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00027}{27}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v(5,\ 42);}
+\DoxyCodeLine{00029\ \ \ \ \ EXPECT\_EQ(v.size(),\ 5u);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 5;\ ++i)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ EXPECT\_EQ(v[i],\ 42);}
+\DoxyCodeLine{00032\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a9905aa36203797ca98cba50c9e40e8b1}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [19/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a9905aa36203797ca98cba50c9e40e8b1} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Constructors}]{}{, }\item[{Default\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00020}{20}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00022\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 0u);}
+\DoxyCodeLine{00023\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}(),\ 0u);}
+\DoxyCodeLine{00024\ \ \ \ \ EXPECT\_TRUE(v.\doxymbox{\hyperlink{class_vector_ad5e31c0f82683ece1b5b020c15a8b77b}{empty}}());}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a22d831a21d1e1c3c68b865087b52ccb3}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [20/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a22d831a21d1e1c3c68b865087b52ccb3} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Constructors}]{}{, }\item[{Initializer\+List\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00049}{49}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{10,\ 20,\ 30\};}
+\DoxyCodeLine{00051\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00052\ \ \ \ \ EXPECT\_EQ(v[0],\ 10);}
+\DoxyCodeLine{00053\ \ \ \ \ EXPECT\_EQ(v[1],\ 20);}
+\DoxyCodeLine{00054\ \ \ \ \ EXPECT\_EQ(v[2],\ 30);}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a7b0fa62fa402fb13326bf8027113858a}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [21/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a7b0fa62fa402fb13326bf8027113858a} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Constructors}]{}{, }\item[{Move\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00067}{67}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ a\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00069\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ b(std::move(a));}
+\DoxyCodeLine{00070\ \ \ \ \ EXPECT\_EQ(b.size(),\ 3u);}
+\DoxyCodeLine{00071\ \ \ \ \ EXPECT\_EQ(b[0],\ 1);}
+\DoxyCodeLine{00072\ \ \ \ \ EXPECT\_EQ(a.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 0u);\ \ \textcolor{comment}{//\ originalas\ tuscias\ po\ perkėlimo}}
+\DoxyCodeLine{00073\ \ \ \ \ EXPECT\_EQ(a.\doxymbox{\hyperlink{class_vector_a1fcf91de0c080eb7a487dddb3124ed7c}{data}}(),\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00074\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a2cc0fbea2dc7787823001afe229433fa}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [22/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a2cc0fbea2dc7787823001afe229433fa} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Constructors}]{}{, }\item[{Range\+Constructor}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00041}{41}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<int>\ src\ =\ \{1,\ 2,\ 3,\ 4,\ 5\};}
+\DoxyCodeLine{00043\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v(src.begin(),\ src.end());}
+\DoxyCodeLine{00044\ \ \ \ \ EXPECT\_EQ(v.size(),\ 5u);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 5;\ ++i)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ EXPECT\_EQ(v[i],\ (\textcolor{keywordtype}{int})(i\ +\ 1));}
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a049c05b9caf29c98bb0b8f182bff0275}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [23/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a049c05b9caf29c98bb0b8f182bff0275} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Edge\+Cases}]{}{, }\item[{Empty\+Vector\+Iterators}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00520}{520}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00521\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00522\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}(),\ v.\doxymbox{\hyperlink{class_vector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}());}
+\DoxyCodeLine{00523\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_a724ade5c5b5f8f5f8669965125b0e5bd}{rbegin}}(),\ v.\doxymbox{\hyperlink{class_vector_a730043c7d5c7fd7507ec811d99c68a63}{rend}}());}
+\DoxyCodeLine{00524\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_adf392972b67bc19e7ff19ac3fa38064f}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [24/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_adf392972b67bc19e7ff19ac3fa38064f} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Edge\+Cases}]{}{, }\item[{Move\+And\+Push\+Back}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00526}{526}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00527\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ a\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00528\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ b\ =\ std::move(a);}
+\DoxyCodeLine{00529\ \ \ \ \ b.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(4);}
+\DoxyCodeLine{00530\ \ \ \ \ EXPECT\_EQ(b.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 4u);}
+\DoxyCodeLine{00531\ \ \ \ \ EXPECT\_EQ(b[3],\ 4);}
+\DoxyCodeLine{00532\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a0543feb21dcfd13b3232c39ab1f5d0da}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [25/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a0543feb21dcfd13b3232c39ab1f5d0da} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Edge\+Cases}]{}{, }\item[{Nested\+Vector}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00545}{545}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00546\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<Vector<int>}}>\ v;}
+\DoxyCodeLine{00547\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(\{1,\ 2,\ 3\});}
+\DoxyCodeLine{00548\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(\{4,\ 5\});}
+\DoxyCodeLine{00549\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 2u);}
+\DoxyCodeLine{00550\ \ \ \ \ EXPECT\_EQ(v[0].size(),\ 3u);}
+\DoxyCodeLine{00551\ \ \ \ \ EXPECT\_EQ(v[1][0],\ 4);}
+\DoxyCodeLine{00552\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_ab482939e2d37dfa9f3942054ddd1282a}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [26/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_ab482939e2d37dfa9f3942054ddd1282a} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Edge\+Cases}]{}{, }\item[{Reserve\+Before\+Push}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00554}{554}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00555\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00556\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_aae047b4b6a79dce4dcc3ffc3c39939d2}{reserve}}(1000);}
+\DoxyCodeLine{00557\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ cap\ =\ v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}();}
+\DoxyCodeLine{00558\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 1000;\ ++i)\ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(i);}
+\DoxyCodeLine{00559\ \ \ \ \ \textcolor{comment}{//\ Neturėtų\ būti\ perskirstymo}}
+\DoxyCodeLine{00560\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}(),\ cap);}
+\DoxyCodeLine{00561\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 1000u);}
+\DoxyCodeLine{00562\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_ae43d0db91717b41233db0b2722c7c37f}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [27/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_ae43d0db91717b41233db0b2722c7c37f} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Edge\+Cases}]{}{, }\item[{String\+Elements}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00534}{534}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00535\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<std::string>}}\ v;}
+\DoxyCodeLine{00536\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(\textcolor{stringliteral}{"{}labas"{}});}
+\DoxyCodeLine{00537\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(\textcolor{stringliteral}{"{}pasauli"{}});}
+\DoxyCodeLine{00538\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 2u);}
+\DoxyCodeLine{00539\ \ \ \ \ EXPECT\_EQ(v[0],\ \textcolor{stringliteral}{"{}labas"{}});}
+\DoxyCodeLine{00540\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a58b6689868c3d347a90f6c7c2d60be12}{insert}}(v.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}()\ +\ 1,\ \textcolor{stringliteral}{"{}grazus"{}});}
+\DoxyCodeLine{00541\ \ \ \ \ EXPECT\_EQ(v[1],\ \textcolor{stringliteral}{"{}grazus"{}});}
+\DoxyCodeLine{00542\ \ \ \ \ EXPECT\_EQ(v[2],\ \textcolor{stringliteral}{"{}pasauli"{}});}
+\DoxyCodeLine{00543\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a9dcc39a0bb70e8335b853b99561cf3ca}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [28/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a9dcc39a0bb70e8335b853b99561cf3ca} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Element\+Access}]{}{, }\item[{At\+In\+Bounds}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00142}{142}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00144\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_a0949c5f412f6fedaa2a35d35752f0555}{at}}(0),\ 1);}
+\DoxyCodeLine{00145\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_a0949c5f412f6fedaa2a35d35752f0555}{at}}(2),\ 3);}
+\DoxyCodeLine{00146\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a857bd50f1ff4a246894a0d951fd76a53}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [29/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a857bd50f1ff4a246894a0d951fd76a53} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Element\+Access}]{}{, }\item[{At\+Out\+Of\+Bounds}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00148}{148}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00150\ \ \ \ \ EXPECT\_THROW(v.\doxymbox{\hyperlink{class_vector_a0949c5f412f6fedaa2a35d35752f0555}{at}}(3),\ std::out\_of\_range);}
+\DoxyCodeLine{00151\ \ \ \ \ EXPECT\_THROW(v.\doxymbox{\hyperlink{class_vector_a0949c5f412f6fedaa2a35d35752f0555}{at}}(100),\ std::out\_of\_range);}
+\DoxyCodeLine{00152\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a61c33765d847274b29b45ae0a690574f}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [30/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a61c33765d847274b29b45ae0a690574f} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Element\+Access}]{}{, }\item[{Data\+Pointer}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00162}{162}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{int}*\ ptr\ =\ v.\doxymbox{\hyperlink{class_vector_a1fcf91de0c080eb7a487dddb3124ed7c}{data}}();}
+\DoxyCodeLine{00165\ \ \ \ \ EXPECT\_EQ(ptr[0],\ 1);}
+\DoxyCodeLine{00166\ \ \ \ \ ptr[0]\ =\ 42;}
+\DoxyCodeLine{00167\ \ \ \ \ EXPECT\_EQ(v[0],\ 42);}
+\DoxyCodeLine{00168\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a0919a5f449d291f8d0ee00fb65cfaa34}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [31/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a0919a5f449d291f8d0ee00fb65cfaa34} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Element\+Access}]{}{, }\item[{Front\+Back}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00154}{154}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{5,\ 6,\ 7\};}
+\DoxyCodeLine{00156\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_a50ff0e4eccfdabf16696498bc42a823c}{front}}(),\ 5);}
+\DoxyCodeLine{00157\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_a0977f3472b15fe46a8895efb09494bed}{back}}(),\ 7);}
+\DoxyCodeLine{00158\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a50ff0e4eccfdabf16696498bc42a823c}{front}}()\ =\ 99;}
+\DoxyCodeLine{00159\ \ \ \ \ EXPECT\_EQ(v[0],\ 99);}
+\DoxyCodeLine{00160\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_ae66ea820655730f52b8d159696ddc37f}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [32/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_ae66ea820655730f52b8d159696ddc37f} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Element\+Access}]{}{, }\item[{Operator\+Brackets}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00135}{135}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{10,\ 20,\ 30\};}
+\DoxyCodeLine{00137\ \ \ \ \ EXPECT\_EQ(v[0],\ 10);}
+\DoxyCodeLine{00138\ \ \ \ \ v[1]\ =\ 99;}
+\DoxyCodeLine{00139\ \ \ \ \ EXPECT\_EQ(v[1],\ 99);}
+\DoxyCodeLine{00140\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_ac69242530330d576f10078db3fc74c5a}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [33/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_ac69242530330d576f10078db3fc74c5a} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Iterators}]{}{, }\item[{Begin\+End}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00172}{172}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3,\ 4,\ 5\};}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{int}\ sum\ =\ 0;}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ v.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}();\ it\ !=\ v.\doxymbox{\hyperlink{class_vector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}();\ ++it)}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ sum\ +=\ *it;}
+\DoxyCodeLine{00177\ \ \ \ \ EXPECT\_EQ(sum,\ 15);}
+\DoxyCodeLine{00178\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a5e57250ceb449bef9c4ba1fc3fe12127}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [34/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a5e57250ceb449bef9c4ba1fc3fe12127} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Iterators}]{}{, }\item[{Const\+Iterator}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00187}{187}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{10,\ 20,\ 30\};}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{int}\ sum\ =\ 0;}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ v.\doxymbox{\hyperlink{class_vector_a0e785a437d78d8e9f925f217a4a158ce}{cbegin}}();\ it\ !=\ v.\doxymbox{\hyperlink{class_vector_a8bb1d0ca8b8eefdb6c18c1ea1a90cec9}{cend}}();\ ++it)}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ sum\ +=\ *it;}
+\DoxyCodeLine{00192\ \ \ \ \ EXPECT\_EQ(sum,\ 60);}
+\DoxyCodeLine{00193\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a80aa1b659352764992a87bf8fc81b494}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [35/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a80aa1b659352764992a87bf8fc81b494} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Iterators}]{}{, }\item[{Range\+For}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00180}{180}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{2,\ 4,\ 6\};}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{int}\ sum\ =\ 0;}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ x\ :\ v)\ sum\ +=\ x;}
+\DoxyCodeLine{00184\ \ \ \ \ EXPECT\_EQ(sum,\ 12);}
+\DoxyCodeLine{00185\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a78c06e75e2d6cc0c6a8927dedff3415b}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [36/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a78c06e75e2d6cc0c6a8927dedff3415b} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Iterators}]{}{, }\item[{Reverse\+Iterator}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00195}{195}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00197\ \ \ \ \ std::vector<int>\ rev(v.\doxymbox{\hyperlink{class_vector_a724ade5c5b5f8f5f8669965125b0e5bd}{rbegin}}(),\ v.\doxymbox{\hyperlink{class_vector_a730043c7d5c7fd7507ec811d99c68a63}{rend}}());}
+\DoxyCodeLine{00198\ \ \ \ \ EXPECT\_EQ(rev[0],\ 3);}
+\DoxyCodeLine{00199\ \ \ \ \ EXPECT\_EQ(rev[1],\ 2);}
+\DoxyCodeLine{00200\ \ \ \ \ EXPECT\_EQ(rev[2],\ 1);}
+\DoxyCodeLine{00201\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a82098b5fddc36c720e99af26c36eab7f}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [37/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a82098b5fddc36c720e99af26c36eab7f} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Iterators}]{}{, }\item[{Std\+Algorithms}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00203}{203}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{5,\ 3,\ 1,\ 4,\ 2\};}
+\DoxyCodeLine{00205\ \ \ \ \ std::sort(v.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}(),\ v.\doxymbox{\hyperlink{class_vector_abaaafc8a6696d49ceb4f799d2f78e299}{end}}());}
+\DoxyCodeLine{00206\ \ \ \ \ EXPECT\_EQ(v[0],\ 1);}
+\DoxyCodeLine{00207\ \ \ \ \ EXPECT\_EQ(v[4],\ 5);}
+\DoxyCodeLine{00208\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a09dcb58cef39b0d3f0276e8480be1da0}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [38/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a09dcb58cef39b0d3f0276e8480be1da0} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Clear}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00266}{266}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00268\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a1a4abc0a085cd7a32db757362f085485}{clear}}();}
+\DoxyCodeLine{00269\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 0u);}
+\DoxyCodeLine{00270\ \ \ \ \ EXPECT\_TRUE(v.\doxymbox{\hyperlink{class_vector_ad5e31c0f82683ece1b5b020c15a8b77b}{empty}}());}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{comment}{//\ Capacity\ išsaugoma}}
+\DoxyCodeLine{00272\ \ \ \ \ EXPECT\_GE(v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}(),\ 3u);}
+\DoxyCodeLine{00273\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_acd3fd34c64682d0f32386a4f60b0c278}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [39/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_acd3fd34c64682d0f32386a4f60b0c278} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Emplace}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00355}{355}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00356\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<std::pair<int,int>}}>\ v\ =\ \{\{1,2\},\ \{5,6\}\};}
+\DoxyCodeLine{00357\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a6a7f65e9b8e57122c868d0aa4f326c19}{emplace}}(v.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}()\ +\ 1,\ 3,\ 4);}
+\DoxyCodeLine{00358\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00359\ \ \ \ \ EXPECT\_EQ(v[1].first,\ 3);}
+\DoxyCodeLine{00360\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a73cea938502faa95400d7ca1ce4961d3}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [40/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a73cea938502faa95400d7ca1ce4961d3} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Emplace\+Back}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00346}{346}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<std::pair<int,int>}}>\ v;}
+\DoxyCodeLine{00348\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a5d19b8e8fd6ded1e2e99045c3962c7e9}{emplace\_back}}(1,\ 2);}
+\DoxyCodeLine{00349\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a5d19b8e8fd6ded1e2e99045c3962c7e9}{emplace\_back}}(3,\ 4);}
+\DoxyCodeLine{00350\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 2u);}
+\DoxyCodeLine{00351\ \ \ \ \ EXPECT\_EQ(v[0].first,\ 1);}
+\DoxyCodeLine{00352\ \ \ \ \ EXPECT\_EQ(v[1].second,\ 4);}
+\DoxyCodeLine{00353\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a53884b53b82b3e2d75d6e78b6aab6574}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [41/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a53884b53b82b3e2d75d6e78b6aab6574} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Erase\+Range}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00338}{338}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3,\ 4,\ 5\};}
+\DoxyCodeLine{00340\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a9475371e34e4ce47ec3359ff25fed6ec}{erase}}(v.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}()\ +\ 1,\ v.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}()\ +\ 4);\ \ \textcolor{comment}{//\ istrina\ 2,3,4}}
+\DoxyCodeLine{00341\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 2u);}
+\DoxyCodeLine{00342\ \ \ \ \ EXPECT\_EQ(v[0],\ 1);}
+\DoxyCodeLine{00343\ \ \ \ \ EXPECT\_EQ(v[1],\ 5);}
+\DoxyCodeLine{00344\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a1036c4a89c7d5dad2a678f83349b975f}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [42/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a1036c4a89c7d5dad2a678f83349b975f} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Erase\+Single}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00330}{330}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3,\ 4\};}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ v.\doxymbox{\hyperlink{class_vector_a9475371e34e4ce47ec3359ff25fed6ec}{erase}}(v.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}()\ +\ 1);}
+\DoxyCodeLine{00333\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00334\ \ \ \ \ EXPECT\_EQ(v[1],\ 3);}
+\DoxyCodeLine{00335\ \ \ \ \ EXPECT\_EQ(*it,\ 3);}
+\DoxyCodeLine{00336\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a1ad333b91c867747301b70f82d2538c8}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [43/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a1ad333b91c867747301b70f82d2538c8} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Insert\+Count}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00305}{305}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 5\};}
+\DoxyCodeLine{00307\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a58b6689868c3d347a90f6c7c2d60be12}{insert}}(v.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}()\ +\ 1,\ 3,\ 2);\ \ \textcolor{comment}{//\ idesime\ 3\ x\ "{}2"{}}}
+\DoxyCodeLine{00308\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 5u);}
+\DoxyCodeLine{00309\ \ \ \ \ EXPECT\_EQ(v[1],\ 2);}
+\DoxyCodeLine{00310\ \ \ \ \ EXPECT\_EQ(v[2],\ 2);}
+\DoxyCodeLine{00311\ \ \ \ \ EXPECT\_EQ(v[3],\ 2);}
+\DoxyCodeLine{00312\ \ \ \ \ EXPECT\_EQ(v[4],\ 5);}
+\DoxyCodeLine{00313\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_ac4f765d0d8777ac765feeb3c3e6c89c7}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [44/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_ac4f765d0d8777ac765feeb3c3e6c89c7} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Insert\+Initializer\+List}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00323}{323}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00324\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 5\};}
+\DoxyCodeLine{00325\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a58b6689868c3d347a90f6c7c2d60be12}{insert}}(v.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}()\ +\ 1,\ \{2,\ 3,\ 4\});}
+\DoxyCodeLine{00326\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 5u);}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 5;\ ++i)\ EXPECT\_EQ(v[i],\ i\ +\ 1);}
+\DoxyCodeLine{00328\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a85e9c76ac6e7bfc3707fa397695f1809}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [45/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a85e9c76ac6e7bfc3707fa397695f1809} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Insert\+Range}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00315}{315}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 5\};}
+\DoxyCodeLine{00317\ \ \ \ \ std::vector<int>\ src\ =\ \{2,\ 3,\ 4\};}
+\DoxyCodeLine{00318\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a58b6689868c3d347a90f6c7c2d60be12}{insert}}(v.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}()\ +\ 1,\ src.begin(),\ src.end());}
+\DoxyCodeLine{00319\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 5u);}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 5;\ ++i)\ EXPECT\_EQ(v[i],\ i\ +\ 1);}
+\DoxyCodeLine{00321\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a410f0a181094395d465b983489232862}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [46/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a410f0a181094395d465b983489232862} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Insert\+Single}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00297}{297}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 4,\ 5\};}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ v.\doxymbox{\hyperlink{class_vector_a58b6689868c3d347a90f6c7c2d60be12}{insert}}(v.\doxymbox{\hyperlink{class_vector_aea04561325108b73824e4ad1dd8114b2}{begin}}()\ +\ 2,\ 3);}
+\DoxyCodeLine{00300\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 5u);}
+\DoxyCodeLine{00301\ \ \ \ \ EXPECT\_EQ(v[2],\ 3);}
+\DoxyCodeLine{00302\ \ \ \ \ EXPECT\_EQ(*it,\ 3);}
+\DoxyCodeLine{00303\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a61cabbd87ce4188887d2ac4476410568}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [47/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a61cabbd87ce4188887d2ac4476410568} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Pop\+Back}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00290}{290}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00292\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a96a0a7cacee7603cb7bce3e82c34d0ae}{pop\_back}}();}
+\DoxyCodeLine{00293\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 2u);}
+\DoxyCodeLine{00294\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_a0977f3472b15fe46a8895efb09494bed}{back}}(),\ 2);}
+\DoxyCodeLine{00295\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a9c54691319a28ef93f27534b7936f08b}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [48/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a9c54691319a28ef93f27534b7936f08b} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Push\+Back}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00275}{275}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 10;\ ++i)\ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(i);}
+\DoxyCodeLine{00278\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 10u);}
+\DoxyCodeLine{00279\ \ \ \ \ EXPECT\_EQ(v[9],\ 9);}
+\DoxyCodeLine{00280\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_adfe244c168385cd3c812484f390f599b}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [49/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_adfe244c168385cd3c812484f390f599b} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Push\+Back\+Move}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00282}{282}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<std::string>}}\ v;}
+\DoxyCodeLine{00284\ \ \ \ \ std::string\ s\ =\ \textcolor{stringliteral}{"{}testas"{}};}
+\DoxyCodeLine{00285\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(std::move(s));}
+\DoxyCodeLine{00286\ \ \ \ \ EXPECT\_EQ(v[0],\ \textcolor{stringliteral}{"{}testas"{}});}
+\DoxyCodeLine{00287\ \ \ \ \ EXPECT\_TRUE(s.empty()\ ||\ s\ ==\ \textcolor{stringliteral}{"{}"{}});\ \ \textcolor{comment}{//\ po\ perkėlimo}}
+\DoxyCodeLine{00288\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a30343c3081f1c2b5b8e83e6cef09c57a}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [50/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a30343c3081f1c2b5b8e83e6cef09c57a} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Resize\+Larger}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00369}{369}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2\};}
+\DoxyCodeLine{00371\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a102e92ccd381a3d0356a08252b28f1ac}{resize}}(5,\ 99);}
+\DoxyCodeLine{00372\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 5u);}
+\DoxyCodeLine{00373\ \ \ \ \ EXPECT\_EQ(v[2],\ 99);}
+\DoxyCodeLine{00374\ \ \ \ \ EXPECT\_EQ(v[4],\ 99);}
+\DoxyCodeLine{00375\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a227bbbe98f6417aa3489112cc662f84a}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [51/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a227bbbe98f6417aa3489112cc662f84a} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Resize\+Smaller}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00362}{362}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00363\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3,\ 4,\ 5\};}
+\DoxyCodeLine{00364\ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a102e92ccd381a3d0356a08252b28f1ac}{resize}}(3);}
+\DoxyCodeLine{00365\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00366\ \ \ \ \ EXPECT\_EQ(v[2],\ 3);}
+\DoxyCodeLine{00367\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_aeef11cbb5c10f0d62287578b61b3d197}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [52/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_aeef11cbb5c10f0d62287578b61b3d197} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Modifiers}]{}{, }\item[{Swap}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00377}{377}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00378\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ a\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{00379\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ b\ =\ \{4,\ 5\};}
+\DoxyCodeLine{00380\ \ \ \ \ a.\doxymbox{\hyperlink{class_vector_ae1387b115ad4874d76690acc701ce976}{swap}}(b);}
+\DoxyCodeLine{00381\ \ \ \ \ EXPECT\_EQ(a.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 2u);}
+\DoxyCodeLine{00382\ \ \ \ \ EXPECT\_EQ(b.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00383\ \ \ \ \ EXPECT\_EQ(a[0],\ 4);}
+\DoxyCodeLine{00384\ \ \ \ \ EXPECT\_EQ(b[0],\ 1);}
+\DoxyCodeLine{00385\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a16a852e2ff63cdb1e69f91656a1884a3}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [53/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a16a852e2ff63cdb1e69f91656a1884a3} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Non\+Member}]{}{, }\item[{Erase\+By\+Value}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00419}{419}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00420\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3,\ 2,\ 4,\ 2\};}
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keyword}{auto}\ removed\ =\ \doxymbox{\hyperlink{vector_8h_a27485ee5e248708d46f9ee5070bd83dd}{erase}}(v,\ 2);}
+\DoxyCodeLine{00422\ \ \ \ \ EXPECT\_EQ(removed,\ 3u);}
+\DoxyCodeLine{00423\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ x\ :\ v)\ EXPECT\_NE(x,\ 2);}
+\DoxyCodeLine{00425\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_aad9115a7599130a9cfde563bb836287f}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [54/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_aad9115a7599130a9cfde563bb836287f} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Non\+Member}]{}{, }\item[{Erase\+If}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00427}{427}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00428\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3,\ 4,\ 5,\ 6\};}
+\DoxyCodeLine{00429\ \ \ \ \ \textcolor{keyword}{auto}\ removed\ =\ \doxymbox{\hyperlink{vector_8h_a37ac162f755710a56ee55d3b5f34511e}{erase\_if}}(v,\ [](\textcolor{keywordtype}{int}\ x)\ \{\ \textcolor{keywordflow}{return}\ x\ \%\ 2\ ==\ 0;\ \});}
+\DoxyCodeLine{00430\ \ \ \ \ EXPECT\_EQ(removed,\ 3u);}
+\DoxyCodeLine{00431\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ x\ :\ v)\ EXPECT\_EQ(x\ \%\ 2,\ 1);}
+\DoxyCodeLine{00433\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a720d0ae3c8422ee63bbb81128c715f3a}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [55/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a720d0ae3c8422ee63bbb81128c715f3a} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Non\+Member}]{}{, }\item[{Global\+Swap}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00411}{411}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00412\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ a\ =\ \{1,\ 2\};}
+\DoxyCodeLine{00413\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ b\ =\ \{3,\ 4,\ 5\};}
+\DoxyCodeLine{00414\ \ \ \ \ \doxymbox{\hyperlink{vector_8h_a4ca7f223315f4e55bf9fdb64a1e57a19}{swap}}(a,\ b);}
+\DoxyCodeLine{00415\ \ \ \ \ EXPECT\_EQ(a.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 3u);}
+\DoxyCodeLine{00416\ \ \ \ \ EXPECT\_EQ(b.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 2u);}
+\DoxyCodeLine{00417\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a617b2197729ec52adc6750eada85b421}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [56/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a617b2197729ec52adc6750eada85b421} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Performance}]{}{, }\item[{Push\+Back100k}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00488}{488}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keyword}{auto}\ t0\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00490\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00491\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ 100000;\ ++i)\ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(i);}
+\DoxyCodeLine{00492\ \ \ \ \ \textcolor{keyword}{auto}\ dt\ =\ std::chrono::duration<double>(}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ std::chrono::high\_resolution\_clock::now()\ -\/\ t0).count();}
+\DoxyCodeLine{00494\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 100000u);}
+\DoxyCodeLine{00495\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Vector\ push\_back\ 100k:\ \ "{}}\ <<\ dt\ <<\ \textcolor{stringliteral}{"{}\ s\(\backslash\)n"{}};}
+\DoxyCodeLine{00496\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_ad6838c0da9a50caf8da7db06ed7613bd}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [57/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_ad6838c0da9a50caf8da7db06ed7613bd} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Performance}]{}{, }\item[{Push\+Back10k}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00477}{477}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \textcolor{keyword}{auto}\ t0\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00479\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ 10000;\ ++i)\ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(i);}
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keyword}{auto}\ dt\ =\ std::chrono::duration<double>(}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ std::chrono::high\_resolution\_clock::now()\ -\/\ t0).count();}
+\DoxyCodeLine{00483\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 10000u);}
+\DoxyCodeLine{00484\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_a0977f3472b15fe46a8895efb09494bed}{back}}(),\ 10000);}
+\DoxyCodeLine{00485\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Vector\ push\_back\ 10k:\ \ \ "{}}\ <<\ dt\ <<\ \textcolor{stringliteral}{"{}\ s\(\backslash\)n"{}};}
+\DoxyCodeLine{00486\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_ab0662d5df9b62a47522743c37497825e}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [58/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_ab0662d5df9b62a47522743c37497825e} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Performance}]{}{, }\item[{Push\+Back1M}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00498}{498}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{keyword}{auto}\ t0\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00500\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00501\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ 1000000;\ ++i)\ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(i);}
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keyword}{auto}\ dt\ =\ std::chrono::duration<double>(}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ std::chrono::high\_resolution\_clock::now()\ -\/\ t0).count();}
+\DoxyCodeLine{00504\ \ \ \ \ EXPECT\_EQ(v.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}(),\ 1000000u);}
+\DoxyCodeLine{00505\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Vector\ push\_back\ 1M:\ \ \ \ "{}}\ <<\ dt\ <<\ \textcolor{stringliteral}{"{}\ s\(\backslash\)n"{}};}
+\DoxyCodeLine{00506\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_abb00479a1ff31f02bdbe9ab8811ca2f5}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [59/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_abb00479a1ff31f02bdbe9ab8811ca2f5} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Performance}]{}{, }\item[{Std\+Vector\+Push\+Back1M}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00508}{508}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00509\ \ \ \ \ \textcolor{keyword}{auto}\ t0\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00510\ \ \ \ \ std::vector<int>\ v;}
+\DoxyCodeLine{00511\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ 1000000;\ ++i)\ v.push\_back(i);}
+\DoxyCodeLine{00512\ \ \ \ \ \textcolor{keyword}{auto}\ dt\ =\ std::chrono::duration<double>(}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ std::chrono::high\_resolution\_clock::now()\ -\/\ t0).count();}
+\DoxyCodeLine{00514\ \ \ \ \ EXPECT\_EQ(v.size(),\ 1000000u);}
+\DoxyCodeLine{00515\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}std::vector\ push\_back\ 1M:\ "{}}\ <<\ dt\ <<\ \textcolor{stringliteral}{"{}\ s\(\backslash\)n"{}};}
+\DoxyCodeLine{00516\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_a6a1dba404a4bb4e7c3396fa4fe9a2218}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [60/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_a6a1dba404a4bb4e7c3396fa4fe9a2218} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Reallocation}]{}{, }\item[{Compare\+With\+Std\+Vector}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00454}{454}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{comment}{//\ Lyginti\ perskirstymų\ skaičių\ su\ std::vector}}
+\DoxyCodeLine{00456\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ myV;}
+\DoxyCodeLine{00457\ \ \ \ \ std::vector<int>\ stdV;}
+\DoxyCodeLine{00458\ \ \ \ \ \textcolor{keywordtype}{int}\ myReallocs\ =\ 0,\ stdReallocs\ =\ 0;}
+\DoxyCodeLine{00459\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ myCap\ =\ 0,\ stdCap\ =\ 0;}
+\DoxyCodeLine{00460\ }
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ 1000000;\ ++i)\ \{}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (myV.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}()\ ==\ myV.\doxymbox{\hyperlink{class_vector_ade9ce4c7602280a9c935c919afe10098}{size}}())\ ++myReallocs;}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stdV.capacity()\ ==\ stdV.size())\ ++stdReallocs;}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ myV.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(i);}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ stdV.push\_back(i);}
+\DoxyCodeLine{00466\ \ \ \ \ \}}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00468\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Vector\ perskirstymai\ (1M\ el.):\ \ \ \ \ mano="{}}\ <<\ myReallocs}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ std="{}}\ <<\ stdReallocs\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{comment}{//\ Abu\ turėtų\ turėti\ panašų\ skaičių}}
+\DoxyCodeLine{00471\ \ \ \ \ EXPECT\_LT(myReallocs,\ 30);}
+\DoxyCodeLine{00472\ \ \ \ \ EXPECT\_LT(stdReallocs,\ 30);}
+\DoxyCodeLine{00473\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vector__unit__tests_8cpp_aeac9be131be116e0b0462e653adde394}\index{vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!vector\_unit\_tests.cpp@{vector\_unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [61/61]}}
+{\footnotesize\ttfamily \label{vector__unit__tests_8cpp_aeac9be131be116e0b0462e653adde394} 
+TEST (\begin{DoxyParamCaption}\item[{Vector\+Reallocation}]{}{, }\item[{Count\+Reallocations}]{}{}\end{DoxyParamCaption})}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{vector__unit__tests_8cpp_source}{vector\+\_\+unit\+\_\+tests.\+cpp}} eilutėje \doxymbox{\hyperlink{vector__unit__tests_8cpp_source_l00437}{437}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keywordtype}{int}\ reallocs\ =\ 0;}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ prev\_cap\ =\ v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}();}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ 100000;\ ++i)\ \{}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ v.\doxymbox{\hyperlink{class_vector_a7cb08d016f15c97741c849cdb83170e1}{push\_back}}(i);}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}()\ !=\ prev\_cap)\ \{}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ ++reallocs;}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ prev\_cap\ =\ v.\doxymbox{\hyperlink{class_vector_a60671a453740307c95b9716139acfaf0}{capacity}}();}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00448\ \ \ \ \ \}}
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{comment}{//\ std::vector\ paprastai\ daro\ \string~17\ perskirstymų\ 100000\ elementams}}
+\DoxyCodeLine{00450\ \ \ \ \ EXPECT\_LT(reallocs,\ 25);}
+\DoxyCodeLine{00451\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Vector\ perskirstymu\ skaicus\ (100000\ el.):\ "{}}\ <<\ reallocs\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00452\ \}}
+
+\end{DoxyCode}

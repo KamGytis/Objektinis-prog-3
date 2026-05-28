@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="lt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Objektinis-prog-3: vector_ops.cpp išeities tekstas</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Objektinis-prog-3<span id="projectnumber">&#160;3.0</span>
+   </div>
+   <div id="projectbrief">C++ Student Management System with STL containers</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Sugeneruota Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Paieška" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d1/d0c/vector__ops_8cpp_source.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">vector_ops.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/d0c/vector__ops_8cpp.html">Eiti į šio failo dokumentaciją.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file vector_ops.cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @brief Vektoriaus operacijų realizacija naudojant nuosavą Vector konteinerį.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * v3.0: std::vector pakeistas nuosavu Vector&lt;T&gt; konteineriu.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d56/vector__ops_8h.html">vector_ops.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d60/utils_8h.html">utils.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d1/d0c/vector__ops_8cpp.html#a2f95bbc86b746e461d85e14f5abe71bb">   19</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d0c/vector__ops_8cpp.html#a2f95bbc86b746e461d85e14f5abe71bb">skaitymas_is_failo</a>(<span class="keyword">const</span> std::string&amp; filename, <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; studentai) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::ifstream file(filename);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span> (!file.is_open())</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Nepavyko atidaryti failo: &quot;</span> + filename);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#a1a4abc0a085cd7a32db757362f085485">clear</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    std::string header, line;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    std::getline(file, header);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">int</span> nr = 0;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">while</span> (std::getline(file, line)) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        ++nr;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        std::stringstream ss(line);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        std::string vardas, pavarde;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        ss &gt;&gt; vardas &gt;&gt; pavarde;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> paz;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordtype">int</span> v;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">while</span> (ss &gt;&gt; v) paz.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(v);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span> (paz.<a class="code hl_function" href="../../d5/db2/class_vector.html#ad5e31c0f82683ece1b5b020c15a8b77b">empty</a>()) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">int</span> egz = paz.<a class="code hl_function" href="../../d5/db2/class_vector.html#a0977f3472b15fe46a8895efb09494bed">back</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        paz.<a class="code hl_function" href="../../d5/db2/class_vector.html#a96a0a7cacee7603cb7bce3e82c34d0ae">pop_back</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#a5d19b8e8fd6ded1e2e99045c3962c7e9">emplace_back</a>(vardas, pavarde, paz, egz);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">if</span> (nr % 1000000 == 0)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;  Nuskaityta: &quot;</span> &lt;&lt; nr &lt;&lt; <span class="stringliteral">&quot; studentu...\n&quot;</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;  Is viso nuskaityta: &quot;</span> &lt;&lt; studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>() &lt;&lt; <span class="stringliteral">&quot; studentu\n&quot;</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../d1/d0c/vector__ops_8cpp.html#a6eac16586279719fc1a1881c0e48b515">   47</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d0c/vector__ops_8cpp.html#a6eac16586279719fc1a1881c0e48b515">isvedimas</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; studentai, <span class="keywordtype">int</span> metodas) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::string rez = (metodas == 1) ? <span class="stringliteral">&quot;Galutinis (vidurkis)&quot;</span> : <span class="stringliteral">&quot;Galutinis (mediana)&quot;</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::cout &lt;&lt; std::left &lt;&lt; std::setw(15) &lt;&lt; <span class="stringliteral">&quot;Vardas&quot;</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        &lt;&lt; std::setw(15) &lt;&lt; <span class="stringliteral">&quot;Pavarde&quot;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        &lt;&lt; std::right &lt;&lt; std::setw(20) &lt;&lt; rez &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; s : studentai)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        std::cout &lt;&lt; s &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../d1/d0c/vector__ops_8cpp.html#a20ae5f429b510a13b04439e305fb39ba">   56</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d0c/vector__ops_8cpp.html#a20ae5f429b510a13b04439e305fb39ba">isvedimas_i_faila</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; studentai,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">const</span> std::string&amp; filename,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">const</span> std::string&amp; kategorija) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    std::ofstream out(filename);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (!out.is_open())</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Nepavyko sukurti failo: &quot;</span> + filename);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    out &lt;&lt; std::left &lt;&lt; std::setw(20) &lt;&lt; <span class="stringliteral">&quot;Vardas&quot;</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        &lt;&lt; std::setw(20) &lt;&lt; <span class="stringliteral">&quot;Pavarde&quot;</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        &lt;&lt; std::right &lt;&lt; std::setw(20) &lt;&lt; <span class="stringliteral">&quot;Galutinis\n&quot;</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        &lt;&lt; std::string(60, <span class="charliteral">&#39;-&#39;</span>) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; s : studentai)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        out &lt;&lt; s &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;  [&quot;</span> &lt;&lt; kategorija &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>()</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        &lt;&lt; <span class="stringliteral">&quot; studentu -&gt; &quot;</span> &lt;&lt; filename &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../d1/d0c/vector__ops_8cpp.html#a0561c8d6a8445c6012c7e7a67e18d5af">   75</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d0c/vector__ops_8cpp.html#a0561c8d6a8445c6012c7e7a67e18d5af">pasirinkimo_metodas</a>(<span class="keywordtype">int</span> tipas, <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; studentai) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; s : studentai)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        s.skaiciuotiRez(tipas);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../d1/d0c/vector__ops_8cpp.html#a37782568f0072fa92899d51756e304ef">   80</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d0c/vector__ops_8cpp.html#a37782568f0072fa92899d51756e304ef">rusiavimas</a>(<a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; studentai, <span class="keywordtype">int</span> budas) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">switch</span> (budas) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">case</span> 1: std::sort(studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>(),</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        [](<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; b) { return a.getVardas() &lt; b.getVardas(); }); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">case</span> 2: std::sort(studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>(),</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        [](<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; b) { return a.getVardas() &gt; b.getVardas(); }); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">case</span> 3: std::sort(studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>(),</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        [](<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; b) { return a.getPavarde() &lt; b.getPavarde(); }); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">case</span> 4: std::sort(studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>(),</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        [](<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; b) { return a.getPavarde() &gt; b.getPavarde(); }); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">case</span> 5: std::sort(studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>(),</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        [](<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; b) { return a.getRez() &lt; b.getRez(); }); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">case</span> 6: std::sort(studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>(),</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        [](<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; b) { return a.getRez() &gt; b.getRez(); }); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">default</span>: std::cerr &lt;&lt; <span class="stringliteral">&quot;Neteisingas rusiavimo budas.\n&quot;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="../../d1/d0c/vector__ops_8cpp.html#a550e2d83bde387b824b30eea3685ae14">   98</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d1/d0c/vector__ops_8cpp.html#a550e2d83bde387b824b30eea3685ae14">pasirinkimas_rusiavimo_budo</a>() {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Pasirinkite rusiavimo buda:\n&quot;</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        &lt;&lt; <span class="stringliteral">&quot;1 - pagal varda didejanciai\n&quot;</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        &lt;&lt; <span class="stringliteral">&quot;2 - pagal varda mazejanciai\n&quot;</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        &lt;&lt; <span class="stringliteral">&quot;3 - pagal pavarde didejanciai\n&quot;</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        &lt;&lt; <span class="stringliteral">&quot;4 - pagal pavarde mazejanciai\n&quot;</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        &lt;&lt; <span class="stringliteral">&quot;5 - pagal galutini rezultata didejanciai\n&quot;</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        &lt;&lt; <span class="stringliteral">&quot;6 - pagal galutini rezultata mazejanciai\n&quot;</span>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordtype">int</span> p; std::cin &gt;&gt; p;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">if</span> (std::cin.fail() || p &lt; 1 || p &gt; 6) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Neteisingas pasirinkimas.\n&quot;</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">return</span> 5;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">return</span> p;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
+</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="../../d1/d0c/vector__ops_8cpp.html#a5c319c4cce65d620b356152911e3109b">  114</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d0c/vector__ops_8cpp.html#a5c319c4cce65d620b356152911e3109b">skirstymas_i_grupes</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; visi,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; kieti,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; vargsai) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; s : visi) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">if</span> (s.getRez() &gt;= 5.0) kieti.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(s);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">else</span>                   vargsai.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(s);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="../../d1/d0c/vector__ops_8cpp.html#afe998fd97cc28efcf5c8ca2c377f1c5b">  123</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="../../d1/d0c/vector__ops_8cpp.html#afe998fd97cc28efcf5c8ca2c377f1c5b">skirstymas_s1</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; studentai,</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; kieti,</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; vargsai) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keyword">auto</span> t0 = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    kieti.<a class="code hl_function" href="../../d5/db2/class_vector.html#a1a4abc0a085cd7a32db757362f085485">clear</a>(); vargsai.<a class="code hl_function" href="../../d5/db2/class_vector.html#a1a4abc0a085cd7a32db757362f085485">clear</a>();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    std::copy_if(studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>(), std::back_inserter(kieti),</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        [](<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; s) { return s.getRez() &gt;= 5.0; });</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    std::copy_if(studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>(), std::back_inserter(vargsai),</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        [](<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; s) { return s.getRez() &lt; 5.0; });</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">return</span> std::chrono::duration&lt;double&gt;(</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        std::chrono::high_resolution_clock::now() - t0).count();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="../../d1/d0c/vector__ops_8cpp.html#a76550e068570b915566fc8a2b9b15d19">  136</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="../../d1/d0c/vector__ops_8cpp.html#a76550e068570b915566fc8a2b9b15d19">skirstymas_s2</a>(<a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; studentai,</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; vargsai) {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keyword">auto</span> t0 = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    vargsai.<a class="code hl_function" href="../../d5/db2/class_vector.html#a1a4abc0a085cd7a32db757362f085485">clear</a>();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    std::copy_if(studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>(), std::back_inserter(vargsai),</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        [](<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; s) { return s.getRez() &lt; 5.0; });</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#a9475371e34e4ce47ec3359ff25fed6ec">erase</a>(</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        std::remove_if(studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>(),</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            [](<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; s) { return s.getRez() &lt; 5.0; }),</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>());</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">return</span> std::chrono::duration&lt;double&gt;(</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        std::chrono::high_resolution_clock::now() - t0).count();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>}</div>
+</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="../../d1/d0c/vector__ops_8cpp.html#afb10dbf5d7ce05ed1d627932201e3e23">  150</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="../../d1/d0c/vector__ops_8cpp.html#afb10dbf5d7ce05ed1d627932201e3e23">skirstymas_s3</a>(<a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; studentai,</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Studentas&gt;</a>&amp; vargsai) {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keyword">auto</span> t0 = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    vargsai.<a class="code hl_function" href="../../d5/db2/class_vector.html#a1a4abc0a085cd7a32db757362f085485">clear</a>();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keyword">auto</span> pivot = std::partition(studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>(),</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        [](<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; s) { return s.getRez() &gt;= 5.0; });</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    vargsai.<a class="code hl_function" href="../../d5/db2/class_vector.html#addd43241ef82bb05d728d59aed9e0a2c">assign</a>(pivot, studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>());</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#a9475371e34e4ce47ec3359ff25fed6ec">erase</a>(pivot, studentai.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>());</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">return</span> std::chrono::duration&lt;double&gt;(</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        std::chrono::high_resolution_clock::now() - t0).count();</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>}</div>
+</div>
+<div class="ttc" id="aclass_studentas_html"><div class="ttname"><a href="../../da/db8/class_studentas.html">Studentas</a></div><div class="ttdoc">Atstovauja studenta su pazymiais ir egzamino rezultatu.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d87/studentas_8h_source.html#l00024">studentas.h:24</a></div></div>
+<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="../../d5/db2/class_vector.html">Vector</a></div><div class="ttdoc">Nuosava Vector konteinerio klasė.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00034">vector.h:34</a></div></div>
+<div class="ttc" id="aclass_vector_html_a0977f3472b15fe46a8895efb09494bed"><div class="ttname"><a href="../../d5/db2/class_vector.html#a0977f3472b15fe46a8895efb09494bed">Vector::back</a></div><div class="ttdeci">reference back()</div><div class="ttdoc">Grąžina paskutinį elementą.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00293">vector.h:293</a></div></div>
+<div class="ttc" id="aclass_vector_html_a1a4abc0a085cd7a32db757362f085485"><div class="ttname"><a href="../../d5/db2/class_vector.html#a1a4abc0a085cd7a32db757362f085485">Vector::clear</a></div><div class="ttdeci">void clear() noexcept</div><div class="ttdoc">Ištrina visus elementus (size = 0, capacity nesikeičia).</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00363">vector.h:363</a></div></div>
+<div class="ttc" id="aclass_vector_html_a5d19b8e8fd6ded1e2e99045c3962c7e9"><div class="ttname"><a href="../../d5/db2/class_vector.html#a5d19b8e8fd6ded1e2e99045c3962c7e9">Vector::emplace_back</a></div><div class="ttdeci">reference emplace_back(Args &amp;&amp;... args)</div><div class="ttdoc">Sukonstruoja elementą gale vietoje.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00528">vector.h:528</a></div></div>
+<div class="ttc" id="aclass_vector_html_a7cb08d016f15c97741c849cdb83170e1"><div class="ttname"><a href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">Vector::push_back</a></div><div class="ttdeci">void push_back(const T &amp;value)</div><div class="ttdoc">Prideda elementą į galą (kopija).</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00513">vector.h:513</a></div></div>
+<div class="ttc" id="aclass_vector_html_a9475371e34e4ce47ec3359ff25fed6ec"><div class="ttname"><a href="../../d5/db2/class_vector.html#a9475371e34e4ce47ec3359ff25fed6ec">Vector::erase</a></div><div class="ttdeci">iterator erase(const_iterator pos)</div><div class="ttdoc">Ištrina elementą ties pos.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00491">vector.h:491</a></div></div>
+<div class="ttc" id="aclass_vector_html_a96a0a7cacee7603cb7bce3e82c34d0ae"><div class="ttname"><a href="../../d5/db2/class_vector.html#a96a0a7cacee7603cb7bce3e82c34d0ae">Vector::pop_back</a></div><div class="ttdeci">void pop_back()</div><div class="ttdoc">Pašalina paskutinį elementą.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00538">vector.h:538</a></div></div>
+<div class="ttc" id="aclass_vector_html_abaaafc8a6696d49ceb4f799d2f78e299"><div class="ttname"><a href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">Vector::end</a></div><div class="ttdeci">iterator end() noexcept</div><div class="ttdoc">Grąžina iteratorių į pabaigą (past-the-end).</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00310">vector.h:310</a></div></div>
+<div class="ttc" id="aclass_vector_html_ad5e31c0f82683ece1b5b020c15a8b77b"><div class="ttname"><a href="../../d5/db2/class_vector.html#ad5e31c0f82683ece1b5b020c15a8b77b">Vector::empty</a></div><div class="ttdeci">bool empty() const noexcept</div><div class="ttdoc">Tikrina ar vektorius tuščias.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00327">vector.h:327</a></div></div>
+<div class="ttc" id="aclass_vector_html_addd43241ef82bb05d728d59aed9e0a2c"><div class="ttname"><a href="../../d5/db2/class_vector.html#addd43241ef82bb05d728d59aed9e0a2c">Vector::assign</a></div><div class="ttdeci">void assign(size_type count, const T &amp;value)</div><div class="ttdoc">Priskiria count kopijų reikšmės value.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00222">vector.h:222</a></div></div>
+<div class="ttc" id="aclass_vector_html_ade9ce4c7602280a9c935c919afe10098"><div class="ttname"><a href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">Vector::size</a></div><div class="ttdeci">size_type size() const noexcept</div><div class="ttdoc">Grąžina elementų skaičių.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00330">vector.h:330</a></div></div>
+<div class="ttc" id="aclass_vector_html_aea04561325108b73824e4ad1dd8114b2"><div class="ttname"><a href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">Vector::begin</a></div><div class="ttdeci">iterator begin() noexcept</div><div class="ttdoc">Grąžina iteratorių į pradžią.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00305">vector.h:305</a></div></div>
+<div class="ttc" id="autils_8h_html"><div class="ttname"><a href="../../d5/d60/utils_8h.html">utils.h</a></div></div>
+<div class="ttc" id="avector__ops_8cpp_html_a0561c8d6a8445c6012c7e7a67e18d5af"><div class="ttname"><a href="../../d1/d0c/vector__ops_8cpp.html#a0561c8d6a8445c6012c7e7a67e18d5af">pasirinkimo_metodas</a></div><div class="ttdeci">void pasirinkimo_metodas(int tipas, Vector&lt; Studentas &gt; &amp;studentai)</div><div class="ttdoc">Apskaičiuoja galutinį rezultatą kiekvienam studentui.</div><div class="ttdef"><b>Definition</b> <a href="#l00075">vector_ops.cpp:75</a></div></div>
+<div class="ttc" id="avector__ops_8cpp_html_a20ae5f429b510a13b04439e305fb39ba"><div class="ttname"><a href="../../d1/d0c/vector__ops_8cpp.html#a20ae5f429b510a13b04439e305fb39ba">isvedimas_i_faila</a></div><div class="ttdeci">void isvedimas_i_faila(const Vector&lt; Studentas &gt; &amp;studentai, const std::string &amp;filename, const std::string &amp;kategorija)</div><div class="ttdoc">Išveda studentų sąrašą į failą.</div><div class="ttdef"><b>Definition</b> <a href="#l00056">vector_ops.cpp:56</a></div></div>
+<div class="ttc" id="avector__ops_8cpp_html_a2f95bbc86b746e461d85e14f5abe71bb"><div class="ttname"><a href="../../d1/d0c/vector__ops_8cpp.html#a2f95bbc86b746e461d85e14f5abe71bb">skaitymas_is_failo</a></div><div class="ttdeci">void skaitymas_is_failo(const std::string &amp;filename, Vector&lt; Studentas &gt; &amp;studentai)</div><div class="ttdef"><b>Definition</b> <a href="#l00019">vector_ops.cpp:19</a></div></div>
+<div class="ttc" id="avector__ops_8cpp_html_a37782568f0072fa92899d51756e304ef"><div class="ttname"><a href="../../d1/d0c/vector__ops_8cpp.html#a37782568f0072fa92899d51756e304ef">rusiavimas</a></div><div class="ttdeci">void rusiavimas(Vector&lt; Studentas &gt; &amp;studentai, int budas)</div><div class="ttdoc">Surūšiuoja studentų vektorių pagal pasirinktą kriterijų.</div><div class="ttdef"><b>Definition</b> <a href="#l00080">vector_ops.cpp:80</a></div></div>
+<div class="ttc" id="avector__ops_8cpp_html_a550e2d83bde387b824b30eea3685ae14"><div class="ttname"><a href="../../d1/d0c/vector__ops_8cpp.html#a550e2d83bde387b824b30eea3685ae14">pasirinkimas_rusiavimo_budo</a></div><div class="ttdeci">int pasirinkimas_rusiavimo_budo()</div><div class="ttdoc">Paprašo vartotojo pasirinkti rūšiavimo būdą.</div><div class="ttdef"><b>Definition</b> <a href="#l00098">vector_ops.cpp:98</a></div></div>
+<div class="ttc" id="avector__ops_8cpp_html_a5c319c4cce65d620b356152911e3109b"><div class="ttname"><a href="../../d1/d0c/vector__ops_8cpp.html#a5c319c4cce65d620b356152911e3109b">skirstymas_i_grupes</a></div><div class="ttdeci">void skirstymas_i_grupes(const Vector&lt; Studentas &gt; &amp;visi, Vector&lt; Studentas &gt; &amp;kieti, Vector&lt; Studentas &gt; &amp;vargsai)</div><div class="ttdoc">Paprastas skirstymas į dvi grupes (originalas lieka nepakitęs).</div><div class="ttdef"><b>Definition</b> <a href="#l00114">vector_ops.cpp:114</a></div></div>
+<div class="ttc" id="avector__ops_8cpp_html_a6eac16586279719fc1a1881c0e48b515"><div class="ttname"><a href="../../d1/d0c/vector__ops_8cpp.html#a6eac16586279719fc1a1881c0e48b515">isvedimas</a></div><div class="ttdeci">void isvedimas(const Vector&lt; Studentas &gt; &amp;studentai, int metodas)</div><div class="ttdoc">Išveda studentų sąrašą į konsolę.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">vector_ops.cpp:47</a></div></div>
+<div class="ttc" id="avector__ops_8cpp_html_a76550e068570b915566fc8a2b9b15d19"><div class="ttname"><a href="../../d1/d0c/vector__ops_8cpp.html#a76550e068570b915566fc8a2b9b15d19">skirstymas_s2</a></div><div class="ttdeci">double skirstymas_s2(Vector&lt; Studentas &gt; &amp;studentai, Vector&lt; Studentas &gt; &amp;vargsai)</div><div class="ttdoc">Strategija S2: vienas naujas + erase/remove_if.</div><div class="ttdef"><b>Definition</b> <a href="#l00136">vector_ops.cpp:136</a></div></div>
+<div class="ttc" id="avector__ops_8cpp_html_afb10dbf5d7ce05ed1d627932201e3e23"><div class="ttname"><a href="../../d1/d0c/vector__ops_8cpp.html#afb10dbf5d7ce05ed1d627932201e3e23">skirstymas_s3</a></div><div class="ttdeci">double skirstymas_s3(Vector&lt; Studentas &gt; &amp;studentai, Vector&lt; Studentas &gt; &amp;vargsai)</div><div class="ttdoc">Strategija S3: std::partition.</div><div class="ttdef"><b>Definition</b> <a href="#l00150">vector_ops.cpp:150</a></div></div>
+<div class="ttc" id="avector__ops_8cpp_html_afe998fd97cc28efcf5c8ca2c377f1c5b"><div class="ttname"><a href="../../d1/d0c/vector__ops_8cpp.html#afe998fd97cc28efcf5c8ca2c377f1c5b">skirstymas_s1</a></div><div class="ttdeci">double skirstymas_s1(const Vector&lt; Studentas &gt; &amp;studentai, Vector&lt; Studentas &gt; &amp;kieti, Vector&lt; Studentas &gt; &amp;vargsai)</div><div class="ttdoc">Strategija S1: du nauji konteineriai, kopijavimas su copy_if.</div><div class="ttdef"><b>Definition</b> <a href="#l00123">vector_ops.cpp:123</a></div></div>
+<div class="ttc" id="avector__ops_8h_html"><div class="ttname"><a href="../../d5/d56/vector__ops_8h.html">vector_ops.h</a></div><div class="ttdoc">Vektoriaus operacijos naudojant nuosavą Vector konteinerį.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../d1/d0c/vector__ops_8cpp.html">vector_ops.cpp</a></li>
+    <li class="footer">Sugeneruota <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

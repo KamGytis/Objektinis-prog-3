@@ -1,0 +1,2118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="lt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Objektinis-prog-3: vector_unit_tests.cpp Failo Nuoroda</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Objektinis-prog-3<span id="projectnumber">&#160;3.0</span>
+   </div>
+   <div id="projectbrief">C++ Student Management System with STL containers</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Sugeneruota Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Paieška" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d2/d4c/vector__unit__tests_8cpp.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">vector_unit_tests.cpp Failo Nuoroda</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Google Test testai nuosavai <a class="el" href="../../d5/db2/class_vector.html" title="Nuosava Vector konteinerio klasė.">Vector</a> klasei.  
+<a href="#details">Daugiau...</a></p>
+<div class="textblock"><code>#include &lt;gtest/gtest.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d68/vector_8h_source.html">Vector.h</a>&quot;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;numeric&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+</div>
+<p><a href="../../d2/d4c/vector__unit__tests_8cpp_source.html">Eiti į šio failo programos kodą.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcijos</h2></td></tr>
+<tr class="memitem:a9905aa36203797ca98cba50c9e40e8b1" id="r_a9905aa36203797ca98cba50c9e40e8b1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9905aa36203797ca98cba50c9e40e8b1">TEST</a> (VectorConstructors, DefaultConstructor)</td></tr>
+<tr class="memitem:af203507f529f86c4214d0b0ec260813f" id="r_af203507f529f86c4214d0b0ec260813f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af203507f529f86c4214d0b0ec260813f">TEST</a> (VectorConstructors, CountValueConstructor)</td></tr>
+<tr class="memitem:ab8cf0985c2e44aa4393014d2433c3259" id="r_ab8cf0985c2e44aa4393014d2433c3259"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab8cf0985c2e44aa4393014d2433c3259">TEST</a> (VectorConstructors, CountDefaultConstructor)</td></tr>
+<tr class="memitem:a2cc0fbea2dc7787823001afe229433fa" id="r_a2cc0fbea2dc7787823001afe229433fa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2cc0fbea2dc7787823001afe229433fa">TEST</a> (VectorConstructors, RangeConstructor)</td></tr>
+<tr class="memitem:a22d831a21d1e1c3c68b865087b52ccb3" id="r_a22d831a21d1e1c3c68b865087b52ccb3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a22d831a21d1e1c3c68b865087b52ccb3">TEST</a> (VectorConstructors, InitializerListConstructor)</td></tr>
+<tr class="memitem:aaad8bbf06155896321324d1dd777004a" id="r_aaad8bbf06155896321324d1dd777004a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aaad8bbf06155896321324d1dd777004a">TEST</a> (VectorConstructors, CopyConstructor)</td></tr>
+<tr class="memitem:a7b0fa62fa402fb13326bf8027113858a" id="r_a7b0fa62fa402fb13326bf8027113858a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7b0fa62fa402fb13326bf8027113858a">TEST</a> (VectorConstructors, MoveConstructor)</td></tr>
+<tr class="memitem:acbd92f034be555c631faecc434d2a15e" id="r_acbd92f034be555c631faecc434d2a15e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acbd92f034be555c631faecc434d2a15e">TEST</a> (VectorAssignment, CopyAssignment)</td></tr>
+<tr class="memitem:a5d092d4f420e34825004258ea8b38511" id="r_a5d092d4f420e34825004258ea8b38511"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5d092d4f420e34825004258ea8b38511">TEST</a> (VectorAssignment, MoveAssignment)</td></tr>
+<tr class="memitem:a0b3ee6c52098a2cfbbc9c9c901378e83" id="r_a0b3ee6c52098a2cfbbc9c9c901378e83"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0b3ee6c52098a2cfbbc9c9c901378e83">TEST</a> (VectorAssignment, InitializerListAssignment)</td></tr>
+<tr class="memitem:a8e899ee196fca96fd92744c6afff3dc0" id="r_a8e899ee196fca96fd92744c6afff3dc0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8e899ee196fca96fd92744c6afff3dc0">TEST</a> (VectorAssignment, SelfAssignment)</td></tr>
+<tr class="memitem:ae08ef2672b20c7d24f78b843a6078bc8" id="r_ae08ef2672b20c7d24f78b843a6078bc8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae08ef2672b20c7d24f78b843a6078bc8">TEST</a> (VectorAssignment, AssignCountValue)</td></tr>
+<tr class="memitem:adfa6fcc875ae5c02d1bfc350df36312a" id="r_adfa6fcc875ae5c02d1bfc350df36312a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adfa6fcc875ae5c02d1bfc350df36312a">TEST</a> (VectorAssignment, AssignRange)</td></tr>
+<tr class="memitem:ae8a4362d89b4cc03020d923b099703c1" id="r_ae8a4362d89b4cc03020d923b099703c1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae8a4362d89b4cc03020d923b099703c1">TEST</a> (VectorAssignment, AssignInitializerList)</td></tr>
+<tr class="memitem:ae66ea820655730f52b8d159696ddc37f" id="r_ae66ea820655730f52b8d159696ddc37f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae66ea820655730f52b8d159696ddc37f">TEST</a> (VectorElementAccess, OperatorBrackets)</td></tr>
+<tr class="memitem:a9dcc39a0bb70e8335b853b99561cf3ca" id="r_a9dcc39a0bb70e8335b853b99561cf3ca"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9dcc39a0bb70e8335b853b99561cf3ca">TEST</a> (VectorElementAccess, AtInBounds)</td></tr>
+<tr class="memitem:a857bd50f1ff4a246894a0d951fd76a53" id="r_a857bd50f1ff4a246894a0d951fd76a53"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a857bd50f1ff4a246894a0d951fd76a53">TEST</a> (VectorElementAccess, AtOutOfBounds)</td></tr>
+<tr class="memitem:a0919a5f449d291f8d0ee00fb65cfaa34" id="r_a0919a5f449d291f8d0ee00fb65cfaa34"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0919a5f449d291f8d0ee00fb65cfaa34">TEST</a> (VectorElementAccess, FrontBack)</td></tr>
+<tr class="memitem:a61c33765d847274b29b45ae0a690574f" id="r_a61c33765d847274b29b45ae0a690574f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a61c33765d847274b29b45ae0a690574f">TEST</a> (VectorElementAccess, DataPointer)</td></tr>
+<tr class="memitem:ac69242530330d576f10078db3fc74c5a" id="r_ac69242530330d576f10078db3fc74c5a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac69242530330d576f10078db3fc74c5a">TEST</a> (VectorIterators, BeginEnd)</td></tr>
+<tr class="memitem:a80aa1b659352764992a87bf8fc81b494" id="r_a80aa1b659352764992a87bf8fc81b494"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a80aa1b659352764992a87bf8fc81b494">TEST</a> (VectorIterators, RangeFor)</td></tr>
+<tr class="memitem:a5e57250ceb449bef9c4ba1fc3fe12127" id="r_a5e57250ceb449bef9c4ba1fc3fe12127"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5e57250ceb449bef9c4ba1fc3fe12127">TEST</a> (VectorIterators, ConstIterator)</td></tr>
+<tr class="memitem:a78c06e75e2d6cc0c6a8927dedff3415b" id="r_a78c06e75e2d6cc0c6a8927dedff3415b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a78c06e75e2d6cc0c6a8927dedff3415b">TEST</a> (VectorIterators, ReverseIterator)</td></tr>
+<tr class="memitem:a82098b5fddc36c720e99af26c36eab7f" id="r_a82098b5fddc36c720e99af26c36eab7f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a82098b5fddc36c720e99af26c36eab7f">TEST</a> (VectorIterators, StdAlgorithms)</td></tr>
+<tr class="memitem:aaa915b8037c2166dc1b26c27ec79081f" id="r_aaa915b8037c2166dc1b26c27ec79081f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aaa915b8037c2166dc1b26c27ec79081f">TEST</a> (VectorCapacity, Empty)</td></tr>
+<tr class="memitem:a9f0a8ea5fbc8ff77b68da62674185e32" id="r_a9f0a8ea5fbc8ff77b68da62674185e32"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9f0a8ea5fbc8ff77b68da62674185e32">TEST</a> (VectorCapacity, Size)</td></tr>
+<tr class="memitem:aa4b23ce6473cfee9ce372cee9f91b94a" id="r_aa4b23ce6473cfee9ce372cee9f91b94a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa4b23ce6473cfee9ce372cee9f91b94a">TEST</a> (VectorCapacity, Reserve)</td></tr>
+<tr class="memitem:a6c0dfe4973688a000a30148eb90f3a60" id="r_a6c0dfe4973688a000a30148eb90f3a60"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6c0dfe4973688a000a30148eb90f3a60">TEST</a> (VectorCapacity, ReserveNoShrink)</td></tr>
+<tr class="memitem:a1e7b7b623879977ece53909100a6fc9e" id="r_a1e7b7b623879977ece53909100a6fc9e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1e7b7b623879977ece53909100a6fc9e">TEST</a> (VectorCapacity, ShrinkToFit)</td></tr>
+<tr class="memitem:ae4016159a1dd18f396e407962773d66b" id="r_ae4016159a1dd18f396e407962773d66b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae4016159a1dd18f396e407962773d66b">TEST</a> (VectorCapacity, CapacityGrowth)</td></tr>
+<tr class="memitem:a09dcb58cef39b0d3f0276e8480be1da0" id="r_a09dcb58cef39b0d3f0276e8480be1da0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a09dcb58cef39b0d3f0276e8480be1da0">TEST</a> (VectorModifiers, Clear)</td></tr>
+<tr class="memitem:a9c54691319a28ef93f27534b7936f08b" id="r_a9c54691319a28ef93f27534b7936f08b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9c54691319a28ef93f27534b7936f08b">TEST</a> (VectorModifiers, PushBack)</td></tr>
+<tr class="memitem:adfe244c168385cd3c812484f390f599b" id="r_adfe244c168385cd3c812484f390f599b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adfe244c168385cd3c812484f390f599b">TEST</a> (VectorModifiers, PushBackMove)</td></tr>
+<tr class="memitem:a61cabbd87ce4188887d2ac4476410568" id="r_a61cabbd87ce4188887d2ac4476410568"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a61cabbd87ce4188887d2ac4476410568">TEST</a> (VectorModifiers, PopBack)</td></tr>
+<tr class="memitem:a410f0a181094395d465b983489232862" id="r_a410f0a181094395d465b983489232862"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a410f0a181094395d465b983489232862">TEST</a> (VectorModifiers, InsertSingle)</td></tr>
+<tr class="memitem:a1ad333b91c867747301b70f82d2538c8" id="r_a1ad333b91c867747301b70f82d2538c8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1ad333b91c867747301b70f82d2538c8">TEST</a> (VectorModifiers, InsertCount)</td></tr>
+<tr class="memitem:a85e9c76ac6e7bfc3707fa397695f1809" id="r_a85e9c76ac6e7bfc3707fa397695f1809"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a85e9c76ac6e7bfc3707fa397695f1809">TEST</a> (VectorModifiers, InsertRange)</td></tr>
+<tr class="memitem:ac4f765d0d8777ac765feeb3c3e6c89c7" id="r_ac4f765d0d8777ac765feeb3c3e6c89c7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac4f765d0d8777ac765feeb3c3e6c89c7">TEST</a> (VectorModifiers, InsertInitializerList)</td></tr>
+<tr class="memitem:a1036c4a89c7d5dad2a678f83349b975f" id="r_a1036c4a89c7d5dad2a678f83349b975f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1036c4a89c7d5dad2a678f83349b975f">TEST</a> (VectorModifiers, EraseSingle)</td></tr>
+<tr class="memitem:a53884b53b82b3e2d75d6e78b6aab6574" id="r_a53884b53b82b3e2d75d6e78b6aab6574"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a53884b53b82b3e2d75d6e78b6aab6574">TEST</a> (VectorModifiers, EraseRange)</td></tr>
+<tr class="memitem:a73cea938502faa95400d7ca1ce4961d3" id="r_a73cea938502faa95400d7ca1ce4961d3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a73cea938502faa95400d7ca1ce4961d3">TEST</a> (VectorModifiers, EmplaceBack)</td></tr>
+<tr class="memitem:acd3fd34c64682d0f32386a4f60b0c278" id="r_acd3fd34c64682d0f32386a4f60b0c278"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acd3fd34c64682d0f32386a4f60b0c278">TEST</a> (VectorModifiers, Emplace)</td></tr>
+<tr class="memitem:a227bbbe98f6417aa3489112cc662f84a" id="r_a227bbbe98f6417aa3489112cc662f84a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a227bbbe98f6417aa3489112cc662f84a">TEST</a> (VectorModifiers, ResizeSmaller)</td></tr>
+<tr class="memitem:a30343c3081f1c2b5b8e83e6cef09c57a" id="r_a30343c3081f1c2b5b8e83e6cef09c57a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a30343c3081f1c2b5b8e83e6cef09c57a">TEST</a> (VectorModifiers, ResizeLarger)</td></tr>
+<tr class="memitem:aeef11cbb5c10f0d62287578b61b3d197" id="r_aeef11cbb5c10f0d62287578b61b3d197"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aeef11cbb5c10f0d62287578b61b3d197">TEST</a> (VectorModifiers, Swap)</td></tr>
+<tr class="memitem:afc93b8d66fd3c7fc76e169a62adb9104" id="r_afc93b8d66fd3c7fc76e169a62adb9104"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afc93b8d66fd3c7fc76e169a62adb9104">TEST</a> (VectorComparison, Equality)</td></tr>
+<tr class="memitem:aec064be43c770c41a4acfc20216db933" id="r_aec064be43c770c41a4acfc20216db933"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aec064be43c770c41a4acfc20216db933">TEST</a> (VectorComparison, LexicographicOrder)</td></tr>
+<tr class="memitem:a720d0ae3c8422ee63bbb81128c715f3a" id="r_a720d0ae3c8422ee63bbb81128c715f3a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a720d0ae3c8422ee63bbb81128c715f3a">TEST</a> (VectorNonMember, GlobalSwap)</td></tr>
+<tr class="memitem:a16a852e2ff63cdb1e69f91656a1884a3" id="r_a16a852e2ff63cdb1e69f91656a1884a3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a16a852e2ff63cdb1e69f91656a1884a3">TEST</a> (VectorNonMember, EraseByValue)</td></tr>
+<tr class="memitem:aad9115a7599130a9cfde563bb836287f" id="r_aad9115a7599130a9cfde563bb836287f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aad9115a7599130a9cfde563bb836287f">TEST</a> (VectorNonMember, EraseIf)</td></tr>
+<tr class="memitem:aeac9be131be116e0b0462e653adde394" id="r_aeac9be131be116e0b0462e653adde394"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aeac9be131be116e0b0462e653adde394">TEST</a> (VectorReallocation, CountReallocations)</td></tr>
+<tr class="memitem:a6a1dba404a4bb4e7c3396fa4fe9a2218" id="r_a6a1dba404a4bb4e7c3396fa4fe9a2218"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6a1dba404a4bb4e7c3396fa4fe9a2218">TEST</a> (VectorReallocation, CompareWithStdVector)</td></tr>
+<tr class="memitem:ad6838c0da9a50caf8da7db06ed7613bd" id="r_ad6838c0da9a50caf8da7db06ed7613bd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad6838c0da9a50caf8da7db06ed7613bd">TEST</a> (VectorPerformance, PushBack10k)</td></tr>
+<tr class="memitem:a617b2197729ec52adc6750eada85b421" id="r_a617b2197729ec52adc6750eada85b421"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a617b2197729ec52adc6750eada85b421">TEST</a> (VectorPerformance, PushBack100k)</td></tr>
+<tr class="memitem:ab0662d5df9b62a47522743c37497825e" id="r_ab0662d5df9b62a47522743c37497825e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab0662d5df9b62a47522743c37497825e">TEST</a> (VectorPerformance, PushBack1M)</td></tr>
+<tr class="memitem:abb00479a1ff31f02bdbe9ab8811ca2f5" id="r_abb00479a1ff31f02bdbe9ab8811ca2f5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abb00479a1ff31f02bdbe9ab8811ca2f5">TEST</a> (VectorPerformance, StdVectorPushBack1M)</td></tr>
+<tr class="memitem:a049c05b9caf29c98bb0b8f182bff0275" id="r_a049c05b9caf29c98bb0b8f182bff0275"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a049c05b9caf29c98bb0b8f182bff0275">TEST</a> (VectorEdgeCases, EmptyVectorIterators)</td></tr>
+<tr class="memitem:adf392972b67bc19e7ff19ac3fa38064f" id="r_adf392972b67bc19e7ff19ac3fa38064f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adf392972b67bc19e7ff19ac3fa38064f">TEST</a> (VectorEdgeCases, MoveAndPushBack)</td></tr>
+<tr class="memitem:ae43d0db91717b41233db0b2722c7c37f" id="r_ae43d0db91717b41233db0b2722c7c37f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae43d0db91717b41233db0b2722c7c37f">TEST</a> (VectorEdgeCases, StringElements)</td></tr>
+<tr class="memitem:a0543feb21dcfd13b3232c39ab1f5d0da" id="r_a0543feb21dcfd13b3232c39ab1f5d0da"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0543feb21dcfd13b3232c39ab1f5d0da">TEST</a> (VectorEdgeCases, NestedVector)</td></tr>
+<tr class="memitem:ab482939e2d37dfa9f3942054ddd1282a" id="r_ab482939e2d37dfa9f3942054ddd1282a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab482939e2d37dfa9f3942054ddd1282a">TEST</a> (VectorEdgeCases, ReserveBeforePush)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Smulkus aprašymas</h2>
+<div class="textblock"><p>Google Test testai nuosavai <a class="el" href="../../d5/db2/class_vector.html" title="Nuosava Vector konteinerio klasė.">Vector</a> klasei. </p>
+<p>Patikrina visą <a class="el" href="../../d5/db2/class_vector.html" title="Nuosava Vector konteinerio klasė.">Vector</a> funkcionalumą pagal std::vector specifikaciją. Kiekviena testuojama grupė atitinka std::vector Member functions sekciją. </p>
+
+<p class="definition">Apibrėžimas faile <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Funkcijos Dokumentacija</h2>
+<a id="ae08ef2672b20c7d24f78b843a6078bc8" name="ae08ef2672b20c7d24f78b843a6078bc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae08ef2672b20c7d24f78b843a6078bc8">&#9670;&#160;</a></span>TEST() <span class="overload">[1/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AssignCountValue</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00110">110</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>                                         {</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  112</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#addd43241ef82bb05d728d59aed9e0a2c">assign</a>(5, 7);</div>
+<div class="line"><span class="lineno">  113</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 5u);</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; 5; ++i)</div>
+<div class="line"><span class="lineno">  115</span>        EXPECT_EQ(v[i], 7);</div>
+<div class="line"><span class="lineno">  116</span>}</div>
+<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="../../d5/db2/class_vector.html">Vector</a></div><div class="ttdoc">Nuosava Vector konteinerio klasė.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00034">vector.h:34</a></div></div>
+<div class="ttc" id="aclass_vector_html_addd43241ef82bb05d728d59aed9e0a2c"><div class="ttname"><a href="../../d5/db2/class_vector.html#addd43241ef82bb05d728d59aed9e0a2c">Vector::assign</a></div><div class="ttdeci">void assign(size_type count, const T &amp;value)</div><div class="ttdoc">Priskiria count kopijų reikšmės value.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00222">vector.h:222</a></div></div>
+<div class="ttc" id="aclass_vector_html_ade9ce4c7602280a9c935c919afe10098"><div class="ttname"><a href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">Vector::size</a></div><div class="ttdeci">size_type size() const noexcept</div><div class="ttdoc">Grąžina elementų skaičių.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00330">vector.h:330</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae8a4362d89b4cc03020d923b099703c1" name="ae8a4362d89b4cc03020d923b099703c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8a4362d89b4cc03020d923b099703c1">&#9670;&#160;</a></span>TEST() <span class="overload">[2/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AssignInitializerList</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00126">126</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>                                              {</div>
+<div class="line"><span class="lineno">  127</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  128</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#addd43241ef82bb05d728d59aed9e0a2c">assign</a>({100, 200, 300});</div>
+<div class="line"><span class="lineno">  129</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">  130</span>    EXPECT_EQ(v[2], 300);</div>
+<div class="line"><span class="lineno">  131</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adfa6fcc875ae5c02d1bfc350df36312a" name="adfa6fcc875ae5c02d1bfc350df36312a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa6fcc875ae5c02d1bfc350df36312a">&#9670;&#160;</a></span>TEST() <span class="overload">[3/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AssignRange</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00118">118</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>                                    {</div>
+<div class="line"><span class="lineno">  119</span>    std::vector&lt;int&gt; src = {10, 20, 30};</div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  121</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#addd43241ef82bb05d728d59aed9e0a2c">assign</a>(src.begin(), src.end());</div>
+<div class="line"><span class="lineno">  122</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">  123</span>    EXPECT_EQ(v[1], 20);</div>
+<div class="line"><span class="lineno">  124</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acbd92f034be555c631faecc434d2a15e" name="acbd92f034be555c631faecc434d2a15e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbd92f034be555c631faecc434d2a15e">&#9670;&#160;</a></span>TEST() <span class="overload">[4/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CopyAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00078">78</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>                                       {</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> a = {1, 2, 3};</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> b;</div>
+<div class="line"><span class="lineno">   81</span>    b = a;</div>
+<div class="line"><span class="lineno">   82</span>    EXPECT_EQ(b.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">   83</span>    a[0] = 99;</div>
+<div class="line"><span class="lineno">   84</span>    EXPECT_EQ(b[0], 1);  <span class="comment">// gili kopija</span></div>
+<div class="line"><span class="lineno">   85</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0b3ee6c52098a2cfbbc9c9c901378e83" name="a0b3ee6c52098a2cfbbc9c9c901378e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b3ee6c52098a2cfbbc9c9c901378e83">&#9670;&#160;</a></span>TEST() <span class="overload">[5/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InitializerListAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00096">96</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>                                                  {</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">   98</span>    v = {7, 8, 9};</div>
+<div class="line"><span class="lineno">   99</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">  100</span>    EXPECT_EQ(v[2], 9);</div>
+<div class="line"><span class="lineno">  101</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5d092d4f420e34825004258ea8b38511" name="a5d092d4f420e34825004258ea8b38511"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d092d4f420e34825004258ea8b38511">&#9670;&#160;</a></span>TEST() <span class="overload">[6/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MoveAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00087">87</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span>                                       {</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> a = {4, 5, 6};</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> b;</div>
+<div class="line"><span class="lineno">   90</span>    b = std::move(a);</div>
+<div class="line"><span class="lineno">   91</span>    EXPECT_EQ(b.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">   92</span>    EXPECT_EQ(b[0], 4);</div>
+<div class="line"><span class="lineno">   93</span>    EXPECT_EQ(a.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 0u);</div>
+<div class="line"><span class="lineno">   94</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8e899ee196fca96fd92744c6afff3dc0" name="a8e899ee196fca96fd92744c6afff3dc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e899ee196fca96fd92744c6afff3dc0">&#9670;&#160;</a></span>TEST() <span class="overload">[7/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SelfAssignment</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00103">103</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>                                       {</div>
+<div class="line"><span class="lineno">  104</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  105</span>    v = v;  <span class="comment">// neturi sukelti klaidos</span></div>
+<div class="line"><span class="lineno">  106</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">  107</span>    EXPECT_EQ(v[0], 1);</div>
+<div class="line"><span class="lineno">  108</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae4016159a1dd18f396e407962773d66b" name="ae4016159a1dd18f396e407962773d66b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4016159a1dd18f396e407962773d66b">&#9670;&#160;</a></span>TEST() <span class="overload">[8/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorCapacity</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CapacityGrowth</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00251">251</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  251</span>                                     {</div>
+<div class="line"><span class="lineno">  252</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  253</span>    <span class="keywordtype">size_t</span> reallocs = 0;</div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordtype">size_t</span> prev_cap = 0;</div>
+<div class="line"><span class="lineno">  255</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 1000; ++i) {</div>
+<div class="line"><span class="lineno">  256</span>        <span class="keywordflow">if</span> (v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>() == v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>()) ++reallocs;</div>
+<div class="line"><span class="lineno">  257</span>        v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(i);</div>
+<div class="line"><span class="lineno">  258</span>        prev_cap = v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>();</div>
+<div class="line"><span class="lineno">  259</span>    }</div>
+<div class="line"><span class="lineno">  260</span>    <span class="comment">// Turėtų būti logaritminis perskirstymų skaičius</span></div>
+<div class="line"><span class="lineno">  261</span>    EXPECT_LT(reallocs, 25u);  <span class="comment">// &lt;= log2(1000) + 1</span></div>
+<div class="line"><span class="lineno">  262</span>}</div>
+<div class="ttc" id="aclass_vector_html_a60671a453740307c95b9716139acfaf0"><div class="ttname"><a href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">Vector::capacity</a></div><div class="ttdeci">size_type capacity() const noexcept</div><div class="ttdoc">Grąžina dabartiną capacity.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00350">vector.h:350</a></div></div>
+<div class="ttc" id="aclass_vector_html_a7cb08d016f15c97741c849cdb83170e1"><div class="ttname"><a href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">Vector::push_back</a></div><div class="ttdeci">void push_back(const T &amp;value)</div><div class="ttdoc">Prideda elementą į galą (kopija).</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00513">vector.h:513</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaa915b8037c2166dc1b26c27ec79081f" name="aaa915b8037c2166dc1b26c27ec79081f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa915b8037c2166dc1b26c27ec79081f">&#9670;&#160;</a></span>TEST() <span class="overload">[9/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorCapacity</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Empty</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00212">212</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  212</span>                            {</div>
+<div class="line"><span class="lineno">  213</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  214</span>    EXPECT_TRUE(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ad5e31c0f82683ece1b5b020c15a8b77b">empty</a>());</div>
+<div class="line"><span class="lineno">  215</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(1);</div>
+<div class="line"><span class="lineno">  216</span>    EXPECT_FALSE(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ad5e31c0f82683ece1b5b020c15a8b77b">empty</a>());</div>
+<div class="line"><span class="lineno">  217</span>}</div>
+<div class="ttc" id="aclass_vector_html_ad5e31c0f82683ece1b5b020c15a8b77b"><div class="ttname"><a href="../../d5/db2/class_vector.html#ad5e31c0f82683ece1b5b020c15a8b77b">Vector::empty</a></div><div class="ttdeci">bool empty() const noexcept</div><div class="ttdoc">Tikrina ar vektorius tuščias.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00327">vector.h:327</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa4b23ce6473cfee9ce372cee9f91b94a" name="aa4b23ce6473cfee9ce372cee9f91b94a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4b23ce6473cfee9ce372cee9f91b94a">&#9670;&#160;</a></span>TEST() <span class="overload">[10/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorCapacity</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Reserve</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00227">227</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  227</span>                              {</div>
+<div class="line"><span class="lineno">  228</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  229</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aae047b4b6a79dce4dcc3ffc3c39939d2">reserve</a>(100);</div>
+<div class="line"><span class="lineno">  230</span>    EXPECT_GE(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>(), 100u);</div>
+<div class="line"><span class="lineno">  231</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 0u);  <span class="comment">// dydis nepakito</span></div>
+<div class="line"><span class="lineno">  232</span>}</div>
+<div class="ttc" id="aclass_vector_html_aae047b4b6a79dce4dcc3ffc3c39939d2"><div class="ttname"><a href="../../d5/db2/class_vector.html#aae047b4b6a79dce4dcc3ffc3c39939d2">Vector::reserve</a></div><div class="ttdeci">void reserve(size_type new_cap)</div><div class="ttdoc">Rezervuoja atmintį new_cap elementams.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00342">vector.h:342</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6c0dfe4973688a000a30148eb90f3a60" name="a6c0dfe4973688a000a30148eb90f3a60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c0dfe4973688a000a30148eb90f3a60">&#9670;&#160;</a></span>TEST() <span class="overload">[11/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorCapacity</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReserveNoShrink</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00234">234</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  234</span>                                      {</div>
+<div class="line"><span class="lineno">  235</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  236</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aae047b4b6a79dce4dcc3ffc3c39939d2">reserve</a>(100);</div>
+<div class="line"><span class="lineno">  237</span>    <span class="keywordtype">size_t</span> cap = v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>();</div>
+<div class="line"><span class="lineno">  238</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aae047b4b6a79dce4dcc3ffc3c39939d2">reserve</a>(10);  <span class="comment">// mažesnis - neturėtų sumažėti</span></div>
+<div class="line"><span class="lineno">  239</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>(), cap);</div>
+<div class="line"><span class="lineno">  240</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1e7b7b623879977ece53909100a6fc9e" name="a1e7b7b623879977ece53909100a6fc9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e7b7b623879977ece53909100a6fc9e">&#9670;&#160;</a></span>TEST() <span class="overload">[12/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorCapacity</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ShrinkToFit</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00242">242</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  242</span>                                  {</div>
+<div class="line"><span class="lineno">  243</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  244</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aae047b4b6a79dce4dcc3ffc3c39939d2">reserve</a>(100);</div>
+<div class="line"><span class="lineno">  245</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(1);</div>
+<div class="line"><span class="lineno">  246</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(2);</div>
+<div class="line"><span class="lineno">  247</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a5746026edae1b2adb3b2133b99996f32">shrink_to_fit</a>();</div>
+<div class="line"><span class="lineno">  248</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>(), v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>());</div>
+<div class="line"><span class="lineno">  249</span>}</div>
+<div class="ttc" id="aclass_vector_html_a5746026edae1b2adb3b2133b99996f32"><div class="ttname"><a href="../../d5/db2/class_vector.html#a5746026edae1b2adb3b2133b99996f32">Vector::shrink_to_fit</a></div><div class="ttdeci">void shrink_to_fit()</div><div class="ttdoc">Sumažina capacity iki size (shrink to fit).</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00355">vector.h:355</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9f0a8ea5fbc8ff77b68da62674185e32" name="a9f0a8ea5fbc8ff77b68da62674185e32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f0a8ea5fbc8ff77b68da62674185e32">&#9670;&#160;</a></span>TEST() <span class="overload">[13/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorCapacity</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Size</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00219">219</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  219</span>                           {</div>
+<div class="line"><span class="lineno">  220</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  221</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 0u);</div>
+<div class="line"><span class="lineno">  222</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(1);</div>
+<div class="line"><span class="lineno">  223</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(2);</div>
+<div class="line"><span class="lineno">  224</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 2u);</div>
+<div class="line"><span class="lineno">  225</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afc93b8d66fd3c7fc76e169a62adb9104" name="afc93b8d66fd3c7fc76e169a62adb9104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc93b8d66fd3c7fc76e169a62adb9104">&#9670;&#160;</a></span>TEST() <span class="overload">[14/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorComparison</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Equality</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00389">389</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  389</span>                                 {</div>
+<div class="line"><span class="lineno">  390</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> a = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  391</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> b = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  392</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> c = {1, 2, 4};</div>
+<div class="line"><span class="lineno">  393</span>    EXPECT_TRUE(a == b);</div>
+<div class="line"><span class="lineno">  394</span>    EXPECT_FALSE(a == c);</div>
+<div class="line"><span class="lineno">  395</span>    EXPECT_TRUE(a != c);</div>
+<div class="line"><span class="lineno">  396</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aec064be43c770c41a4acfc20216db933" name="aec064be43c770c41a4acfc20216db933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec064be43c770c41a4acfc20216db933">&#9670;&#160;</a></span>TEST() <span class="overload">[15/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorComparison</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LexicographicOrder</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00398">398</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  398</span>                                           {</div>
+<div class="line"><span class="lineno">  399</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> a = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  400</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> b = {1, 2, 4};</div>
+<div class="line"><span class="lineno">  401</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> c = {1, 2, 3, 0};</div>
+<div class="line"><span class="lineno">  402</span>    EXPECT_TRUE(a &lt; b);</div>
+<div class="line"><span class="lineno">  403</span>    EXPECT_TRUE(a &lt; c);</div>
+<div class="line"><span class="lineno">  404</span>    EXPECT_TRUE(b &gt; a);</div>
+<div class="line"><span class="lineno">  405</span>    EXPECT_TRUE(a &lt;= a);</div>
+<div class="line"><span class="lineno">  406</span>    EXPECT_TRUE(a &gt;= a);</div>
+<div class="line"><span class="lineno">  407</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaad8bbf06155896321324d1dd777004a" name="aaad8bbf06155896321324d1dd777004a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaad8bbf06155896321324d1dd777004a">&#9670;&#160;</a></span>TEST() <span class="overload">[16/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorConstructors</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CopyConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00057">57</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>                                          {</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> a = {1, 2, 3};</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> b(a);</div>
+<div class="line"><span class="lineno">   60</span>    EXPECT_EQ(b.size(), 3u);</div>
+<div class="line"><span class="lineno">   61</span>    EXPECT_EQ(b[0], 1);</div>
+<div class="line"><span class="lineno">   62</span>    <span class="comment">// Gili kopija - pakeitimas a neturi itakos b</span></div>
+<div class="line"><span class="lineno">   63</span>    a[0] = 99;</div>
+<div class="line"><span class="lineno">   64</span>    EXPECT_EQ(b[0], 1);</div>
+<div class="line"><span class="lineno">   65</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab8cf0985c2e44aa4393014d2433c3259" name="ab8cf0985c2e44aa4393014d2433c3259"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8cf0985c2e44aa4393014d2433c3259">&#9670;&#160;</a></span>TEST() <span class="overload">[17/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorConstructors</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CountDefaultConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00034">34</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>                                                  {</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v(4);</div>
+<div class="line"><span class="lineno">   36</span>    EXPECT_EQ(v.size(), 4u);</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; 4; ++i)</div>
+<div class="line"><span class="lineno">   38</span>        EXPECT_EQ(v[i], 0);</div>
+<div class="line"><span class="lineno">   39</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af203507f529f86c4214d0b0ec260813f" name="af203507f529f86c4214d0b0ec260813f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af203507f529f86c4214d0b0ec260813f">&#9670;&#160;</a></span>TEST() <span class="overload">[18/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorConstructors</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CountValueConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00027">27</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>                                                {</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v(5, 42);</div>
+<div class="line"><span class="lineno">   29</span>    EXPECT_EQ(v.size(), 5u);</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; 5; ++i)</div>
+<div class="line"><span class="lineno">   31</span>        EXPECT_EQ(v[i], 42);</div>
+<div class="line"><span class="lineno">   32</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9905aa36203797ca98cba50c9e40e8b1" name="a9905aa36203797ca98cba50c9e40e8b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9905aa36203797ca98cba50c9e40e8b1">&#9670;&#160;</a></span>TEST() <span class="overload">[19/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorConstructors</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DefaultConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00020">20</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>                                             {</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">   22</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 0u);</div>
+<div class="line"><span class="lineno">   23</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>(), 0u);</div>
+<div class="line"><span class="lineno">   24</span>    EXPECT_TRUE(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ad5e31c0f82683ece1b5b020c15a8b77b">empty</a>());</div>
+<div class="line"><span class="lineno">   25</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a22d831a21d1e1c3c68b865087b52ccb3" name="a22d831a21d1e1c3c68b865087b52ccb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d831a21d1e1c3c68b865087b52ccb3">&#9670;&#160;</a></span>TEST() <span class="overload">[20/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorConstructors</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InitializerListConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00049">49</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>                                                     {</div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {10, 20, 30};</div>
+<div class="line"><span class="lineno">   51</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">   52</span>    EXPECT_EQ(v[0], 10);</div>
+<div class="line"><span class="lineno">   53</span>    EXPECT_EQ(v[1], 20);</div>
+<div class="line"><span class="lineno">   54</span>    EXPECT_EQ(v[2], 30);</div>
+<div class="line"><span class="lineno">   55</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7b0fa62fa402fb13326bf8027113858a" name="a7b0fa62fa402fb13326bf8027113858a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b0fa62fa402fb13326bf8027113858a">&#9670;&#160;</a></span>TEST() <span class="overload">[21/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorConstructors</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MoveConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00067">67</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>                                          {</div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> a = {1, 2, 3};</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> b(std::move(a));</div>
+<div class="line"><span class="lineno">   70</span>    EXPECT_EQ(b.size(), 3u);</div>
+<div class="line"><span class="lineno">   71</span>    EXPECT_EQ(b[0], 1);</div>
+<div class="line"><span class="lineno">   72</span>    EXPECT_EQ(a.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 0u);  <span class="comment">// originalas tuscias po perkėlimo</span></div>
+<div class="line"><span class="lineno">   73</span>    EXPECT_EQ(a.<a class="code hl_function" href="../../d5/db2/class_vector.html#a1fcf91de0c080eb7a487dddb3124ed7c">data</a>(), <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">   74</span>}</div>
+<div class="ttc" id="aclass_vector_html_a1fcf91de0c080eb7a487dddb3124ed7c"><div class="ttname"><a href="../../d5/db2/class_vector.html#a1fcf91de0c080eb7a487dddb3124ed7c">Vector::data</a></div><div class="ttdeci">T * data() noexcept</div><div class="ttdoc">Grąžina rodyklę į vidinį duomenų masyvą.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00299">vector.h:299</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2cc0fbea2dc7787823001afe229433fa" name="a2cc0fbea2dc7787823001afe229433fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cc0fbea2dc7787823001afe229433fa">&#9670;&#160;</a></span>TEST() <span class="overload">[22/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorConstructors</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RangeConstructor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00041">41</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>                                           {</div>
+<div class="line"><span class="lineno">   42</span>    std::vector&lt;int&gt; src = {1, 2, 3, 4, 5};</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v(src.begin(), src.end());</div>
+<div class="line"><span class="lineno">   44</span>    EXPECT_EQ(v.size(), 5u);</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; 5; ++i)</div>
+<div class="line"><span class="lineno">   46</span>        EXPECT_EQ(v[i], (<span class="keywordtype">int</span>)(i + 1));</div>
+<div class="line"><span class="lineno">   47</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a049c05b9caf29c98bb0b8f182bff0275" name="a049c05b9caf29c98bb0b8f182bff0275"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a049c05b9caf29c98bb0b8f182bff0275">&#9670;&#160;</a></span>TEST() <span class="overload">[23/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorEdgeCases</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EmptyVectorIterators</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00520">520</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  520</span>                                            {</div>
+<div class="line"><span class="lineno">  521</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  522</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), v.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>());</div>
+<div class="line"><span class="lineno">  523</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a724ade5c5b5f8f5f8669965125b0e5bd">rbegin</a>(), v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a730043c7d5c7fd7507ec811d99c68a63">rend</a>());</div>
+<div class="line"><span class="lineno">  524</span>}</div>
+<div class="ttc" id="aclass_vector_html_a724ade5c5b5f8f5f8669965125b0e5bd"><div class="ttname"><a href="../../d5/db2/class_vector.html#a724ade5c5b5f8f5f8669965125b0e5bd">Vector::rbegin</a></div><div class="ttdeci">reverse_iterator rbegin() noexcept</div><div class="ttdoc">Grąžina atvirkštinį iteratorių.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00315">vector.h:315</a></div></div>
+<div class="ttc" id="aclass_vector_html_a730043c7d5c7fd7507ec811d99c68a63"><div class="ttname"><a href="../../d5/db2/class_vector.html#a730043c7d5c7fd7507ec811d99c68a63">Vector::rend</a></div><div class="ttdeci">reverse_iterator rend() noexcept</div><div class="ttdoc">Grąžina atvirkštinį past-the-end iteratorių.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00320">vector.h:320</a></div></div>
+<div class="ttc" id="aclass_vector_html_abaaafc8a6696d49ceb4f799d2f78e299"><div class="ttname"><a href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">Vector::end</a></div><div class="ttdeci">iterator end() noexcept</div><div class="ttdoc">Grąžina iteratorių į pabaigą (past-the-end).</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00310">vector.h:310</a></div></div>
+<div class="ttc" id="aclass_vector_html_aea04561325108b73824e4ad1dd8114b2"><div class="ttname"><a href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">Vector::begin</a></div><div class="ttdeci">iterator begin() noexcept</div><div class="ttdoc">Grąžina iteratorių į pradžią.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00305">vector.h:305</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adf392972b67bc19e7ff19ac3fa38064f" name="adf392972b67bc19e7ff19ac3fa38064f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf392972b67bc19e7ff19ac3fa38064f">&#9670;&#160;</a></span>TEST() <span class="overload">[24/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorEdgeCases</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MoveAndPushBack</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00526">526</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  526</span>                                       {</div>
+<div class="line"><span class="lineno">  527</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> a = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  528</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> b = std::move(a);</div>
+<div class="line"><span class="lineno">  529</span>    b.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(4);</div>
+<div class="line"><span class="lineno">  530</span>    EXPECT_EQ(b.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 4u);</div>
+<div class="line"><span class="lineno">  531</span>    EXPECT_EQ(b[3], 4);</div>
+<div class="line"><span class="lineno">  532</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0543feb21dcfd13b3232c39ab1f5d0da" name="a0543feb21dcfd13b3232c39ab1f5d0da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0543feb21dcfd13b3232c39ab1f5d0da">&#9670;&#160;</a></span>TEST() <span class="overload">[25/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorEdgeCases</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">NestedVector</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00545">545</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  545</span>                                    {</div>
+<div class="line"><span class="lineno">  546</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;Vector&lt;int&gt;</a>&gt; v;</div>
+<div class="line"><span class="lineno">  547</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>({1, 2, 3});</div>
+<div class="line"><span class="lineno">  548</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>({4, 5});</div>
+<div class="line"><span class="lineno">  549</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 2u);</div>
+<div class="line"><span class="lineno">  550</span>    EXPECT_EQ(v[0].size(), 3u);</div>
+<div class="line"><span class="lineno">  551</span>    EXPECT_EQ(v[1][0], 4);</div>
+<div class="line"><span class="lineno">  552</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab482939e2d37dfa9f3942054ddd1282a" name="ab482939e2d37dfa9f3942054ddd1282a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab482939e2d37dfa9f3942054ddd1282a">&#9670;&#160;</a></span>TEST() <span class="overload">[26/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorEdgeCases</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReserveBeforePush</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00554">554</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  554</span>                                         {</div>
+<div class="line"><span class="lineno">  555</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  556</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aae047b4b6a79dce4dcc3ffc3c39939d2">reserve</a>(1000);</div>
+<div class="line"><span class="lineno">  557</span>    <span class="keywordtype">size_t</span> cap = v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>();</div>
+<div class="line"><span class="lineno">  558</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 1000; ++i) v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(i);</div>
+<div class="line"><span class="lineno">  559</span>    <span class="comment">// Neturėtų būti perskirstymo</span></div>
+<div class="line"><span class="lineno">  560</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>(), cap);</div>
+<div class="line"><span class="lineno">  561</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 1000u);</div>
+<div class="line"><span class="lineno">  562</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae43d0db91717b41233db0b2722c7c37f" name="ae43d0db91717b41233db0b2722c7c37f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae43d0db91717b41233db0b2722c7c37f">&#9670;&#160;</a></span>TEST() <span class="overload">[27/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorEdgeCases</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StringElements</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00534">534</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  534</span>                                      {</div>
+<div class="line"><span class="lineno">  535</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;std::string&gt;</a> v;</div>
+<div class="line"><span class="lineno">  536</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(<span class="stringliteral">&quot;labas&quot;</span>);</div>
+<div class="line"><span class="lineno">  537</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(<span class="stringliteral">&quot;pasauli&quot;</span>);</div>
+<div class="line"><span class="lineno">  538</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 2u);</div>
+<div class="line"><span class="lineno">  539</span>    EXPECT_EQ(v[0], <span class="stringliteral">&quot;labas&quot;</span>);</div>
+<div class="line"><span class="lineno">  540</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a58b6689868c3d347a90f6c7c2d60be12">insert</a>(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>() + 1, <span class="stringliteral">&quot;grazus&quot;</span>);</div>
+<div class="line"><span class="lineno">  541</span>    EXPECT_EQ(v[1], <span class="stringliteral">&quot;grazus&quot;</span>);</div>
+<div class="line"><span class="lineno">  542</span>    EXPECT_EQ(v[2], <span class="stringliteral">&quot;pasauli&quot;</span>);</div>
+<div class="line"><span class="lineno">  543</span>}</div>
+<div class="ttc" id="aclass_vector_html_a58b6689868c3d347a90f6c7c2d60be12"><div class="ttname"><a href="../../d5/db2/class_vector.html#a58b6689868c3d347a90f6c7c2d60be12">Vector::insert</a></div><div class="ttdeci">iterator insert(const_iterator pos, const T &amp;value)</div><div class="ttdoc">Įterpia elementą prieš pos.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00375">vector.h:375</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9dcc39a0bb70e8335b853b99561cf3ca" name="a9dcc39a0bb70e8335b853b99561cf3ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dcc39a0bb70e8335b853b99561cf3ca">&#9670;&#160;</a></span>TEST() <span class="overload">[28/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorElementAccess</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AtInBounds</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00142">142</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>                                      {</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  144</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a0949c5f412f6fedaa2a35d35752f0555">at</a>(0), 1);</div>
+<div class="line"><span class="lineno">  145</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a0949c5f412f6fedaa2a35d35752f0555">at</a>(2), 3);</div>
+<div class="line"><span class="lineno">  146</span>}</div>
+<div class="ttc" id="aclass_vector_html_a0949c5f412f6fedaa2a35d35752f0555"><div class="ttname"><a href="../../d5/db2/class_vector.html#a0949c5f412f6fedaa2a35d35752f0555">Vector::at</a></div><div class="ttdeci">reference at(size_type pos)</div><div class="ttdoc">Prieiga prie elemento su ribų tikrinimu.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00261">vector.h:261</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a857bd50f1ff4a246894a0d951fd76a53" name="a857bd50f1ff4a246894a0d951fd76a53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a857bd50f1ff4a246894a0d951fd76a53">&#9670;&#160;</a></span>TEST() <span class="overload">[29/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorElementAccess</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AtOutOfBounds</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00148">148</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>                                         {</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  150</span>    EXPECT_THROW(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a0949c5f412f6fedaa2a35d35752f0555">at</a>(3), std::out_of_range);</div>
+<div class="line"><span class="lineno">  151</span>    EXPECT_THROW(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a0949c5f412f6fedaa2a35d35752f0555">at</a>(100), std::out_of_range);</div>
+<div class="line"><span class="lineno">  152</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a61c33765d847274b29b45ae0a690574f" name="a61c33765d847274b29b45ae0a690574f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61c33765d847274b29b45ae0a690574f">&#9670;&#160;</a></span>TEST() <span class="overload">[30/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorElementAccess</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataPointer</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00162">162</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>                                       {</div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordtype">int</span>* ptr = v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a1fcf91de0c080eb7a487dddb3124ed7c">data</a>();</div>
+<div class="line"><span class="lineno">  165</span>    EXPECT_EQ(ptr[0], 1);</div>
+<div class="line"><span class="lineno">  166</span>    ptr[0] = 42;</div>
+<div class="line"><span class="lineno">  167</span>    EXPECT_EQ(v[0], 42);</div>
+<div class="line"><span class="lineno">  168</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0919a5f449d291f8d0ee00fb65cfaa34" name="a0919a5f449d291f8d0ee00fb65cfaa34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0919a5f449d291f8d0ee00fb65cfaa34">&#9670;&#160;</a></span>TEST() <span class="overload">[31/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorElementAccess</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FrontBack</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00154">154</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>                                     {</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {5, 6, 7};</div>
+<div class="line"><span class="lineno">  156</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a50ff0e4eccfdabf16696498bc42a823c">front</a>(), 5);</div>
+<div class="line"><span class="lineno">  157</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a0977f3472b15fe46a8895efb09494bed">back</a>(), 7);</div>
+<div class="line"><span class="lineno">  158</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a50ff0e4eccfdabf16696498bc42a823c">front</a>() = 99;</div>
+<div class="line"><span class="lineno">  159</span>    EXPECT_EQ(v[0], 99);</div>
+<div class="line"><span class="lineno">  160</span>}</div>
+<div class="ttc" id="aclass_vector_html_a0977f3472b15fe46a8895efb09494bed"><div class="ttname"><a href="../../d5/db2/class_vector.html#a0977f3472b15fe46a8895efb09494bed">Vector::back</a></div><div class="ttdeci">reference back()</div><div class="ttdoc">Grąžina paskutinį elementą.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00293">vector.h:293</a></div></div>
+<div class="ttc" id="aclass_vector_html_a50ff0e4eccfdabf16696498bc42a823c"><div class="ttname"><a href="../../d5/db2/class_vector.html#a50ff0e4eccfdabf16696498bc42a823c">Vector::front</a></div><div class="ttdeci">reference front()</div><div class="ttdoc">Grąžina pirmą elementą.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00287">vector.h:287</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae66ea820655730f52b8d159696ddc37f" name="ae66ea820655730f52b8d159696ddc37f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66ea820655730f52b8d159696ddc37f">&#9670;&#160;</a></span>TEST() <span class="overload">[32/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorElementAccess</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">OperatorBrackets</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00135">135</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>                                            {</div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {10, 20, 30};</div>
+<div class="line"><span class="lineno">  137</span>    EXPECT_EQ(v[0], 10);</div>
+<div class="line"><span class="lineno">  138</span>    v[1] = 99;</div>
+<div class="line"><span class="lineno">  139</span>    EXPECT_EQ(v[1], 99);</div>
+<div class="line"><span class="lineno">  140</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac69242530330d576f10078db3fc74c5a" name="ac69242530330d576f10078db3fc74c5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac69242530330d576f10078db3fc74c5a">&#9670;&#160;</a></span>TEST() <span class="overload">[33/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorIterators</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BeginEnd</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00172">172</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>                                {</div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3, 4, 5};</div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordtype">int</span> sum = 0;</div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(); it != v.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>(); ++it)</div>
+<div class="line"><span class="lineno">  176</span>        sum += *it;</div>
+<div class="line"><span class="lineno">  177</span>    EXPECT_EQ(sum, 15);</div>
+<div class="line"><span class="lineno">  178</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5e57250ceb449bef9c4ba1fc3fe12127" name="a5e57250ceb449bef9c4ba1fc3fe12127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e57250ceb449bef9c4ba1fc3fe12127">&#9670;&#160;</a></span>TEST() <span class="overload">[34/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorIterators</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ConstIterator</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00187">187</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  187</span>                                     {</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keyword">const</span> <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {10, 20, 30};</div>
+<div class="line"><span class="lineno">  189</span>    <span class="keywordtype">int</span> sum = 0;</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a0e785a437d78d8e9f925f217a4a158ce">cbegin</a>(); it != v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a8bb1d0ca8b8eefdb6c18c1ea1a90cec9">cend</a>(); ++it)</div>
+<div class="line"><span class="lineno">  191</span>        sum += *it;</div>
+<div class="line"><span class="lineno">  192</span>    EXPECT_EQ(sum, 60);</div>
+<div class="line"><span class="lineno">  193</span>}</div>
+<div class="ttc" id="aclass_vector_html_a0e785a437d78d8e9f925f217a4a158ce"><div class="ttname"><a href="../../d5/db2/class_vector.html#a0e785a437d78d8e9f925f217a4a158ce">Vector::cbegin</a></div><div class="ttdeci">const_iterator cbegin() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00307">vector.h:307</a></div></div>
+<div class="ttc" id="aclass_vector_html_a8bb1d0ca8b8eefdb6c18c1ea1a90cec9"><div class="ttname"><a href="../../d5/db2/class_vector.html#a8bb1d0ca8b8eefdb6c18c1ea1a90cec9">Vector::cend</a></div><div class="ttdeci">const_iterator cend() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00312">vector.h:312</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a80aa1b659352764992a87bf8fc81b494" name="a80aa1b659352764992a87bf8fc81b494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80aa1b659352764992a87bf8fc81b494">&#9670;&#160;</a></span>TEST() <span class="overload">[35/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorIterators</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RangeFor</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00180">180</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  180</span>                                {</div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {2, 4, 6};</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordtype">int</span> sum = 0;</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; x : v) sum += x;</div>
+<div class="line"><span class="lineno">  184</span>    EXPECT_EQ(sum, 12);</div>
+<div class="line"><span class="lineno">  185</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a78c06e75e2d6cc0c6a8927dedff3415b" name="a78c06e75e2d6cc0c6a8927dedff3415b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78c06e75e2d6cc0c6a8927dedff3415b">&#9670;&#160;</a></span>TEST() <span class="overload">[36/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorIterators</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReverseIterator</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00195">195</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  195</span>                                       {</div>
+<div class="line"><span class="lineno">  196</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  197</span>    std::vector&lt;int&gt; rev(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a724ade5c5b5f8f5f8669965125b0e5bd">rbegin</a>(), v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a730043c7d5c7fd7507ec811d99c68a63">rend</a>());</div>
+<div class="line"><span class="lineno">  198</span>    EXPECT_EQ(rev[0], 3);</div>
+<div class="line"><span class="lineno">  199</span>    EXPECT_EQ(rev[1], 2);</div>
+<div class="line"><span class="lineno">  200</span>    EXPECT_EQ(rev[2], 1);</div>
+<div class="line"><span class="lineno">  201</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a82098b5fddc36c720e99af26c36eab7f" name="a82098b5fddc36c720e99af26c36eab7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82098b5fddc36c720e99af26c36eab7f">&#9670;&#160;</a></span>TEST() <span class="overload">[37/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorIterators</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StdAlgorithms</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00203">203</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  203</span>                                     {</div>
+<div class="line"><span class="lineno">  204</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {5, 3, 1, 4, 2};</div>
+<div class="line"><span class="lineno">  205</span>    std::sort(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>(), v.<a class="code hl_function" href="../../d5/db2/class_vector.html#abaaafc8a6696d49ceb4f799d2f78e299">end</a>());</div>
+<div class="line"><span class="lineno">  206</span>    EXPECT_EQ(v[0], 1);</div>
+<div class="line"><span class="lineno">  207</span>    EXPECT_EQ(v[4], 5);</div>
+<div class="line"><span class="lineno">  208</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a09dcb58cef39b0d3f0276e8480be1da0" name="a09dcb58cef39b0d3f0276e8480be1da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09dcb58cef39b0d3f0276e8480be1da0">&#9670;&#160;</a></span>TEST() <span class="overload">[38/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Clear</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00266">266</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  266</span>                             {</div>
+<div class="line"><span class="lineno">  267</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  268</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a1a4abc0a085cd7a32db757362f085485">clear</a>();</div>
+<div class="line"><span class="lineno">  269</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 0u);</div>
+<div class="line"><span class="lineno">  270</span>    EXPECT_TRUE(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ad5e31c0f82683ece1b5b020c15a8b77b">empty</a>());</div>
+<div class="line"><span class="lineno">  271</span>    <span class="comment">// Capacity išsaugoma</span></div>
+<div class="line"><span class="lineno">  272</span>    EXPECT_GE(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>(), 3u);</div>
+<div class="line"><span class="lineno">  273</span>}</div>
+<div class="ttc" id="aclass_vector_html_a1a4abc0a085cd7a32db757362f085485"><div class="ttname"><a href="../../d5/db2/class_vector.html#a1a4abc0a085cd7a32db757362f085485">Vector::clear</a></div><div class="ttdeci">void clear() noexcept</div><div class="ttdoc">Ištrina visus elementus (size = 0, capacity nesikeičia).</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00363">vector.h:363</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acd3fd34c64682d0f32386a4f60b0c278" name="acd3fd34c64682d0f32386a4f60b0c278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd3fd34c64682d0f32386a4f60b0c278">&#9670;&#160;</a></span>TEST() <span class="overload">[39/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Emplace</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00355">355</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  355</span>                               {</div>
+<div class="line"><span class="lineno">  356</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;std::pair&lt;int,int&gt;</a>&gt; v = {{1,2}, {5,6}};</div>
+<div class="line"><span class="lineno">  357</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a6a7f65e9b8e57122c868d0aa4f326c19">emplace</a>(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>() + 1, 3, 4);</div>
+<div class="line"><span class="lineno">  358</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">  359</span>    EXPECT_EQ(v[1].first, 3);</div>
+<div class="line"><span class="lineno">  360</span>}</div>
+<div class="ttc" id="aclass_vector_html_a6a7f65e9b8e57122c868d0aa4f326c19"><div class="ttname"><a href="../../d5/db2/class_vector.html#a6a7f65e9b8e57122c868d0aa4f326c19">Vector::emplace</a></div><div class="ttdeci">iterator emplace(const_iterator pos, Args &amp;&amp;... args)</div><div class="ttdoc">Sukonstruoja elementą vietoje prieš pos.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00462">vector.h:462</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a73cea938502faa95400d7ca1ce4961d3" name="a73cea938502faa95400d7ca1ce4961d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73cea938502faa95400d7ca1ce4961d3">&#9670;&#160;</a></span>TEST() <span class="overload">[40/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EmplaceBack</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00346">346</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  346</span>                                   {</div>
+<div class="line"><span class="lineno">  347</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;std::pair&lt;int,int&gt;</a>&gt; v;</div>
+<div class="line"><span class="lineno">  348</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a5d19b8e8fd6ded1e2e99045c3962c7e9">emplace_back</a>(1, 2);</div>
+<div class="line"><span class="lineno">  349</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a5d19b8e8fd6ded1e2e99045c3962c7e9">emplace_back</a>(3, 4);</div>
+<div class="line"><span class="lineno">  350</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 2u);</div>
+<div class="line"><span class="lineno">  351</span>    EXPECT_EQ(v[0].first, 1);</div>
+<div class="line"><span class="lineno">  352</span>    EXPECT_EQ(v[1].second, 4);</div>
+<div class="line"><span class="lineno">  353</span>}</div>
+<div class="ttc" id="aclass_vector_html_a5d19b8e8fd6ded1e2e99045c3962c7e9"><div class="ttname"><a href="../../d5/db2/class_vector.html#a5d19b8e8fd6ded1e2e99045c3962c7e9">Vector::emplace_back</a></div><div class="ttdeci">reference emplace_back(Args &amp;&amp;... args)</div><div class="ttdoc">Sukonstruoja elementą gale vietoje.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00528">vector.h:528</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a53884b53b82b3e2d75d6e78b6aab6574" name="a53884b53b82b3e2d75d6e78b6aab6574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53884b53b82b3e2d75d6e78b6aab6574">&#9670;&#160;</a></span>TEST() <span class="overload">[41/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EraseRange</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00338">338</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  338</span>                                  {</div>
+<div class="line"><span class="lineno">  339</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3, 4, 5};</div>
+<div class="line"><span class="lineno">  340</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a9475371e34e4ce47ec3359ff25fed6ec">erase</a>(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>() + 1, v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>() + 4);  <span class="comment">// istrina 2,3,4</span></div>
+<div class="line"><span class="lineno">  341</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 2u);</div>
+<div class="line"><span class="lineno">  342</span>    EXPECT_EQ(v[0], 1);</div>
+<div class="line"><span class="lineno">  343</span>    EXPECT_EQ(v[1], 5);</div>
+<div class="line"><span class="lineno">  344</span>}</div>
+<div class="ttc" id="aclass_vector_html_a9475371e34e4ce47ec3359ff25fed6ec"><div class="ttname"><a href="../../d5/db2/class_vector.html#a9475371e34e4ce47ec3359ff25fed6ec">Vector::erase</a></div><div class="ttdeci">iterator erase(const_iterator pos)</div><div class="ttdoc">Ištrina elementą ties pos.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00491">vector.h:491</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1036c4a89c7d5dad2a678f83349b975f" name="a1036c4a89c7d5dad2a678f83349b975f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1036c4a89c7d5dad2a678f83349b975f">&#9670;&#160;</a></span>TEST() <span class="overload">[42/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EraseSingle</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00330">330</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  330</span>                                   {</div>
+<div class="line"><span class="lineno">  331</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3, 4};</div>
+<div class="line"><span class="lineno">  332</span>    <span class="keyword">auto</span> it = v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a9475371e34e4ce47ec3359ff25fed6ec">erase</a>(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>() + 1);</div>
+<div class="line"><span class="lineno">  333</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">  334</span>    EXPECT_EQ(v[1], 3);</div>
+<div class="line"><span class="lineno">  335</span>    EXPECT_EQ(*it, 3);</div>
+<div class="line"><span class="lineno">  336</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1ad333b91c867747301b70f82d2538c8" name="a1ad333b91c867747301b70f82d2538c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ad333b91c867747301b70f82d2538c8">&#9670;&#160;</a></span>TEST() <span class="overload">[43/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InsertCount</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00305">305</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  305</span>                                   {</div>
+<div class="line"><span class="lineno">  306</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 5};</div>
+<div class="line"><span class="lineno">  307</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a58b6689868c3d347a90f6c7c2d60be12">insert</a>(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>() + 1, 3, 2);  <span class="comment">// idesime 3 x &quot;2&quot;</span></div>
+<div class="line"><span class="lineno">  308</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 5u);</div>
+<div class="line"><span class="lineno">  309</span>    EXPECT_EQ(v[1], 2);</div>
+<div class="line"><span class="lineno">  310</span>    EXPECT_EQ(v[2], 2);</div>
+<div class="line"><span class="lineno">  311</span>    EXPECT_EQ(v[3], 2);</div>
+<div class="line"><span class="lineno">  312</span>    EXPECT_EQ(v[4], 5);</div>
+<div class="line"><span class="lineno">  313</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac4f765d0d8777ac765feeb3c3e6c89c7" name="ac4f765d0d8777ac765feeb3c3e6c89c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4f765d0d8777ac765feeb3c3e6c89c7">&#9670;&#160;</a></span>TEST() <span class="overload">[44/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InsertInitializerList</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00323">323</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  323</span>                                             {</div>
+<div class="line"><span class="lineno">  324</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 5};</div>
+<div class="line"><span class="lineno">  325</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a58b6689868c3d347a90f6c7c2d60be12">insert</a>(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>() + 1, {2, 3, 4});</div>
+<div class="line"><span class="lineno">  326</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 5u);</div>
+<div class="line"><span class="lineno">  327</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; ++i) EXPECT_EQ(v[i], i + 1);</div>
+<div class="line"><span class="lineno">  328</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a85e9c76ac6e7bfc3707fa397695f1809" name="a85e9c76ac6e7bfc3707fa397695f1809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85e9c76ac6e7bfc3707fa397695f1809">&#9670;&#160;</a></span>TEST() <span class="overload">[45/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InsertRange</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00315">315</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  315</span>                                   {</div>
+<div class="line"><span class="lineno">  316</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 5};</div>
+<div class="line"><span class="lineno">  317</span>    std::vector&lt;int&gt; src = {2, 3, 4};</div>
+<div class="line"><span class="lineno">  318</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a58b6689868c3d347a90f6c7c2d60be12">insert</a>(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>() + 1, src.begin(), src.end());</div>
+<div class="line"><span class="lineno">  319</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 5u);</div>
+<div class="line"><span class="lineno">  320</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; ++i) EXPECT_EQ(v[i], i + 1);</div>
+<div class="line"><span class="lineno">  321</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a410f0a181094395d465b983489232862" name="a410f0a181094395d465b983489232862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a410f0a181094395d465b983489232862">&#9670;&#160;</a></span>TEST() <span class="overload">[46/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InsertSingle</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00297">297</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  297</span>                                    {</div>
+<div class="line"><span class="lineno">  298</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 4, 5};</div>
+<div class="line"><span class="lineno">  299</span>    <span class="keyword">auto</span> it = v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a58b6689868c3d347a90f6c7c2d60be12">insert</a>(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#aea04561325108b73824e4ad1dd8114b2">begin</a>() + 2, 3);</div>
+<div class="line"><span class="lineno">  300</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 5u);</div>
+<div class="line"><span class="lineno">  301</span>    EXPECT_EQ(v[2], 3);</div>
+<div class="line"><span class="lineno">  302</span>    EXPECT_EQ(*it, 3);</div>
+<div class="line"><span class="lineno">  303</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a61cabbd87ce4188887d2ac4476410568" name="a61cabbd87ce4188887d2ac4476410568"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61cabbd87ce4188887d2ac4476410568">&#9670;&#160;</a></span>TEST() <span class="overload">[47/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PopBack</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00290">290</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  290</span>                               {</div>
+<div class="line"><span class="lineno">  291</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  292</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a96a0a7cacee7603cb7bce3e82c34d0ae">pop_back</a>();</div>
+<div class="line"><span class="lineno">  293</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 2u);</div>
+<div class="line"><span class="lineno">  294</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a0977f3472b15fe46a8895efb09494bed">back</a>(), 2);</div>
+<div class="line"><span class="lineno">  295</span>}</div>
+<div class="ttc" id="aclass_vector_html_a96a0a7cacee7603cb7bce3e82c34d0ae"><div class="ttname"><a href="../../d5/db2/class_vector.html#a96a0a7cacee7603cb7bce3e82c34d0ae">Vector::pop_back</a></div><div class="ttdeci">void pop_back()</div><div class="ttdoc">Pašalina paskutinį elementą.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00538">vector.h:538</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9c54691319a28ef93f27534b7936f08b" name="a9c54691319a28ef93f27534b7936f08b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c54691319a28ef93f27534b7936f08b">&#9670;&#160;</a></span>TEST() <span class="overload">[48/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PushBack</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00275">275</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  275</span>                                {</div>
+<div class="line"><span class="lineno">  276</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  277</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; ++i) v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(i);</div>
+<div class="line"><span class="lineno">  278</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 10u);</div>
+<div class="line"><span class="lineno">  279</span>    EXPECT_EQ(v[9], 9);</div>
+<div class="line"><span class="lineno">  280</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adfe244c168385cd3c812484f390f599b" name="adfe244c168385cd3c812484f390f599b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfe244c168385cd3c812484f390f599b">&#9670;&#160;</a></span>TEST() <span class="overload">[49/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PushBackMove</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00282">282</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  282</span>                                    {</div>
+<div class="line"><span class="lineno">  283</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;std::string&gt;</a> v;</div>
+<div class="line"><span class="lineno">  284</span>    std::string s = <span class="stringliteral">&quot;testas&quot;</span>;</div>
+<div class="line"><span class="lineno">  285</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(std::move(s));</div>
+<div class="line"><span class="lineno">  286</span>    EXPECT_EQ(v[0], <span class="stringliteral">&quot;testas&quot;</span>);</div>
+<div class="line"><span class="lineno">  287</span>    EXPECT_TRUE(s.empty() || s == <span class="stringliteral">&quot;&quot;</span>);  <span class="comment">// po perkėlimo</span></div>
+<div class="line"><span class="lineno">  288</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a30343c3081f1c2b5b8e83e6cef09c57a" name="a30343c3081f1c2b5b8e83e6cef09c57a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30343c3081f1c2b5b8e83e6cef09c57a">&#9670;&#160;</a></span>TEST() <span class="overload">[50/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ResizeLarger</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00369">369</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  369</span>                                    {</div>
+<div class="line"><span class="lineno">  370</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2};</div>
+<div class="line"><span class="lineno">  371</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a102e92ccd381a3d0356a08252b28f1ac">resize</a>(5, 99);</div>
+<div class="line"><span class="lineno">  372</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 5u);</div>
+<div class="line"><span class="lineno">  373</span>    EXPECT_EQ(v[2], 99);</div>
+<div class="line"><span class="lineno">  374</span>    EXPECT_EQ(v[4], 99);</div>
+<div class="line"><span class="lineno">  375</span>}</div>
+<div class="ttc" id="aclass_vector_html_a102e92ccd381a3d0356a08252b28f1ac"><div class="ttname"><a href="../../d5/db2/class_vector.html#a102e92ccd381a3d0356a08252b28f1ac">Vector::resize</a></div><div class="ttdeci">void resize(size_type count, const T &amp;value=T())</div><div class="ttdoc">Pakeičia vektoriaus dydį.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00547">vector.h:547</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a227bbbe98f6417aa3489112cc662f84a" name="a227bbbe98f6417aa3489112cc662f84a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a227bbbe98f6417aa3489112cc662f84a">&#9670;&#160;</a></span>TEST() <span class="overload">[51/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ResizeSmaller</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00362">362</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  362</span>                                     {</div>
+<div class="line"><span class="lineno">  363</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3, 4, 5};</div>
+<div class="line"><span class="lineno">  364</span>    v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a102e92ccd381a3d0356a08252b28f1ac">resize</a>(3);</div>
+<div class="line"><span class="lineno">  365</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">  366</span>    EXPECT_EQ(v[2], 3);</div>
+<div class="line"><span class="lineno">  367</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aeef11cbb5c10f0d62287578b61b3d197" name="aeef11cbb5c10f0d62287578b61b3d197"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeef11cbb5c10f0d62287578b61b3d197">&#9670;&#160;</a></span>TEST() <span class="overload">[52/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorModifiers</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Swap</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00377">377</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  377</span>                            {</div>
+<div class="line"><span class="lineno">  378</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> a = {1, 2, 3};</div>
+<div class="line"><span class="lineno">  379</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> b = {4, 5};</div>
+<div class="line"><span class="lineno">  380</span>    a.<a class="code hl_function" href="../../d5/db2/class_vector.html#ae1387b115ad4874d76690acc701ce976">swap</a>(b);</div>
+<div class="line"><span class="lineno">  381</span>    EXPECT_EQ(a.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 2u);</div>
+<div class="line"><span class="lineno">  382</span>    EXPECT_EQ(b.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">  383</span>    EXPECT_EQ(a[0], 4);</div>
+<div class="line"><span class="lineno">  384</span>    EXPECT_EQ(b[0], 1);</div>
+<div class="line"><span class="lineno">  385</span>}</div>
+<div class="ttc" id="aclass_vector_html_ae1387b115ad4874d76690acc701ce976"><div class="ttname"><a href="../../d5/db2/class_vector.html#ae1387b115ad4874d76690acc701ce976">Vector::swap</a></div><div class="ttdeci">void swap(Vector &amp;other) noexcept</div><div class="ttdoc">Sukeičia du vektorius vietomis (O(1)).</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00565">vector.h:565</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a16a852e2ff63cdb1e69f91656a1884a3" name="a16a852e2ff63cdb1e69f91656a1884a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16a852e2ff63cdb1e69f91656a1884a3">&#9670;&#160;</a></span>TEST() <span class="overload">[53/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorNonMember</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EraseByValue</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00419">419</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  419</span>                                    {</div>
+<div class="line"><span class="lineno">  420</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3, 2, 4, 2};</div>
+<div class="line"><span class="lineno">  421</span>    <span class="keyword">auto</span> removed = <a class="code hl_function" href="../../d6/d68/vector_8h.html#a27485ee5e248708d46f9ee5070bd83dd">erase</a>(v, 2);</div>
+<div class="line"><span class="lineno">  422</span>    EXPECT_EQ(removed, 3u);</div>
+<div class="line"><span class="lineno">  423</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">  424</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; x : v) EXPECT_NE(x, 2);</div>
+<div class="line"><span class="lineno">  425</span>}</div>
+<div class="ttc" id="avector_8h_html_a27485ee5e248708d46f9ee5070bd83dd"><div class="ttname"><a href="../../d6/d68/vector_8h.html#a27485ee5e248708d46f9ee5070bd83dd">erase</a></div><div class="ttdeci">Vector&lt; T, A &gt;::size_type erase(Vector&lt; T, A &gt; &amp;c, const U &amp;value)</div><div class="ttdoc">Ištrina elementus pagal reikšmę (C++20 stilius).</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00622">vector.h:622</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aad9115a7599130a9cfde563bb836287f" name="aad9115a7599130a9cfde563bb836287f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad9115a7599130a9cfde563bb836287f">&#9670;&#160;</a></span>TEST() <span class="overload">[54/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorNonMember</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EraseIf</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00427">427</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  427</span>                               {</div>
+<div class="line"><span class="lineno">  428</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3, 4, 5, 6};</div>
+<div class="line"><span class="lineno">  429</span>    <span class="keyword">auto</span> removed = <a class="code hl_function" href="../../d6/d68/vector_8h.html#a37ac162f755710a56ee55d3b5f34511e">erase_if</a>(v, [](<span class="keywordtype">int</span> x) { <span class="keywordflow">return</span> x % 2 == 0; });</div>
+<div class="line"><span class="lineno">  430</span>    EXPECT_EQ(removed, 3u);</div>
+<div class="line"><span class="lineno">  431</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">  432</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; x : v) EXPECT_EQ(x % 2, 1);</div>
+<div class="line"><span class="lineno">  433</span>}</div>
+<div class="ttc" id="avector_8h_html_a37ac162f755710a56ee55d3b5f34511e"><div class="ttname"><a href="../../d6/d68/vector_8h.html#a37ac162f755710a56ee55d3b5f34511e">erase_if</a></div><div class="ttdeci">Vector&lt; T, A &gt;::size_type erase_if(Vector&lt; T, A &gt; &amp;c, Pred pred)</div><div class="ttdoc">Ištrina elementus pagal predikato sąlygą (C++20 stilius).</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00631">vector.h:631</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a720d0ae3c8422ee63bbb81128c715f3a" name="a720d0ae3c8422ee63bbb81128c715f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a720d0ae3c8422ee63bbb81128c715f3a">&#9670;&#160;</a></span>TEST() <span class="overload">[55/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorNonMember</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GlobalSwap</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00411">411</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  411</span>                                  {</div>
+<div class="line"><span class="lineno">  412</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> a = {1, 2};</div>
+<div class="line"><span class="lineno">  413</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> b = {3, 4, 5};</div>
+<div class="line"><span class="lineno">  414</span>    <a class="code hl_function" href="../../d6/d68/vector_8h.html#a4ca7f223315f4e55bf9fdb64a1e57a19">swap</a>(a, b);</div>
+<div class="line"><span class="lineno">  415</span>    EXPECT_EQ(a.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 3u);</div>
+<div class="line"><span class="lineno">  416</span>    EXPECT_EQ(b.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 2u);</div>
+<div class="line"><span class="lineno">  417</span>}</div>
+<div class="ttc" id="avector_8h_html_a4ca7f223315f4e55bf9fdb64a1e57a19"><div class="ttname"><a href="../../d6/d68/vector_8h.html#a4ca7f223315f4e55bf9fdb64a1e57a19">swap</a></div><div class="ttdeci">void swap(Vector&lt; T, A &gt; &amp;lhs, Vector&lt; T, A &gt; &amp;rhs) noexcept</div><div class="ttdoc">Globalus swap (ADL).</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00616">vector.h:616</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a617b2197729ec52adc6750eada85b421" name="a617b2197729ec52adc6750eada85b421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a617b2197729ec52adc6750eada85b421">&#9670;&#160;</a></span>TEST() <span class="overload">[56/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorPerformance</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PushBack100k</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00488">488</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  488</span>                                      {</div>
+<div class="line"><span class="lineno">  489</span>    <span class="keyword">auto</span> t0 = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><span class="lineno">  490</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  491</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 100000; ++i) v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(i);</div>
+<div class="line"><span class="lineno">  492</span>    <span class="keyword">auto</span> dt = std::chrono::duration&lt;double&gt;(</div>
+<div class="line"><span class="lineno">  493</span>        std::chrono::high_resolution_clock::now() - t0).count();</div>
+<div class="line"><span class="lineno">  494</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 100000u);</div>
+<div class="line"><span class="lineno">  495</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Vector push_back 100k:  &quot;</span> &lt;&lt; dt &lt;&lt; <span class="stringliteral">&quot; s\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  496</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad6838c0da9a50caf8da7db06ed7613bd" name="ad6838c0da9a50caf8da7db06ed7613bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6838c0da9a50caf8da7db06ed7613bd">&#9670;&#160;</a></span>TEST() <span class="overload">[57/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorPerformance</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PushBack10k</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00477">477</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  477</span>                                     {</div>
+<div class="line"><span class="lineno">  478</span>    <span class="keyword">auto</span> t0 = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><span class="lineno">  479</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  480</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 10000; ++i) v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(i);</div>
+<div class="line"><span class="lineno">  481</span>    <span class="keyword">auto</span> dt = std::chrono::duration&lt;double&gt;(</div>
+<div class="line"><span class="lineno">  482</span>        std::chrono::high_resolution_clock::now() - t0).count();</div>
+<div class="line"><span class="lineno">  483</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 10000u);</div>
+<div class="line"><span class="lineno">  484</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a0977f3472b15fe46a8895efb09494bed">back</a>(), 10000);</div>
+<div class="line"><span class="lineno">  485</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Vector push_back 10k:   &quot;</span> &lt;&lt; dt &lt;&lt; <span class="stringliteral">&quot; s\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  486</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab0662d5df9b62a47522743c37497825e" name="ab0662d5df9b62a47522743c37497825e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0662d5df9b62a47522743c37497825e">&#9670;&#160;</a></span>TEST() <span class="overload">[58/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorPerformance</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PushBack1M</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00498">498</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  498</span>                                    {</div>
+<div class="line"><span class="lineno">  499</span>    <span class="keyword">auto</span> t0 = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><span class="lineno">  500</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  501</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 1000000; ++i) v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(i);</div>
+<div class="line"><span class="lineno">  502</span>    <span class="keyword">auto</span> dt = std::chrono::duration&lt;double&gt;(</div>
+<div class="line"><span class="lineno">  503</span>        std::chrono::high_resolution_clock::now() - t0).count();</div>
+<div class="line"><span class="lineno">  504</span>    EXPECT_EQ(v.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>(), 1000000u);</div>
+<div class="line"><span class="lineno">  505</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Vector push_back 1M:    &quot;</span> &lt;&lt; dt &lt;&lt; <span class="stringliteral">&quot; s\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  506</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abb00479a1ff31f02bdbe9ab8811ca2f5" name="abb00479a1ff31f02bdbe9ab8811ca2f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb00479a1ff31f02bdbe9ab8811ca2f5">&#9670;&#160;</a></span>TEST() <span class="overload">[59/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorPerformance</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StdVectorPushBack1M</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00508">508</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  508</span>                                             {</div>
+<div class="line"><span class="lineno">  509</span>    <span class="keyword">auto</span> t0 = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><span class="lineno">  510</span>    std::vector&lt;int&gt; v;</div>
+<div class="line"><span class="lineno">  511</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 1000000; ++i) v.push_back(i);</div>
+<div class="line"><span class="lineno">  512</span>    <span class="keyword">auto</span> dt = std::chrono::duration&lt;double&gt;(</div>
+<div class="line"><span class="lineno">  513</span>        std::chrono::high_resolution_clock::now() - t0).count();</div>
+<div class="line"><span class="lineno">  514</span>    EXPECT_EQ(v.size(), 1000000u);</div>
+<div class="line"><span class="lineno">  515</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;std::vector push_back 1M: &quot;</span> &lt;&lt; dt &lt;&lt; <span class="stringliteral">&quot; s\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  516</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6a1dba404a4bb4e7c3396fa4fe9a2218" name="a6a1dba404a4bb4e7c3396fa4fe9a2218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a1dba404a4bb4e7c3396fa4fe9a2218">&#9670;&#160;</a></span>TEST() <span class="overload">[60/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorReallocation</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CompareWithStdVector</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00454">454</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  454</span>                                               {</div>
+<div class="line"><span class="lineno">  455</span>    <span class="comment">// Lyginti perskirstymų skaičių su std::vector</span></div>
+<div class="line"><span class="lineno">  456</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> myV;</div>
+<div class="line"><span class="lineno">  457</span>    std::vector&lt;int&gt; stdV;</div>
+<div class="line"><span class="lineno">  458</span>    <span class="keywordtype">int</span> myReallocs = 0, stdReallocs = 0;</div>
+<div class="line"><span class="lineno">  459</span>    <span class="keywordtype">size_t</span> myCap = 0, stdCap = 0;</div>
+<div class="line"><span class="lineno">  460</span> </div>
+<div class="line"><span class="lineno">  461</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 1000000; ++i) {</div>
+<div class="line"><span class="lineno">  462</span>        <span class="keywordflow">if</span> (myV.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>() == myV.<a class="code hl_function" href="../../d5/db2/class_vector.html#ade9ce4c7602280a9c935c919afe10098">size</a>()) ++myReallocs;</div>
+<div class="line"><span class="lineno">  463</span>        <span class="keywordflow">if</span> (stdV.capacity() == stdV.size()) ++stdReallocs;</div>
+<div class="line"><span class="lineno">  464</span>        myV.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(i);</div>
+<div class="line"><span class="lineno">  465</span>        stdV.push_back(i);</div>
+<div class="line"><span class="lineno">  466</span>    }</div>
+<div class="line"><span class="lineno">  467</span> </div>
+<div class="line"><span class="lineno">  468</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Vector perskirstymai (1M el.):     mano=&quot;</span> &lt;&lt; myReallocs</div>
+<div class="line"><span class="lineno">  469</span>              &lt;&lt; <span class="stringliteral">&quot;, std=&quot;</span> &lt;&lt; stdReallocs &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  470</span>    <span class="comment">// Abu turėtų turėti panašų skaičių</span></div>
+<div class="line"><span class="lineno">  471</span>    EXPECT_LT(myReallocs, 30);</div>
+<div class="line"><span class="lineno">  472</span>    EXPECT_LT(stdReallocs, 30);</div>
+<div class="line"><span class="lineno">  473</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aeac9be131be116e0b0462e653adde394" name="aeac9be131be116e0b0462e653adde394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac9be131be116e0b0462e653adde394">&#9670;&#160;</a></span>TEST() <span class="overload">[61/61]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">VectorReallocation</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CountReallocations</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html">vector_unit_tests.cpp</a> eilutėje <a class="el" href="../../d2/d4c/vector__unit__tests_8cpp_source.html#l00437">437</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  437</span>                                             {</div>
+<div class="line"><span class="lineno">  438</span>    <a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"><span class="lineno">  439</span>    <span class="keywordtype">int</span> reallocs = 0;</div>
+<div class="line"><span class="lineno">  440</span>    <span class="keywordtype">size_t</span> prev_cap = v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>();</div>
+<div class="line"><span class="lineno">  441</span> </div>
+<div class="line"><span class="lineno">  442</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 100000; ++i) {</div>
+<div class="line"><span class="lineno">  443</span>        v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a7cb08d016f15c97741c849cdb83170e1">push_back</a>(i);</div>
+<div class="line"><span class="lineno">  444</span>        <span class="keywordflow">if</span> (v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>() != prev_cap) {</div>
+<div class="line"><span class="lineno">  445</span>            ++reallocs;</div>
+<div class="line"><span class="lineno">  446</span>            prev_cap = v.<a class="code hl_function" href="../../d5/db2/class_vector.html#a60671a453740307c95b9716139acfaf0">capacity</a>();</div>
+<div class="line"><span class="lineno">  447</span>        }</div>
+<div class="line"><span class="lineno">  448</span>    }</div>
+<div class="line"><span class="lineno">  449</span>    <span class="comment">// std::vector paprastai daro ~17 perskirstymų 100000 elementams</span></div>
+<div class="line"><span class="lineno">  450</span>    EXPECT_LT(reallocs, 25);</div>
+<div class="line"><span class="lineno">  451</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Vector perskirstymu skaicus (100000 el.): &quot;</span> &lt;&lt; reallocs &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  452</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../d2/d4c/vector__unit__tests_8cpp.html">vector_unit_tests.cpp</a></li>
+    <li class="footer">Sugeneruota <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

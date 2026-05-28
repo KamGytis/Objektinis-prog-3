@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="lt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Objektinis-prog-3: C:/Users/GYTIS/Documents/GitHub/Objektinis-prog-3/0.1_versija/0.1_versija/studentas.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Objektinis-prog-3<span id="projectnumber">&#160;3.0</span>
+   </div>
+   <div id="projectbrief">C++ Student Management System with STL containers</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Sugeneruota Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Paieška" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('dd/de7/_c_1_2_users_2_g_y_t_i_s_2_documents_2_git_hub_2_objektinis-prog-3_20_81_versija_20_81_versija_2studentas_8h-example.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">C:/Users/GYTIS/Documents/GitHub/Objektinis-prog-3/0.1_versija/0.1_versija/studentas.h</div></div>
+</div><!--header-->
+<div class="contents">
+<p>Parametrinis konstruktorius.</p>
+<p>Parametrinis konstruktorius</p><dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vardas</td><td>Studento vardas </td></tr>
+    <tr><td class="paramname">pavarde</td><td>Studento pavarde </td></tr>
+    <tr><td class="paramname">paz</td><td>Namu darbu pazymiu vektorius </td></tr>
+    <tr><td class="paramname">egz</td><td>Egzamino pazymys</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>std::vector&lt;int&gt; pazymiai = {8, 9, 7}; <a class="el" href="../../da/db8/class_studentas.html" title="Atstovauja studenta su pazymiais ir egzamino rezultatu.">Studentas</a> s("Jonas", "Jonaitis", pazymiai, 10);</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#ifndef STUDENTAS_H</span></div>
+<div class="line"><span class="preprocessor">#define STUDENTAS_H</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../d2/d34/zmogus_8h.html">zmogus.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../d6/d68/vector_8h.html">vector.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/**</span></div>
+<div class="line"><span class="comment"> * @class Studentas</span></div>
+<div class="line"><span class="comment"> * @brief Atstovauja studenta su pazymiais ir egzamino rezultatu</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * Si klase praplecia Zmogus klase ir igyvendina studentams budinga funkcionaluma,</span></div>
+<div class="line"><span class="comment"> * iskaitant pazymiu valdyma, rezultatu skaiciavima (vidurkis/mediana) ir</span></div>
+<div class="line"><span class="comment"> * klasifikavima i grupes.</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * @author Studentu Valdymo Sistema</span></div>
+<div class="line"><span class="comment"> * @version 2.0</span></div>
+<div class="line"><span class="comment"> * @date 2026</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span><a id="_a0" name="_a0"></a><a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a> : <span class="keyword">public</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="../../d5/d27/class_zmogus.html">Zmogus</a> {</div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    std::vector&lt;int&gt; <a id="a2" name="a2"></a><a class="code hl_variable" href="../../da/db8/class_studentas.html#ac09fb288689efa743b13b9449967923a">paz_</a>; <span class="comment">// Pazymiai</span></div>
+<div class="line">    <span class="keywordtype">int</span> <a id="a3" name="a3"></a><a class="code hl_variable" href="../../da/db8/class_studentas.html#a1d99507fca56727060b9b76a7a52f346">egz_</a>; <span class="comment">// Egzamino rezultatas</span></div>
+<div class="line">    <span class="keywordtype">double</span> <a id="a4" name="a4"></a><a class="code hl_variable" href="../../da/db8/class_studentas.html#a60f6f7d2bc40fd88cc99f3eb334fc81f">rez_</a>; <span class="comment">// Galutinis rezultatas (vidurkis arba mediana)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="comment">// Konstruktoriai </span><span class="comment"></span></div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Numatytasis konstruktorius</span></div>
+<div class="line"><span class="comment">     *</span></div>
+<div class="line"><span class="comment">     * Sukuria tuscia studenta su numatytosiomis reiksmemis.</span></div>
+<div class="line"><span class="comment">     * Visi pazymiai isvalomi, egzaminas = 0, rezultatas = 0.0</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    </div>
+<div class="line">    <a id="a5" name="a5"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#ab459e995e8c9b24cdc9aec5b09a66539">Studentas</a>();</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Parametrinis konstruktorius</span></div>
+<div class="line"><span class="comment">     * @param vardas Studento vardas</span></div>
+<div class="line"><span class="comment">     * @param pavarde Studento pavarde</span></div>
+<div class="line"><span class="comment">     * @param paz Namu darbu pazymiu vektorius</span></div>
+<div class="line"><span class="comment">     * @param egz Egzamino pazymys</span></div>
+<div class="line"><span class="comment">     *</span></div>
+<div class="line"><span class="comment">     * @example</span></div>
+<div class="line"><span class="comment">     * std::vector&lt;int&gt; pazymiai = {8, 9, 7};</span></div>
+<div class="line"><span class="comment">     * Studentas s(&quot;Jonas&quot;, &quot;Jonaitis&quot;, pazymiai, 10);</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="../../da/db8/class_studentas.html#ab459e995e8c9b24cdc9aec5b09a66539">Studentas</a>(<span class="keyword">const</span> std::string&amp; vardas,</div>
+<div class="line">        <span class="keyword">const</span> std::string&amp; pavarde,</div>
+<div class="line">        <span class="keyword">const</span> <a id="_a6" name="_a6"></a><a class="code hl_class" href="../../d5/db2/class_vector.html">Vector&lt;int&gt;</a>&amp; paz,</div>
+<div class="line">        <span class="keywordtype">int</span> egz);</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Kopijavimo konstruktorius (gilioji kopija)</span></div>
+<div class="line"><span class="comment">     * @param other Studentas objektas, is kurio kopijuojama</span></div>
+<div class="line"><span class="comment">     * @kompleksiskumas O(n), kur n yra pazymiu skaicius</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Kopijavimo konstruktorius</span></div>
+<div class="line">    <a class="code hl_function" href="../../da/db8/class_studentas.html#ab459e995e8c9b24cdc9aec5b09a66539">Studentas</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; other);</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Perkelimo konstruktorius</span></div>
+<div class="line"><span class="comment">     * @param other Studentas objektas, is kurio perkeliama</span></div>
+<div class="line"><span class="comment">     * @kompleksiskumas O(1)</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="../../da/db8/class_studentas.html#ab459e995e8c9b24cdc9aec5b09a66539">Studentas</a>(<a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp;&amp; other) <span class="keyword">noexcept</span>;</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Virtualus destruktorius</span></div>
+<div class="line"><span class="comment">     *</span></div>
+<div class="line"><span class="comment">     * Uztikrina tinkama isvestiniu klasiu isvalyma</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <a id="a7" name="a7"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a63e449e0f51a0b14340d02ee71b4be23">~Studentas</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">//  Priskyrimo operatoriai </span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Kopijavimo priskyrimo operatorius</span></div>
+<div class="line"><span class="comment">     * @param other Studentas objektas, is kurio kopijuojama</span></div>
+<div class="line"><span class="comment">     * @return Nuoroda i si objekta</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; <a id="a8" name="a8"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a25bcc531503d3bc490dab4a656e3b8e9">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; other);</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Perkelimo priskyrimo operatorius</span></div>
+<div class="line"><span class="comment">     * @param other Studentas objektas, is kurio perkeliama</span></div>
+<div class="line"><span class="comment">     * @return Nuoroda i si objekta</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; <a class="code hl_function" href="../../da/db8/class_studentas.html#a25bcc531503d3bc490dab4a656e3b8e9">operator=</a>(<a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp;&amp; other) <span class="keyword">noexcept</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">//  Palyginimo operatoriai </span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">     /**</span></div>
+<div class="line"><span class="comment">     * @brief Maziau uz (pagal galutini rezultata)</span></div>
+<div class="line"><span class="comment">     * @param other Studentas su kuriuo lyginama</span></div>
+<div class="line"><span class="comment">     * @return true jei si.rez_ &lt; other.rez_</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <span class="keywordtype">bool</span> <a id="a9" name="a9"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a5fdd664ecf8537e01dedf6296d32fb76">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Daugiau uz (pagal galutini rezultata)</span></div>
+<div class="line"><span class="comment">     * @param other Studentas su kuriuo lyginama</span></div>
+<div class="line"><span class="comment">     * @return true jei si.rez_ &gt; other.rez_</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <span class="keywordtype">bool</span> <a id="a10" name="a10"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a14b779c442d6221ffeee1a7f61dba9bd">operator&gt;</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">    * @brief Lygybe (pagal varda ir pavarde)</span></div>
+<div class="line"><span class="comment">    * @param other Studentas su kuriuo lyginama</span></div>
+<div class="line"><span class="comment">    * @return true jei vardai ir pavardes sutampa</span></div>
+<div class="line"><span class="comment">    */</span></div>
+<div class="line">    <span class="keywordtype">bool</span> <a id="a11" name="a11"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#aa5d9f15dc7728f3a9189e2178c7d5307">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Maziau arba lygu</span></div>
+<div class="line"><span class="comment">     * @return true jei si.rez_ &lt;= other.rez_</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <span class="keywordtype">bool</span> <a id="a12" name="a12"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a98f15dd7bc253082ef3e6e69b2557f8b">operator&lt;=</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Daugiau arba lygu</span></div>
+<div class="line"><span class="comment">     * @return true jei si.rez_ &gt;= other.rez_</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <span class="keywordtype">bool</span> <a id="a13" name="a13"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a600debf7fb1379d7bd28d3999b93205a">operator&gt;=</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Nelygybe</span></div>
+<div class="line"><span class="comment">     * @param other Studentas su kuriuo lyginama</span></div>
+<div class="line"><span class="comment">     * @return true jei vardai ar pavardes skiriasi</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <span class="keywordtype">bool</span> <a id="a14" name="a14"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a32408cb261d5a27f458869a472a18f5c">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Prideti pazymi: s += 8</span></div>
+<div class="line">    <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; <a id="a15" name="a15"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a2d6e25f6ea53ea4cf5fa54a37f05fdf0">operator+=</a>(<span class="keywordtype">int</span> pazymys);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Prieiga prie paz_[i]</span></div>
+<div class="line">    <span class="keywordtype">int</span>  <a id="a16" name="a16"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a82115013e275cf072c946fc144c97479">operator[]</a>(<span class="keywordtype">size_t</span> i) <span class="keyword">const</span>;</div>
+<div class="line">    <span class="keywordtype">int</span>&amp; <a class="code hl_function" href="../../da/db8/class_studentas.html#a82115013e275cf072c946fc144c97479">operator[]</a>(<span class="keywordtype">size_t</span> i);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// SRAUTU OPERATORIAI</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Isvedimo i ekrana operatorius</span></div>
+<div class="line"><span class="comment">     * @param os Isvesties srautas</span></div>
+<div class="line"><span class="comment">     * @param s Studentas objektas</span></div>
+<div class="line"><span class="comment">     * @return Nuoroda i isvesties srauta</span></div>
+<div class="line"><span class="comment">     * @detales Formatas: &quot;Vardas Pavarde [pazymiai] Egz: E Rez: R&quot;</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <span class="keyword">friend</span> std::ostream&amp; <a id="a17" name="a17"></a><a class="code hl_friend" href="../../da/db8/class_studentas.html#a4062cbd3f4c44fac2063e38cfa00a8cf">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; s);</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Ivedimo is failo operatorius</span></div>
+<div class="line"><span class="comment">     * @param is Ivesties srautas</span></div>
+<div class="line"><span class="comment">     * @param s Studentas objektas</span></div>
+<div class="line"><span class="comment">     * @return Nuoroda i ivesties srauta</span></div>
+<div class="line"><span class="comment">     * @detales Skaito: &quot;Vardas Pavarde paz1 paz2 ... pazN egzaminas&quot;</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <span class="keyword">friend</span> std::istream&amp; <a id="a18" name="a18"></a><a class="code hl_friend" href="../../da/db8/class_studentas.html#ac63003b577b137ac6ad5b1fb176bd59a">operator&gt;&gt;</a>(std::istream&amp; is, <a class="code hl_class" href="../../da/db8/class_studentas.html">Studentas</a>&amp; s);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// </span></div>
+<div class="line">    <span class="comment">// Virtualus metodas � realizuoja bazines klases gryna virtualu metoda</span></div>
+<div class="line">    <span class="comment">// </span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Spausdina studento informacija (pakeicia Zmogus::print)</span></div>
+<div class="line"><span class="comment">     * @param os Isvesties srautas</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <span class="keywordtype">void</span> <a id="a19" name="a19"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a3d73d57245cccb84a87fff820a32f205">print</a>(std::ostream&amp; os) <span class="keyword">const override</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// </span></div>
+<div class="line">    <span class="comment">// GETTERIAI</span></div>
+<div class="line">    <span class="comment">// </span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">     /** @return Pastovi nuoroda i pazymiu vektoriu */</span></div>
+<div class="line">    <span class="keyword">const</span> std::vector&lt;int&gt;&amp; <a id="a20" name="a20"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#af6d51bf9a3db3e7d4ae4c160792c4b93">getPaz</a>()<span class="keyword">         const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/db8/class_studentas.html#ac09fb288689efa743b13b9449967923a">paz_</a>; }</div>
+<div class="line">    <span class="comment"></span></div>
+<div class="line"><span class="comment">    /** @return Egzamino pazymys */</span></div>
+<div class="line">    <span class="keywordtype">int</span>                     <a id="a21" name="a21"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a2f9dcb2fef2e6b3dbc1581779a90a68a">getEgz</a>()<span class="keyword">         const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/db8/class_studentas.html#a1d99507fca56727060b9b76a7a52f346">egz_</a>; }</div>
+<div class="line">    <span class="comment"></span></div>
+<div class="line"><span class="comment">    /** @return Galutinis rezultatas */</span></div>
+<div class="line">    <span class="keywordtype">double</span>                  <a id="a22" name="a22"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a96a5c56d0b94ab196e7f1e30275e9737">getRez</a>()<span class="keyword">         const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/db8/class_studentas.html#a60f6f7d2bc40fd88cc99f3eb334fc81f">rez_</a>; }</div>
+<div class="line">    <span class="comment"></span></div>
+<div class="line"><span class="comment">    /** @return Namu darbu pazymiu skaicius */</span></div>
+<div class="line">    <span class="keywordtype">size_t</span>                  <a id="a23" name="a23"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#ad8939c9dc002dd7429853e195c5ec6f8">getPazSkaicius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/db8/class_studentas.html#ac09fb288689efa743b13b9449967923a">paz_</a>.size(); }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// </span></div>
+<div class="line">    <span class="comment">// SETTERIAI</span></div>
+<div class="line">    <span class="comment">// </span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /** @param e Naujas egzamino pazymys (0-10) */</span></div>
+<div class="line">    <span class="keywordtype">void</span> <a id="a24" name="a24"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#af7a2740c86cee79b07ea47b3eb819280">setEgz</a>(<span class="keywordtype">int</span> e) { <a class="code hl_variable" href="../../da/db8/class_studentas.html#a1d99507fca56727060b9b76a7a52f346">egz_</a> = e; }</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /** @param r Naujas galutinis rezultatas */</span></div>
+<div class="line">    <span class="keywordtype">void</span> <a id="a25" name="a25"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#abd5e5804e13a6ca6c960ac1ad24faa08">setRez</a>(<span class="keywordtype">double</span> r) { <a class="code hl_variable" href="../../da/db8/class_studentas.html#a60f6f7d2bc40fd88cc99f3eb334fc81f">rez_</a> = r; }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// </span></div>
+<div class="line">    <span class="comment">// METODAI</span></div>
+<div class="line">    <span class="comment">// </span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Prideda viena namu darbu pazymi</span></div>
+<div class="line"><span class="comment">     * @param p Pazymys (1-10)</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <span class="keywordtype">void</span>   <a id="a26" name="a26"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#af7d66b90b71aa433ecf2c179044271aa">addPazymys</a>(<span class="keywordtype">int</span> p);</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /** @brief Isvalo visus namu darbu pazymius */</span></div>
+<div class="line">    <span class="keywordtype">void</span>   <a id="a27" name="a27"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a9833ccfffe1cbb3b719766bacd0ad46a">clearPazymiai</a>();</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Skaiciuoja namu darbu pazymiu vidurki</span></div>
+<div class="line"><span class="comment">     * @return Aritmetinis vidurkis kaip double</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <span class="keywordtype">double</span> <a id="a28" name="a28"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a0e85ff82a3ab64d4d318da28c9ee06dc">vidurkis</a>() <span class="keyword">const</span>;</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">    * @brief Skaiciuoja namu darbu pazymiu mediana</span></div>
+<div class="line"><span class="comment">    * @return Mediana kaip double</span></div>
+<div class="line"><span class="comment">    */</span></div>
+<div class="line">    <span class="keywordtype">double</span> <a id="a29" name="a29"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#a503f18b8bbe14f5501ba97a1dc1c48fc">mediana</a>()  <span class="keyword">const</span>;</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Skaiciuoja galutini rezultata</span></div>
+<div class="line"><span class="comment">     * @param tipas 1=vidurkis, 2=mediana</span></div>
+<div class="line"><span class="comment">     * @detales Formule: 0.4 * pazymys + 0.6 * egzaminas</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <span class="keywordtype">void</span>   <a id="a30" name="a30"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#ac4d14762e601179e54e166075a1b98ee">skaiciuotiRez</a>(<span class="keywordtype">int</span> tipas); <span class="comment">// 1=vidurkis, 2=mediana</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    /**</span></div>
+<div class="line"><span class="comment">     * @brief Tikrina ar studentas islaike</span></div>
+<div class="line"><span class="comment">     * @return true jei rez_ &gt;= 5.0</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <span class="keywordtype">bool</span>   <a id="a31" name="a31"></a><a class="code hl_function" href="../../da/db8/class_studentas.html#af510e8f8b93c43f2e7a775d2b12066db">islaike</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/db8/class_studentas.html#a60f6f7d2bc40fd88cc99f3eb334fc81f">rez_</a> &gt;= 5.0; }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#endif </span></div>
+<div class="ttc" id="aclass_studentas_html"><div class="ttname"><a href="../../da/db8/class_studentas.html">Studentas</a></div><div class="ttdoc">Atstovauja studenta su pazymiais ir egzamino rezultatu.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d87/studentas_8h_source.html#l00024">studentas.h:24</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a0e85ff82a3ab64d4d318da28c9ee06dc"><div class="ttname"><a href="../../da/db8/class_studentas.html#a0e85ff82a3ab64d4d318da28c9ee06dc">Studentas::vidurkis</a></div><div class="ttdeci">double vidurkis() const</div><div class="ttdoc">Skaiciuoja namu darbu pazymiu vidurki.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00143">studentas.cpp:143</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a14b779c442d6221ffeee1a7f61dba9bd"><div class="ttname"><a href="../../da/db8/class_studentas.html#a14b779c442d6221ffeee1a7f61dba9bd">Studentas::operator&gt;</a></div><div class="ttdeci">bool operator&gt;(const Studentas &amp;other) const</div><div class="ttdoc">Daugiau uz (pagal galutini rezultata).</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00074">studentas.cpp:74</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a1d99507fca56727060b9b76a7a52f346"><div class="ttname"><a href="../../da/db8/class_studentas.html#a1d99507fca56727060b9b76a7a52f346">Studentas::egz_</a></div><div class="ttdeci">int egz_</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d87/studentas_8h_source.html#l00027">studentas.h:27</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a25bcc531503d3bc490dab4a656e3b8e9"><div class="ttname"><a href="../../da/db8/class_studentas.html#a25bcc531503d3bc490dab4a656e3b8e9">Studentas::operator=</a></div><div class="ttdeci">Studentas &amp; operator=(const Studentas &amp;other)</div><div class="ttdoc">Kopijavimo priskyrimo operatorius.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00047">studentas.cpp:47</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a2d6e25f6ea53ea4cf5fa54a37f05fdf0"><div class="ttname"><a href="../../da/db8/class_studentas.html#a2d6e25f6ea53ea4cf5fa54a37f05fdf0">Studentas::operator+=</a></div><div class="ttdeci">Studentas &amp; operator+=(int pazymys)</div></div>
+<div class="ttc" id="aclass_studentas_html_a2f9dcb2fef2e6b3dbc1581779a90a68a"><div class="ttname"><a href="../../da/db8/class_studentas.html#a2f9dcb2fef2e6b3dbc1581779a90a68a">Studentas::getEgz</a></div><div class="ttdeci">int getEgz() const</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d87/studentas_8h_source.html#l00189">studentas.h:189</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a32408cb261d5a27f458869a472a18f5c"><div class="ttname"><a href="../../da/db8/class_studentas.html#a32408cb261d5a27f458869a472a18f5c">Studentas::operator!=</a></div><div class="ttdeci">bool operator!=(const Studentas &amp;other) const</div><div class="ttdoc">Nelygybe.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00080">studentas.cpp:80</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a3d73d57245cccb84a87fff820a32f205"><div class="ttname"><a href="../../da/db8/class_studentas.html#a3d73d57245cccb84a87fff820a32f205">Studentas::print</a></div><div class="ttdeci">void print(std::ostream &amp;os) const override</div><div class="ttdoc">Spausdina studento informacija (pakeicia Zmogus::print).</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00130">studentas.cpp:130</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a4062cbd3f4c44fac2063e38cfa00a8cf"><div class="ttname"><a href="../../da/db8/class_studentas.html#a4062cbd3f4c44fac2063e38cfa00a8cf">Studentas::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Studentas &amp;s)</div><div class="ttdoc">Isvedimo i ekrana operatorius.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00092">studentas.cpp:92</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a503f18b8bbe14f5501ba97a1dc1c48fc"><div class="ttname"><a href="../../da/db8/class_studentas.html#a503f18b8bbe14f5501ba97a1dc1c48fc">Studentas::mediana</a></div><div class="ttdeci">double mediana() const</div><div class="ttdoc">Skaiciuoja namu darbu pazymiu mediana.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00148">studentas.cpp:148</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a5fdd664ecf8537e01dedf6296d32fb76"><div class="ttname"><a href="../../da/db8/class_studentas.html#a5fdd664ecf8537e01dedf6296d32fb76">Studentas::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const Studentas &amp;other) const</div><div class="ttdoc">Maziau uz (pagal galutini rezultata).</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00071">studentas.cpp:71</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a600debf7fb1379d7bd28d3999b93205a"><div class="ttname"><a href="../../da/db8/class_studentas.html#a600debf7fb1379d7bd28d3999b93205a">Studentas::operator&gt;=</a></div><div class="ttdeci">bool operator&gt;=(const Studentas &amp;other) const</div><div class="ttdoc">Daugiau arba lygu.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00086">studentas.cpp:86</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a60f6f7d2bc40fd88cc99f3eb334fc81f"><div class="ttname"><a href="../../da/db8/class_studentas.html#a60f6f7d2bc40fd88cc99f3eb334fc81f">Studentas::rez_</a></div><div class="ttdeci">double rez_</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d87/studentas_8h_source.html#l00028">studentas.h:28</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a63e449e0f51a0b14340d02ee71b4be23"><div class="ttname"><a href="../../da/db8/class_studentas.html#a63e449e0f51a0b14340d02ee71b4be23">Studentas::~Studentas</a></div><div class="ttdeci">~Studentas()</div><div class="ttdoc">Virtualus destruktorius.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00042">studentas.cpp:42</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a82115013e275cf072c946fc144c97479"><div class="ttname"><a href="../../da/db8/class_studentas.html#a82115013e275cf072c946fc144c97479">Studentas::operator[]</a></div><div class="ttdeci">int operator[](size_t i) const</div></div>
+<div class="ttc" id="aclass_studentas_html_a96a5c56d0b94ab196e7f1e30275e9737"><div class="ttname"><a href="../../da/db8/class_studentas.html#a96a5c56d0b94ab196e7f1e30275e9737">Studentas::getRez</a></div><div class="ttdeci">double getRez() const</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d87/studentas_8h_source.html#l00192">studentas.h:192</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a9833ccfffe1cbb3b719766bacd0ad46a"><div class="ttname"><a href="../../da/db8/class_studentas.html#a9833ccfffe1cbb3b719766bacd0ad46a">Studentas::clearPazymiai</a></div><div class="ttdeci">void clearPazymiai()</div><div class="ttdoc">Isvalo visus namu darbu pazymius.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00139">studentas.cpp:139</a></div></div>
+<div class="ttc" id="aclass_studentas_html_a98f15dd7bc253082ef3e6e69b2557f8b"><div class="ttname"><a href="../../da/db8/class_studentas.html#a98f15dd7bc253082ef3e6e69b2557f8b">Studentas::operator&lt;=</a></div><div class="ttdeci">bool operator&lt;=(const Studentas &amp;other) const</div><div class="ttdoc">Maziau arba lygu.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00083">studentas.cpp:83</a></div></div>
+<div class="ttc" id="aclass_studentas_html_aa5d9f15dc7728f3a9189e2178c7d5307"><div class="ttname"><a href="../../da/db8/class_studentas.html#aa5d9f15dc7728f3a9189e2178c7d5307">Studentas::operator==</a></div><div class="ttdeci">bool operator==(const Studentas &amp;other) const</div><div class="ttdoc">Lygybe (pagal varda ir pavarde).</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00077">studentas.cpp:77</a></div></div>
+<div class="ttc" id="aclass_studentas_html_ab459e995e8c9b24cdc9aec5b09a66539"><div class="ttname"><a href="../../da/db8/class_studentas.html#ab459e995e8c9b24cdc9aec5b09a66539">Studentas::Studentas</a></div><div class="ttdeci">Studentas()</div><div class="ttdoc">Numatytasis konstruktorius.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00010">studentas.cpp:10</a></div></div>
+<div class="ttc" id="aclass_studentas_html_abd5e5804e13a6ca6c960ac1ad24faa08"><div class="ttname"><a href="../../da/db8/class_studentas.html#abd5e5804e13a6ca6c960ac1ad24faa08">Studentas::setRez</a></div><div class="ttdeci">void setRez(double r)</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d87/studentas_8h_source.html#l00205">studentas.h:205</a></div></div>
+<div class="ttc" id="aclass_studentas_html_ac09fb288689efa743b13b9449967923a"><div class="ttname"><a href="../../da/db8/class_studentas.html#ac09fb288689efa743b13b9449967923a">Studentas::paz_</a></div><div class="ttdeci">std::vector&lt; int &gt; paz_</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d87/studentas_8h_source.html#l00026">studentas.h:26</a></div></div>
+<div class="ttc" id="aclass_studentas_html_ac4d14762e601179e54e166075a1b98ee"><div class="ttname"><a href="../../da/db8/class_studentas.html#ac4d14762e601179e54e166075a1b98ee">Studentas::skaiciuotiRez</a></div><div class="ttdeci">void skaiciuotiRez(int tipas)</div><div class="ttdoc">Skaiciuoja galutini rezultata.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00156">studentas.cpp:156</a></div></div>
+<div class="ttc" id="aclass_studentas_html_ac63003b577b137ac6ad5b1fb176bd59a"><div class="ttname"><a href="../../da/db8/class_studentas.html#ac63003b577b137ac6ad5b1fb176bd59a">Studentas::operator&gt;&gt;</a></div><div class="ttdeci">friend std::istream &amp; operator&gt;&gt;(std::istream &amp;is, Studentas &amp;s)</div><div class="ttdoc">Ivedimo is failo operatorius.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00107">studentas.cpp:107</a></div></div>
+<div class="ttc" id="aclass_studentas_html_ad8939c9dc002dd7429853e195c5ec6f8"><div class="ttname"><a href="../../da/db8/class_studentas.html#ad8939c9dc002dd7429853e195c5ec6f8">Studentas::getPazSkaicius</a></div><div class="ttdeci">size_t getPazSkaicius() const</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d87/studentas_8h_source.html#l00195">studentas.h:195</a></div></div>
+<div class="ttc" id="aclass_studentas_html_af510e8f8b93c43f2e7a775d2b12066db"><div class="ttname"><a href="../../da/db8/class_studentas.html#af510e8f8b93c43f2e7a775d2b12066db">Studentas::islaike</a></div><div class="ttdeci">bool islaike() const</div><div class="ttdoc">Tikrina ar studentas islaike.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d87/studentas_8h_source.html#l00243">studentas.h:243</a></div></div>
+<div class="ttc" id="aclass_studentas_html_af6d51bf9a3db3e7d4ae4c160792c4b93"><div class="ttname"><a href="../../da/db8/class_studentas.html#af6d51bf9a3db3e7d4ae4c160792c4b93">Studentas::getPaz</a></div><div class="ttdeci">const std::vector&lt; int &gt; &amp; getPaz() const</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d87/studentas_8h_source.html#l00186">studentas.h:186</a></div></div>
+<div class="ttc" id="aclass_studentas_html_af7a2740c86cee79b07ea47b3eb819280"><div class="ttname"><a href="../../da/db8/class_studentas.html#af7a2740c86cee79b07ea47b3eb819280">Studentas::setEgz</a></div><div class="ttdeci">void setEgz(int e)</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d87/studentas_8h_source.html#l00202">studentas.h:202</a></div></div>
+<div class="ttc" id="aclass_studentas_html_af7d66b90b71aa433ecf2c179044271aa"><div class="ttname"><a href="../../da/db8/class_studentas.html#af7d66b90b71aa433ecf2c179044271aa">Studentas::addPazymys</a></div><div class="ttdeci">void addPazymys(int p)</div><div class="ttdoc">Prideda viena namu darbu pazymi.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d11/studentas_8cpp_source.html#l00135">studentas.cpp:135</a></div></div>
+<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="../../d5/db2/class_vector.html">Vector</a></div><div class="ttdoc">Nuosava Vector konteinerio klasė.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d68/vector_8h_source.html#l00034">vector.h:34</a></div></div>
+<div class="ttc" id="aclass_zmogus_html"><div class="ttname"><a href="../../d5/d27/class_zmogus.html">Zmogus</a></div><div class="ttdoc">Abstrakti bazine klase, atstovaujanti zmogu.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d34/zmogus_8h_source.html#l00019">zmogus.h:19</a></div></div>
+<div class="ttc" id="avector_8h_html"><div class="ttname"><a href="../../d6/d68/vector_8h.html">vector.h</a></div><div class="ttdoc">Nuosavos Vector konteinerio klasės aprašas.</div></div>
+<div class="ttc" id="azmogus_8h_html"><div class="ttname"><a href="../../d2/d34/zmogus_8h.html">zmogus.h</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Sugeneruota <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>
