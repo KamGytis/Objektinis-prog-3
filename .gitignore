@@ -2,12 +2,12 @@
 Debug/
 Release/
 x64/
+out/
 *.exe
 *.user
-*.txt
-studentai*.txt
-kursiokai*.txt
-studentai1000000.txt
-out/
 *.vcxproj
 *.filters
+studentai*.txt
+kursiokai*.txt
+!test_files/
+!test_files/*.txt
